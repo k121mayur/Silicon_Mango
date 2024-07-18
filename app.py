@@ -105,11 +105,11 @@ def certificate():
             return send_file(file_path, as_attachment=True)
     if request.method == 'GET':
         return render_template('get_certificate.html')
-        data = db.session.query(StudentDatabase).filter_by(code=code).first()
-    return render_template('verify.html', data={'entry': True, "name": data.first_name, "batch": "June 2024", "course": "Excel", "code": code})
+        
+    
 # Ensure the application context is pushed
 with app.app_context():
     db.create_all()
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run()
