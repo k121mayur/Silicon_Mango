@@ -1,0 +1,3 @@
+PILLOW
+flask_sqlalchemy
+flask
