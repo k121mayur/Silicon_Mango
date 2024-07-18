@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Silicon Mango - Your trusted partner in data and web solutions.">
+    <title>Silicon Mango - Data and Web Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.10.4/gsap.min.js"></script>
+    <script src="scripts.js" defer></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #333;
+            color: #fff;
+        }
+
+        header img {
+            height: 50px;
+        }
+
+        nav a {
+            color: #fff;
+            margin: 0 15px;
+            text-decoration: none;
+        }
+
+        section {
+            padding: 50px;
+            text-align: center;
+        }
+
+        .about, .products, .quote, .contact {
+            background: #f4f4f4;
+            margin: 20px 0;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .quote form {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .quote input, .quote textarea {
+            width: 80%;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        .quote button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            cursor: pointer;
+        }
+
+        .contact ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .contact li {
+            margin: 10px 0;
+        }
+
+        footer {
+            background-color: #333;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+
+        <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Silicon Mango Logo" id="logo" >
+        <nav>
+            <a href="#about">About Us</a>
+            <a href="#products">Products</a>
+            <a href="#quote">Get A Quote</a>
+            <a href="#contact">Contact Us</a>
+        </nav>
+    </header>
+
+    <section id="about" class="about">
+        <h2>About Us</h2>
+        <p>Welcome to Silicon Mango, your trusted partner in data and web solutions. We specialize in providing cutting-edge solutions that help your business thrive in the digital world.</p>
+    </section>
+
+    <section id="products" class="products">
+        <h2>Our Products</h2>
+        <p>We offer a range of products designed to streamline your operations and boost your productivity. From data analytics tools to web development frameworks, we have you covered.</p>
+    </section>
+
+    <section id="quote" class="quote">
+        <h2>Get A Quote</h2>
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="email" placeholder="Your Email" required>
+            <textarea placeholder="Project Details" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+    </section>
+
+    <section id="contact" class="contact">
+        <h2>Contact Us</h2>
+        <ul>
+            <li>Email: kharade.mayur@gmail.com</li>
+            <li>Phone: (+91) 9503633029</li>
+            <li>Address: Kothrud, Pune, India</li>
+        </ul>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Silicon Mango. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            gsap.from("#logo", { duration: 1, y: -50, opacity: 0 });
+            gsap.from("nav a", { duration: 1, y: -50, opacity: 0, stagger: 0.2 });
+            gsap.from(".about, .products, .quote, .contact", { duration: 1, x: -50, opacity: 0, stagger: 0.3 });
+        });
+    </script>
+</body>
+
+</html>

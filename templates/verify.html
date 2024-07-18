@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Verify</title>
+</head>
+<body>
+    <h1>Welcome to Silicon Mango</h1>
+    <p>We practice the trasnperency of data</p>
+
+    {% if data['entry'] %}
+        <h2>{{ data['name'] }}</h2>
+        <p>{{ data['batch'] }}</p>
+        <p>{{ data['course'] }}</p>
+    {% else %}
+        <p>No data found for the specified code. there might be a typing mistake or certificate is not valid.</p>
+    {% endif %}
+    
+</body>
+</html>
