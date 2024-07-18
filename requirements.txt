@@ -1,3 +1,6 @@
 PILLOW
 flask_sqlalchemy
 flask
+datetime
+sqlalchemy
+flask_migrate
