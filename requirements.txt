@@ -1,7 +1,0 @@
-PILLOW
-flask_sqlalchemy
-flask
-datetime
-sqlalchemy
-gunicorn
-flask-migrate
