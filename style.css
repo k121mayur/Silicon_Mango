@@ -1,7 +1,12 @@
 * {
   box-sizing: border-box;
 }
-
+.pr {
+  padding-right: 0;
+}
+.pr button {
+  padding: 0.25rem;
+}
 .p-70 {
   padding: 50px;
 }
@@ -98,22 +103,38 @@
   color: #024383;
 }
 .about-mission {
-  padding: 50px 110px;
+  background-image: url(images/mission.png);
+  background-repeat: no-repeat;
+
+  padding: 50px;
+  border-bottom-left-radius: 50px;
+  margin-right: 50px;
 }
 .about-vision {
-  padding: 50px 110px;
+  background-image: url(images/vision.png);
+  background-repeat: no-repeat;
+  border-top-right-radius: 50px;
+  padding: 50px;
+  margin-left: 50px;
 }
 .mission {
-  background-color: #d9d9d9;
-  border-top-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  padding: 30px;
+  color: #fff;
+
+  padding: 24px;
+}
+.about-mission .mission p {
+  font-size: 18px;
+  line-height: 2rem;
+  padding: 0 150px;
+}
+.about-vision p {
+  font-size: 18px;
+  line-height: 2rem;
+  padding: 0 150px;
 }
 .vision {
-  background-color: #d9d9d9;
-  border-top-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-  padding: 40px;
+  color: #fff;
+  padding: 24px;
 }
 .about-bg p {
   text-align: justify;
@@ -123,12 +144,16 @@
 .philo-head {
   color: #fff;
   /* text-align: center; */
-  background: #024383;
+  background: #157dc5;
   padding: 5px 50px;
   font-weight: 700;
   font-size: 20px;
-  border-top-left-radius: 20px;
-  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.value-bg {
+  background-image: url(images/values.png);
+  background-repeat: no-repeat;
 }
 .services-bg {
   background-image: url(images/image\ 2.jpg);
@@ -191,13 +216,14 @@
   border-top-left-radius: 15px;
 }
 .philosophy-para {
-  padding: 50px 70px;
+  padding: 50px 100px 50px 15px;
 }
 .philosophy-para p {
   text-align: justify;
-  line-height: 1.5rem;
-  background: #fff;
-  padding: 50px;
+  font-size: 17px;
+  line-height: 1.7rem;
+  color: #fff;
+  padding: 40px 75px;
   border-radius: 10px;
 }
 .sec-bg {
@@ -205,27 +231,30 @@
   border-radius: 20px;
 }
 .value {
-  background-color: #d9d9d9;
-  border-top-left-radius: 20px;
-  border-bottom-right-radius: 20px;
-  padding: 10px 30px;
-  margin: 10px 54px;
+  border: 2px solid #fff;
+  padding: 30px;
+  margin: 15px 0;
+}
+.value-line {
+  width: 100px;
+  background: #fff;
+  height: 2px;
+  margin: auto;
 }
 .value p {
-  font-size: 16px;
+  font-size: 17px;
   text-align: start;
+  color: #fff;
 }
 .value h6 {
-  font-size: 19px;
+  font-size: 22px;
   font-weight: 600;
   text-align: center;
-  margin-bottom: 10px;
+
+  color: #fff;
 }
 .outer {
-  background-color: #024383;
-  padding: 20px;
-  height: 350px;
-  margin-top: 100px;
+  padding: 50px;
 }
 .values {
   margin-top: -100px;
@@ -234,6 +263,7 @@
   padding: 45px;
   border-radius: 20px;
 }
+
 .mt-70 {
   margin-top: 70px;
 }
@@ -252,8 +282,8 @@
   margin-bottom: 7px;
 }
 .obj-head {
-  font-weight: 600;
-  font-size: 16px;
+  font-weight: 700;
+  font-size: 18px;
 }
 .ver-line {
   width: 4px;
@@ -270,6 +300,135 @@
   background: #27b4e9;
   font-weight: 600;
 }
+.app-bg {
+  background-image: url(images/app-dev.png);
+
+  background-size: cover;
+  width: 100%;
+}
+.app-bg .para {
+  color: #fff;
+  font-size: 18px;
+  padding: 50px;
+  font-weight: 400;
+}
+.app-bg span {
+  color: #041624;
+  background: #c7e9fa;
+  padding: 5px 50px;
+  text-align: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.training-bg {
+  background-image: url(images/image\ 6.png);
+
+  background-size: cover;
+  width: 100%;
+}
+.training-bg .para {
+  color: #fff;
+  font-size: 18px;
+  padding: 50px 25px 50px 0;
+  font-weight: 400;
+}
+.training-bg .train {
+  color: #041624;
+  background: #c7e9fa;
+  padding: 5px 50px;
+  text-align: center;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+  font-size: 24px;
+  font-weight: 700;
+}
+.training-bg .ver-line {
+  width: 3px;
+  height: 60px;
+  background: #fff;
+  margin: 40px 20px;
+}
+.objective {
+  padding: 30px;
+}
+.objective ul li {
+  padding: 5px;
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+}
+.our-service {
+  background-image: url(images/about-us.png);
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.our-service h4 {
+  padding: 15px;
+  /* margin: auto; */
+  color: #fff;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 900;
+  text-shadow: 0 0 black;
+}
+.data-sol {
+  background-image: url(images/data-solu.png);
+  background-size: cover;
+}
+.data-bg {
+  background-color: #0c4563;
+  border-radius: 20px;
+}
+.data-sol h4 {
+  font-size: 24px;
+  /* text-align: center; */
+  color: #fff;
+  font-weight: 700;
+  padding: 15px 50px;
+}
+.data-objective ul li {
+  color: #fff;
+  padding: 5px;
+  font-size: 17px;
+  font-weight: 400;
+}
+.about {
+  background-image: url(images/about-us.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.about h4 {
+  padding: 15px;
+  /* margin: auto; */
+  color: #fff;
+  text-align: center;
+  font-size: 35px;
+  font-weight: 900;
+  text-shadow: 3px 3px black;
+}
+.philo-bg {
+  background-image: url(images/values.png);
+  background-position: center;
+  position: relative;
+  padding: 45px 0;
+}
+.philosophy-para {
+  background-image: url(images/philo.png);
+  background-position: center;
+  background-size: cover;
+  border-top-right-radius: 20px;
+  border-bottom-right-radius: 20px;
+}
+.logo-img img {
+  width: 100%;
+  position: absolute;
+  right: 45%;
+  top: 20%;
+}
+
 /*slider css*/
 .partner {
   display: grid;
@@ -357,4 +516,121 @@
   border-radius: 20px;
   background: #131c43;
   box-shadow: 1px 1px 1px 1px #000;
+}
+@media screen and (max-width: 576px) {
+  .pr {
+    padding-right: 1.5rem;
+  }
+  h2 {
+    font-size: 20px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  .philosophy-para {
+    padding: 25px;
+  }
+  .philosophy-para p {
+    padding: 0;
+    padding-top: 10px;
+    font-size: 13px;
+    line-height: 1.3rem;
+  }
+  .logo-img img {
+    width: 120px;
+    position: absolute;
+    right: 40%;
+    top: 45%;
+  }
+  .about h4 {
+    font-size: 20px;
+  }
+  .mission {
+    padding: 10px 24px;
+  }
+  .about-mission {
+    padding: 10px 0;
+    margin-right: 0;
+  }
+  .about-mission .mission p {
+    padding: 0;
+    line-height: 1.5rem;
+    font-size: 15px;
+  }
+  .vision {
+    padding: 10px 24px;
+  }
+  .about-vision {
+    padding: 10px 0;
+    margin-left: 0;
+  }
+  .about-vision .vision p {
+    padding: 0;
+    line-height: 1.5rem;
+    font-size: 15px;
+  }
+  .value {
+    padding: 15px;
+    margin: 7px 0;
+  }
+  .value h6 {
+    font-size: 18px;
+  }
+  .value p {
+    font-size: 14px;
+    text-align: justify;
+  }
+  .our-service h4 {
+    font-size: 20px;
+  }
+  .app-bg span {
+    padding: 5px 20px;
+    font-size: 18px;
+  }
+  .app-bg .para {
+    font-size: 14px;
+    padding: 25px;
+  }
+  .training-bg .train {
+    padding: 5px 20px;
+    font-size: 18px;
+  }
+  .training-bg .ver-line {
+    display: none;
+  }
+  .training-bg .para {
+    font-size: 14px;
+    padding: 25px;
+  }
+  .objective ul li {
+    font-size: 15px;
+    font-weight: 500;
+    padding: 0;
+  }
+  .data-sol {
+    background-size: contain;
+
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  .data-sol h4 {
+    font-size: 20px;
+  }
+  .data-objective ul li {
+    font-size: 14px;
+  }
+  .obj-head {
+    font-weight: 500;
+    font-size: 15px;
+  }
+  .head-text {
+    font-size: 22px;
+  }
+  .logo-h {
+    height: 50px;
+  }
+  .navbar-dark .navbar-toggler {
+    color: #fff;
+    background: #024383;
+  }
 }
