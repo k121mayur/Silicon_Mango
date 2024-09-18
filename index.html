@@ -104,12 +104,14 @@
         <div class="row justify-content-center">
           <div class="col-lg-6">
             <div class="choose-img text-center">
-              <img src="images/d 1.jpg" alt="img" style="width: 500px" />
+              <img src="images/d 1.jpg" alt="img" />
             </div>
           </div>
           <div class="col-lg-6 pt-150">
             <div class="why-choose pt-5">
-              <span>Why Choose Us?</span>
+              <div class="center">
+                <span>Why Choose Us?</span>
+              </div>
               <ul class="p-0 pt-3">
                 <li>
                   ■ &nbsp&nbsp Expertise in both Social and Technology sectors
@@ -177,8 +179,8 @@
           <span class="head-about">About Us</span>
         </div>
         <div class="row">
-          <div class="col-lg-6 about-mission">
-            <h4 class="text-center text-white">Mission</h4>
+          <div class="col-lg-6 abt-mission">
+            <h3 class="text-center text-white">Mission</h3>
             <div
               class="mission animate__animated animate__fadeInLeft animate__delay-3s"
             >
@@ -191,8 +193,8 @@
               </p>
             </div>
           </div>
-          <div class="col-lg-6 about-vision">
-            <h4 class="text-center text-white">Vision</h4>
+          <div class="col-lg-6 abt-vision">
+            <h3 class="text-center text-white">Vision</h3>
             <div
               class="vision animate__animated animate__fadeInRight animate__delay-3s"
             >
@@ -214,7 +216,7 @@
         <div style="background-color: #d9d9d9">
           <div class="row">
             <div class="col-lg-12">
-              <div class="philosophy-para">
+              <div class="philo-para">
                 <p>
                   At the core of our work is a deep commitment to empowering
                   India's growth by delivering innovative data, training, and
@@ -294,7 +296,8 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1">Name -</label>
                   <input
-                    type="name"
+                    type="text"
+                    name="name"
                     class="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
@@ -303,6 +306,7 @@
                 <div class="form-group">
                   <label for="exampleInputEmail1">Email -</label>
                   <input
+                    name="email"
                     type="email"
                     class="form-control"
                     id="exampleInputEmail1"
@@ -312,19 +316,22 @@
                 <div class="form-group">
                   <label for="exampleInputPassword1">Subject -</label>
                   <input
-                    type="password"
+                    type="text"
+                    name="subject"
                     class="form-control"
                     id="exampleInputPassword1"
                   />
                 </div>
                 <div class="form-group">
                   <label for="exampleInputEmail1">Message -</label>
-                  <input
-                    type="email"
+                  <textarea
+                    name="message"
+                    rows="3"
+                    cols="5"
                     class="form-control"
                     id="exampleInputEmail1"
                     aria-describedby="emailHelp"
-                  />
+                  ></textarea>
                 </div>
                 <div class="text-center">
                   <button type="submit" class="btn">Send Message</button>
