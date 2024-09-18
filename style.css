@@ -95,12 +95,27 @@
 }
 .head-about {
   background-color: #d9d9d9;
-  padding: 5px 40px;
+  padding: 3px 50px;
   border-top-right-radius: 20px;
   border-bottom-right-radius: 20px;
-  font-size: 20px;
+  font-size: 25px;
   font-weight: 800;
   color: #024383;
+}
+.abt-mission {
+  padding: 50px 110px;
+}
+.abt-mission .mission {
+  background-color: #d9d9d9;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 30px;
+}
+.abt-mission .mission p {
+  text-align: justify;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
 }
 .about-mission {
   background-image: url(images/mission.png);
@@ -109,6 +124,21 @@
   padding: 50px;
   border-bottom-left-radius: 50px;
   margin-right: 50px;
+}
+.abt-vision {
+  padding: 50px 110px;
+}
+.abt-vision .vision {
+  background-color: #d9d9d9;
+  border-top-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+  padding: 40px;
+}
+.abt-vision .vision p {
+  text-align: justify;
+  font-size: 18px;
+  font-weight: 400;
+  color: #000;
 }
 .about-vision {
   background-image: url(images/vision.png);
@@ -150,6 +180,16 @@
   font-size: 20px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
+}
+.philo-para {
+  padding: 50px 70px;
+}
+.philo-para p {
+  text-align: justify;
+  line-height: 1.5rem;
+  background: #fff;
+  padding: 50px;
+  border-radius: 10px;
 }
 .value-bg {
   background-image: url(images/values.png);
@@ -331,7 +371,7 @@
 .training-bg .para {
   color: #fff;
   font-size: 18px;
-  padding: 50px 25px 50px 0;
+  padding: 70px 25px 50px 0;
   font-weight: 400;
 }
 .training-bg .train {
@@ -348,7 +388,8 @@
   width: 3px;
   height: 60px;
   background: #fff;
-  margin: 40px 20px;
+  position: absolute;
+  top: 10%;
 }
 .objective {
   padding: 30px;
@@ -517,9 +558,19 @@
   background: #131c43;
   box-shadow: 1px 1px 1px 1px #000;
 }
+.choose-img img {
+  max-width: 100%;
+  width: 500px;
+}
+.services-training {
+  padding: 70px 15px;
+}
 @media screen and (max-width: 576px) {
   .pr {
     padding-right: 1.5rem;
+  }
+  .pt-150 {
+    padding-top: 0;
   }
   h2 {
     font-size: 20px;
@@ -602,6 +653,12 @@
     font-size: 14px;
     padding: 25px;
   }
+  .services-training {
+    padding: 30px 15px;
+  }
+  .objective {
+    padding: 10px 25px;
+  }
   .objective ul li {
     font-size: 15px;
     font-weight: 500;
@@ -623,8 +680,8 @@
     font-weight: 500;
     font-size: 15px;
   }
-  .head-text {
-    font-size: 22px;
+  .head-white {
+    font-size: 25px;
   }
   .logo-h {
     height: 50px;
@@ -632,5 +689,65 @@
   .navbar-dark .navbar-toggler {
     color: #fff;
     background: #024383;
+  }
+  .head-text {
+    font-size: 22px;
+  }
+  .head-para {
+    font-size: 16px;
+  }
+  .why-choose ul li {
+    font-size: 16px;
+    line-height: 1.5rem;
+  }
+  .why-choose .center {
+    text-align: center;
+  }
+  .abt-mission {
+    padding: 40px;
+  }
+  .abt-mission .mission {
+    padding: 25px;
+  }
+  .abt-mission .mission p {
+    font-size: 14px;
+  }
+  .abt-vision {
+    padding: 40px;
+  }
+  .abt-vision .vision {
+    padding: 25px;
+  }
+  .abt-vision .vision p {
+    font-size: 14px;
+  }
+  .philo-para {
+    padding: 25px;
+  }
+  .philo-para p {
+    font-size: 14px;
+    padding: 20px;
+  }
+  .p-130 {
+    padding: 30px;
+  }
+  .services-bg {
+    height: auto;
+  }
+  .services-head h5 {
+    font-size: 20px;
+  }
+  .services-head ul li {
+    font-size: 16px;
+  }
+  .blog-head {
+    font-size: 22px;
+    text-align: end;
+  }
+  .line {
+    width: 50%;
+    left: 46%;
+  }
+  services-traning {
   }
 }
