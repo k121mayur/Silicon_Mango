@@ -14,7 +14,7 @@
   padding-top: 150px;
 }
 .p-130 {
-  padding: 130px;
+  padding: 122px;
 }
 .text-blue {
   color: #030f49;
@@ -54,33 +54,35 @@
 }
 .head-para {
   color: #fff;
-  font-size: 18px;
+  font-size: 20px;
   font-weight: 500;
 }
 .head-services span {
   background: #c6d8ff;
   color: #000;
   border-bottom-right-radius: 15px;
-  padding: 3px 40px 3px 20px;
+  padding: 3px 40px;
   font-weight: 700;
+  font-size: 20px;
 }
-.head-services ul li {
+.head-services ul li a {
   color: #fff;
   list-style: none;
+  text-decoration: none;
 }
 .why-choose span {
-  padding: 5px 60px;
+  padding: 5px 70px;
   background: #c6d8ff;
   color: #01204f;
   font-weight: 800;
-  font-size: 20px;
+  font-size: 30px;
   border-bottom-right-radius: 20px;
   border-top-left-radius: 20px;
 }
 .why-choose ul li {
   color: #012a5e;
   list-style: none;
-  font-size: 18px;
+  font-size: 22px;
   font-weight: 500;
   line-height: 2rem;
 }
@@ -171,13 +173,22 @@
   font-size: 18px;
   font-weight: 400;
 }
+.core-value {
+  color: #fff;
+  /* text-align: center; */
+  background: #0d1b3b;
+  padding: 10px 50px;
+  font-weight: 700;
+  font-size: 30px;
+  border-radius: 20px;
+}
 .philo-head {
   color: #fff;
   /* text-align: center; */
-  background: #157dc5;
-  padding: 5px 50px;
+  background: #024383;
+  padding: 2px 50px;
   font-weight: 700;
-  font-size: 20px;
+  font-size: 32px;
   border-bottom-left-radius: 20px;
   border-bottom-right-radius: 20px;
 }
@@ -203,7 +214,7 @@
 }
 .services-head h5 {
   color: #fff;
-  font-size: 25px;
+  font-size: 32px;
   font-weight: 700;
   text-align: center;
 }
@@ -214,11 +225,15 @@
   left: 35%;
 }
 .services-head ul li {
-  color: #fff;
   list-style: none;
-  font-size: 18px;
+}
+.services-head ul li a {
+  color: #fff;
+
+  font-size: 20px;
   font-weight: 500;
-  line-height: 2rem;
+  line-height: 2.5rem;
+  text-decoration: none;
 }
 .blog-bg {
   background-image: url(images/image\ 3.jpg);
@@ -235,6 +250,10 @@
   width: 100%;
   background-size: cover;
   background-repeat: no-repeat;
+}
+.contact-bg h4 {
+  font-size: 32px;
+  font-weight: 700;
 }
 .contact-head h5 {
   color: #fff;
@@ -399,6 +418,7 @@
   color: #fff;
   font-size: 22px;
   font-weight: 700;
+  list-style: none;
 }
 .our-service {
   background-image: url(images/about-us.png);
@@ -420,7 +440,7 @@
 }
 .data-bg {
   background-color: #0c4563;
-  border-radius: 20px;
+  /* border-radius: 20px; */
 }
 .data-sol h4 {
   font-size: 24px;
@@ -450,12 +470,12 @@
   font-weight: 900;
   text-shadow: 3px 3px black;
 }
-.philo-bg {
+/* .philo-bg {
   background-image: url(images/values.png);
   background-position: center;
   position: relative;
   padding: 45px 0;
-}
+} */
 .philosophy-para {
   background-image: url(images/philo.png);
   background-position: center;
@@ -494,17 +514,17 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 100px;
-  animation: scrolling 20s linear infinite;
+  gap: 200px;
+  animation: scrolling 10s linear infinite;
 }
 
 @keyframes scrolling {
   0% {
-    transform: translateX(80%);
+    transform: translateX(100%);
   }
 
   100% {
-    transform: translateX(-20%);
+    transform: translateX(-50%);
   }
 }
 
@@ -564,6 +584,23 @@
 }
 .services-training {
   padding: 70px 15px;
+}
+.float {
+  position: fixed;
+  padding: 5px 10px;
+  bottom: 40px;
+  right: 40px;
+  background-color: #ffad0e;
+  color: #fff;
+  font-size: 17px;
+  font-weight: 600;
+  border-radius: 10px;
+  text-align: center;
+  box-shadow: 2px 2px 3px #999;
+}
+
+.my-float {
+  margin-top: 22px;
 }
 @media screen and (max-width: 576px) {
   .pr {
