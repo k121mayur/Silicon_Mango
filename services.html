@@ -9,6 +9,11 @@
     />
     <title>Services-Silicon Mango</title>
     <link rel="icon" href="images/favicon-32x32.png" />
+    <!-- fontawesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.min.css"
+    />
     <!-- Bootstrap CSS -->
     <link
       rel="stylesheet"
@@ -46,7 +51,7 @@
             <a class="nav-link text-white" href="about.html"> About Us </a>
           </li>
           <li class="nav-item menu-head">
-            <a class="nav-link text-white" href="sevice.html"> Services </a>
+            <a class="nav-link text-white" href="services.html"> Services </a>
           </li>
           <li class="nav-item menu-head">
             <a class="nav-link text-white" href="blog.html">Blog</a>
@@ -70,10 +75,10 @@
         </div>
       </div>
 
-      <div class="our-service">
+      <!-- <div class="our-service">
         <h4 class="my-4">Our Services</h4>
-      </div>
-      <section class="app-bg">
+      </div> -->
+      <section class="app-bg" id="webapp">
         <div class="row">
           <div class="col-lg-6">
             <div class="my-5">
@@ -91,7 +96,7 @@
         </div>
       </section>
 
-      <section class="training-bg my-5">
+      <section class="training-bg my-5" id="training">
         <div class="row">
           <div class="col-lg-2 services-training">
             <span class="train">Training</span>
@@ -109,20 +114,22 @@
 
           <div class="objective">
             <ul>
-              <li>Linux Commands for Developers</li>
-              <li>Excel Advanced</li>
-              <li>Python Programming</li>
+              <li>
+                <i class="fab fa-linux pr-3"></i>Linux Commands for Developers
+              </li>
+              <li><i class="far fa-file-excel pr-3"></i> Excel Advanced</li>
+              <li><i class="fab fa-python pr-3"></i>Python Programming</li>
             </ul>
           </div>
         </div>
       </section>
 
-      <section class="my-5">
+      <section class="my-5" id="data-sol">
         <div class="data-sol">
-          <h4>Data Solutions</h4>
+          <h4 class="mb-0">Data Solutions</h4>
         </div>
 
-        <div class="data-bg my-4">
+        <div class="data-bg">
           <div class="data-objective py-4 px-4">
             <ul>
               <li>
@@ -159,6 +166,10 @@
           </div>
         </div>
       </section>
+
+      <!-- floating button -->
+
+      <a href="#" class="float"> Get A Quote </a>
     </div>
     <!-- script -->
     <script
