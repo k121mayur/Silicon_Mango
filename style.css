@@ -7,6 +7,9 @@
 .pr button {
   padding: 0.25rem;
 }
+.p-50 {
+  padding:0 50px;
+}
 .p-70 {
   padding: 50px;
 }
@@ -14,7 +17,7 @@
   padding-top: 150px;
 }
 .p-130 {
-  padding: 122px;
+  padding: 70px 120px;
 }
 .text-blue {
   color: #030f49;
@@ -193,7 +196,7 @@
   border-bottom-right-radius: 20px;
 }
 .philo-para {
-  padding: 50px 70px;
+  padding: 30px 70px;
 }
 .philo-para p {
   text-align: justify;
@@ -210,7 +213,7 @@
   background-image: url(images/image\ 2.jpg);
   background-size: cover;
   width: 100%;
-  height: 500px;
+  height: auto;
 }
 .services-head h5 {
   color: #fff;
@@ -219,10 +222,10 @@
   text-align: center;
 }
 .line {
-  width: 65%;
+  width: 61%;
   position: absolute;
   /* right: -100px; */
-  left: 35%;
+  left: 37%;
 }
 .services-head ul li {
   list-style: none;
@@ -237,7 +240,7 @@
 }
 .blog-bg {
   background-image: url(images/image\ 3.jpg);
-  height: 500px;
+  height:350px;
   background-size: cover;
 }
 .blog-head {
@@ -491,6 +494,7 @@
 }
 
 /*slider css*/
+/*
 .partner {
   display: grid;
   place-items: center;
@@ -533,6 +537,46 @@
   margin: 20px;
   height: 120px;
 }
+*/ 
+.slider {
+  width: 90%;
+  overflow: hidden;
+  background: #f8f8f8;
+  padding: 20px 0;
+  white-space: nowrap;
+  position: relative;
+  margin: 0 auto;
+  border-radius: 20px;
+}
+
+.slider-track {
+  display: flex;
+  animation: scroll 15s linear infinite;
+  width: calc(170px * 12); /* Adjust width based on number of slides */
+  justify-content: space-evenly;
+  align-items: center;
+  
+}
+
+.slide {
+  /* width: 200px;  */
+  flex-shrink: 0;
+}
+
+.slide img {
+  width: 150px;
+  margin: 20px;
+  height: 120px;
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
 
 /* demo */
 .test {
@@ -572,6 +616,8 @@
   /* text-shadow: 0.1em 0.1em 0.5em rgb(0 0 0 / 50%); */
   margin: 0;
   position: absolute;
+  left: 42%;
+  
   border: none;
   padding: 5px 50px;
   border-radius: 20px;
@@ -602,9 +648,19 @@
 .my-float {
   margin-top: 22px;
 }
+.email-img{
+  width: 20px;
+    background: #fff;
+    
+    margin: 0;
+    border-radius: 7px;
+}
 @media screen and (max-width: 576px) {
   .pr {
     padding-right: 1.5rem;
+  }
+  p{
+    font-size: 14px;
   }
   .pt-150 {
     padding-top: 0;
@@ -612,8 +668,12 @@
   h2 {
     font-size: 20px;
   }
+  h3{
+    font-size: 18px;
+  }
+ 
   h4 {
-    font-size: 20px;
+    font-size: 15px;
   }
   .philosophy-para {
     padding: 25px;
@@ -630,8 +690,11 @@
     right: 40%;
     top: 45%;
   }
-  .about h4 {
+  .head-about{
     font-size: 20px;
+  }
+  .about h4 {
+    font-size: 18px;
   }
   .mission {
     padding: 10px 24px;
@@ -718,7 +781,7 @@
     font-size: 15px;
   }
   .head-white {
-    font-size: 25px;
+    font-size: 20px;
   }
   .logo-h {
     height: 50px;
@@ -728,20 +791,23 @@
     background: #024383;
   }
   .head-text {
-    font-size: 22px;
+    font-size: 20px;
   }
   .head-para {
     font-size: 16px;
   }
+  .why-choose span{
+    font-size: 20px;
+  }
   .why-choose ul li {
-    font-size: 16px;
+    font-size: 15px;
     line-height: 1.5rem;
   }
   .why-choose .center {
     text-align: center;
   }
   .abt-mission {
-    padding: 40px;
+    padding:5px 40px;
   }
   .abt-mission .mission {
     padding: 25px;
@@ -750,13 +816,16 @@
     font-size: 14px;
   }
   .abt-vision {
-    padding: 40px;
+    padding:5px 40px;
   }
   .abt-vision .vision {
     padding: 25px;
   }
   .abt-vision .vision p {
     font-size: 14px;
+  }
+  .philo-head{
+    font-size: 20px;
   }
   .philo-para {
     padding: 25px;
@@ -770,12 +839,16 @@
   }
   .services-bg {
     height: auto;
+    background-position: right;
   }
   .services-head h5 {
     font-size: 20px;
   }
-  .services-head ul li {
-    font-size: 16px;
+  .services-head ul li{
+    padding-left: 25px;
+  }
+  .services-head ul li a{
+    font-size: 15px;
   }
   .blog-head {
     font-size: 22px;
@@ -785,6 +858,16 @@
     width: 50%;
     left: 46%;
   }
-  services-traning {
+  .contact-bg h4 {
+    font-size: 20px;
+  }
+  .slide img {
+    width: 100px;
+    margin: 10px;
+    height: 80px;
+}
+  .slider-track{
+
+  width: calc(100px * 12);
   }
 }
