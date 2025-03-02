@@ -12,6 +12,24 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
     integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    @media screen and (max-width: 768px) {
+
+      .partner-slide,
+      .partner-slide div {
+        display: inline-block !important;
+      }
+
+      .partner-logos {
+        padding: 15px 0;
+        margin: 0 15px;
+      }
+
+      .partner-slide p {
+        padding: 10px 0px 0;
+      }
+    }
+  </style>
 </head>
 
 <body>
@@ -123,9 +141,91 @@
         <div class="pb-3">
           <img src="images/Line 6.png" alt="line" class="line6" />
         </div>
-        <div class="slider my-3">
 
-          <!-- <div class="slider-items">
+        <div class="partner-logos">
+          <div class="partner-slide">
+            <div class="text-center">
+              <a href="https://www.shgplus.in/" target="_blank">
+                <img src="images/AKRSP_Logo.jpeg" alt="AKRSP_Logo" width="100%" /></a>
+              <p>Aga Khan Rural Support Programme <br> (India), Bihar</p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.soilfoundation.org.in/" target="_blank"><img src="images/SOIL Foundation Logo.jpg"
+                  alt="soil logo" width="100%" /></a>
+              <p>SOIL Foundation Sirsi,<br> Karnataka</p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.dhwani.org.in/" target="_blank"><img src="images/Dhwani Foundation Logo.jpg"
+                  alt="dhwani logo" width="100%" /></a>
+              <p>DHWANI Foundation, <br> Mysuru, Karnataka</p>
+            </div>
+
+            <div class="text-center">
+              <a href="https://www.ecobasketconsultancy.com/" target="_blank"><img src="images/eco-basket.jpeg"
+                  alt="eco-basket" width="100%" /></a>
+              <p> Eco Basket Consultancy</p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.nitiniketan.org/" target="_blank"><img src="images/niti niketan.jpeg"
+                  alt="eco-basket" width="100%" /></a>
+              <p> Niti Niketan Trust</p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.tamuku.org/" target="_blank"><img src="images/tamuku.jpeg" alt="tamuku"
+                  width="100%" /></a>
+              <p> Tamuku </p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.karta-initiative.org.uk/index.html" target="_blank"><img src="images/karta.jpeg"
+                  alt="karta-initiative" width="100%" /></a>
+              <p>The Karta Initiative </p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.shgplus.in/" target="_blank">
+                <img src="images/AKRSP_Logo.jpeg" alt="AKRSP_Logo" width="100%" /></a>
+              <p>Aga Khan Rural Support Programme <br> (India), Bihar</p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.soilfoundation.org.in/" target="_blank"><img src="images/SOIL Foundation Logo.jpg"
+                  alt="soil logo" width="100%" /></a>
+              <p>SOIL Foundation Sirsi,<br> Karnataka</p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.dhwani.org.in/" target="_blank"><img src="images/Dhwani Foundation Logo.jpg"
+                  alt="dhwani logo" width="100%" /></a>
+              <p>DHWANI Foundation, <br> Mysuru, Karnataka</p>
+            </div>
+
+            <div class="text-center">
+              <a href="https://www.ecobasketconsultancy.com/" target="_blank"><img src="images/eco-basket.jpeg"
+                  alt="eco-basket" width="100%" /></a>
+              <p> Eco Basket Consultancy</p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.nitiniketan.org/" target="_blank"><img src="images/niti niketan.jpeg"
+                  alt="eco-basket" width="100%" /></a>
+              <p> Niti Niketan Trust</p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.tamuku.org/" target="_blank"><img src="images/tamuku.jpeg" alt="tamuku"
+                  width="100%" /></a>
+              <p> Tamuku </p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.karta-initiative.org.uk/index.html" target="_blank"><img src="images/karta.jpeg"
+                  alt="karta-initiative" width="100%" /></a>
+              <p>The Karta Initiative </p>
+            </div>
+
+
+
+          </div>
+        </div>
+        <!-- duplicate -->
+
+        <!-- <div class="slider my-3">
+
+          <div class="slider-items">
             <div class="text-center">
               <a href="https://www.shgplus.in/" target="_blank">
                 <img src="images/AKRSP_Logo.jpeg" alt="AKRSP_Logo" width="100%" /></a>
@@ -162,8 +262,8 @@
                   alt="karta-initiative" width="100%" /></a>
               <p>The Karta Initiative </p>
             </div>
-          </div> -->
-          <div class="slider">
+          </div>
+          -- <div class="slider">
             <div class="slider-track text-center">
               <div class="slide">
                 <a href="https://www.shgplus.in/" target="_blank">
@@ -182,7 +282,7 @@
               </div>
               <div class="slide">
                 <a href="https://www.nitiniketan.org/" target="_blank"><img src="images/niti niketan.jpeg"
-                    alt="eco-basket" width="100%" /></a>
+                    alt="nitiniketan" width="100%" /></a>
                 <p> Niti Niketan Trust</p>
               </div>
               <div class="slide">
@@ -196,10 +296,10 @@
                 <p>The Karta Initiative </p>
               </div>
             </div>
-          </div>
+          </div> 
 
 
-        </div>
+        </div> -->
         <!-- <div class="col-lg-5 mx-0 px-0">
             <div>
               <img src="images/patnars 1.jpg" alt="partner" />
@@ -376,6 +476,12 @@
   </div>
 
   <!-- script -->
+
+  <script>
+    var copy = document.querySelector(".logos-slide").cloneNode(true);
+    document.querySelector(".logos").appendChild(copy);
+  </script>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
     integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
     crossorigin="anonymous"></script>
