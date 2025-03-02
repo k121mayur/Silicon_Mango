@@ -494,8 +494,7 @@
 }
 
 /*slider css*/
-/*
-.partner {
+/* .partner {
   display: grid;
   place-items: center;
 }
@@ -523,12 +522,12 @@
 }
 
 @keyframes scrolling {
-  0% {
-    transform: translateX(100%);
+from {
+    transform: translateX(0%);
   }
 
-  100% {
-    transform: translateX(-50%);
+  to {
+    transform: translateX(-80%);
   }
 }
 
@@ -536,8 +535,8 @@
   width: 150px;
   margin: 20px;
   height: 120px;
-}
-*/ 
+} */
+/*
 .slider {
   width: 90%;
   overflow: hidden;
@@ -552,14 +551,13 @@
 .slider-track {
   display: flex;
   animation: scroll 15s linear infinite;
-  width: calc(170px * 12); /* Adjust width based on number of slides */
-  justify-content: space-evenly;
-  align-items: center;
+  width: calc(170px * 12); Adjust width based on number of slides
+  
   
 }
 
 .slide {
-  /* width: 200px;  */
+   width: 200px;  
   flex-shrink: 0;
 }
 
@@ -577,6 +575,65 @@
     transform: translateX(-50%);
   }
 }
+*/
+/* slider code */
+@keyframes slide {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+.partner-logos {
+  overflow: hidden;
+  padding: 60px 0;
+  background: white;
+  white-space: nowrap;
+  position: relative;
+  border-radius: 10px;
+  margin: 0 80px;
+}
+
+.partner-slide p {
+ margin: 0;
+ line-height: 16px;
+ font-size: 16px;
+ padding: 10px 50px 0;
+}
+.partner-logos:before,
+.partner-logos:after {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  height: 100%;
+  content: "";
+  z-index: 2;
+}
+
+.partner-logos:before {
+  left: 0;
+  background: linear-gradient;
+}
+
+.partner-logos:after {
+  right: 0;
+  background: linear-gradient;
+}
+
+
+.partner-slide {
+  display: flex;
+  animation: 15s slide infinite linear;
+}
+
+.partner-slide img {
+  width: 100px ;
+  height: 80px;
+  margin: 0 40px;
+}
+
 
 /* demo */
 .test {
@@ -861,13 +918,24 @@
   .contact-bg h4 {
     font-size: 20px;
   }
-  .slide img {
-    width: 100px;
-    margin: 10px;
-    height: 80px;
+ 
 }
-  .slider-track{
+@media screen and (max-width: 768px) {
 
-  width: calc(100px * 12);
+  .partner-slide,
+  .partner-slide div {
+    display: inline-block !important;
+  }
+
+  .partner-logos {
+    padding: 15px 0;
+    margin: 0 15px;
+  }
+
+  .partner-slide p {
+    padding: 10px 0px 0;
+  }
+  .partner-slide{
+    animation: 35s slide infinite linear;
   }
 }
