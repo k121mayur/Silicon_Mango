@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>SQL Crash Course | Silicon Mango</title>
+  <meta name="description" content="7-Day SQL Crash Course - Hands-on sessions to master SQL queries and data extraction.">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #0d1b2a;
+      color: #f0f0f0;
+    }
+    .hero {
+      background: linear-gradient(to right, #061121, #003566);
+      text-align: center;
+      padding: 100px 20px;
+    }
+    .hero h1 {
+      margin: 0;
+      font-size: 2.7rem;
+      color: #ffd60a;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin: 1rem 0;
+      color: #e0e0e0;
+    }
+    .btn {
+      background: #ffd60a;
+      color: #061121;
+      padding: 0.8rem 1.6rem;
+      font-size: 1.1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .special-offer {
+      background: #001d3d;
+      color: #ffd60a;
+      text-align: center;
+      padding: 1rem;
+      font-size: 1.2rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .special-offer i {
+      font-size: 1.5rem;
+    }
+    .container {
+      max-width: 1100px;
+      margin: auto;
+      padding: 2rem 1rem;
+    }
+    .section-title {
+      color: #00b4d8;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      border-left: 4px solid #00b4d8;
+      padding-left: 12px;
+    }
+    .course-tagline {
+      font-style: italic;
+      color: #b0c4de;
+      margin-bottom: 2rem;
+    }
+    .row {
+      display: flex;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      margin-bottom: 2rem;
+    }
+    .col-md-4 {
+      flex: 1 1 30%;
+      max-width: 30%;
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+    .who-join-icon {
+      font-size: 2.5rem;
+      margin-bottom: 0.5rem;
+      color: #ffd60a;
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    .course-box {
+      background: #132c42;
+      padding: 1.5rem;
+      border-left: 4px solid #00b4d8;
+      border-radius: 5px;
+      color: #e0e0e0;
+    }
+    .course-curriculum details {
+      background: #132c42;
+      border: 1px solid #00b4d8;
+      border-radius: 5px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .course-curriculum summary {
+      list-style: none;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem;
+      cursor: pointer;
+      font-weight: bold;
+      color: #ffd60a;
+    }
+    .course-curriculum summary::-webkit-details-marker {
+      display: none;
+    }
+    .course-curriculum summary::after {
+      content: '\25BC';
+      font-size: 1.2rem;
+      transition: transform 0.2s;
+      color: #00b4d8;
+    }
+    .course-curriculum details[open] summary::after {
+      transform: rotate(180deg);
+    }
+    .course-curriculum ul {
+      padding: 0 1.5rem 1rem;
+      margin: 0;
+      color: #e0e0e0;
+    }
+    .course-curriculum li {
+      margin-bottom: 0.5rem;
+    }
+    .footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #003566;
+      color: white;
+      font-size: 0.9rem;
+    }
+    .floating-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: #ffd60a;
+      color: #061121;
+      border: none;
+      border-radius: 50%;
+      padding: 1rem;
+      font-size: 1.5rem;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <section class="hero">
+    <div class="container">
+      <h1>SQL Crash Course</h1>
+      <p>Live Online Course – July 20 to July 27 | Flexible Timings</p>
+      <a href="https://rzp.io/r/sqlmango" class="btn">Join Now – ₹249</a>
+    </div>
+  </section>
+  <div class="special-offer">
+    <i class="fas fa-tags"></i>
+    <span>Special Offer: ₹249 only (Save ₹200!) – Limited 50 participants</span>
+  </div>
+  <div class="container">
+    <h2 class="section-title">Who Should Join?</h2>
+    <p class="course-tagline">Perfect for anyone eager to pull meaningful insights from databases—no heavy database design required.</p>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="who-join-icon">🎓</div>
+        <p>Students aiming to enhance skills</p>
+      </div>
+      <div class="col-md-4">
+        <div class="who-join-icon">💼</div>
+        <p>Data Analysts & Software Developers</p>
+      </div>
+      <div class="col-md-4">
+        <div class="who-join-icon">📊</div>
+        <p>M&E Professionals & Data Enthusiasts</p>
+      </div>
+    </div>
+    <p><em>Ideal for anyone who can spare 1–2 hours daily to upskill and accelerate their career.</em></p>
+  </div>
+  <div class="container">
+    <h2 class="section-title">Why This Course?</h2>
+    <div class="course-box">
+      <p>Every day, systems generate massive amounts of data stored in relational databases. You don’t need to build the database—your job is to extract insights. SQL is the universal query language that lets you pull exactly the data you need. In this hands-on course, you’ll write real queries, solve practical problems, and build confidence to unlock data-driven decisions.</p>
+    </div>
+  </div>
+  <div class="container">
+    <h2 class="section-title">What You’ll Learn</h2>
+    <ul>
+      <li>Relational database fundamentals</li>
+      <li>Writing and running SQL queries</li>
+      <li>Filtering and aggregating data</li>
+      <li>Joining tables for deeper insights</li>
+      <li>Building a final hands-on project</li>
+    </ul>
+  </div>
+  <div class="container">
+    <h2 class="section-title">Course Curriculum</h2>
+    <div class="course-curriculum">
+      <details>
+        <summary>Session 1: Kickstart & Intro to SQL <span>July 20, 11 AM–12 PM</span></summary>
+        <ul>
+          <li>Why SQL? Understanding its purpose</li>
+          <li>Installing SQLite for practice</li>
+          <li>Running your first query</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Session 2: SELECT, WHERE & Filtering <span>July 21, 8 PM–8:45 PM</span></summary>
+        <ul>
+          <li>SQL data types overview</li>
+          <li>Selecting columns and rows</li>
+          <li>Applying filters with WHERE</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Session 3: Functions & Aggregations <span>July 22, 8 PM–8:45 PM</span></summary>
+        <ul>
+          <li>Using aggregate functions (SUM, AVG)</li>
+          <li>Grouping data with GROUP BY</li>
+          <li>Filtering groups with HAVING</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Session 4: Joins Made Easy <span>July 23, 8 PM–8:45 PM</span></summary>
+        <ul>
+          <li>INNER, LEFT, RIGHT, and FULL joins</li>
+          <li>Combining multiple tables</li>
+          <li>Real-world join examples</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Session 5: Data Modification <span>July 24, 8 PM–8:45 PM</span></summary>
+        <ul>
+          <li>INSERTing new records</li>
+          <li>UPDATEing existing data</li>
+          <li>Safely DELETEing rows</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Session 6: Subqueries & Nesting <span>July 25, 8 PM–8:45 PM</span></summary>
+        <ul>
+          <li>Writing subqueries for complex queries</li>
+          <li>Nested SELECT statements</li>
+          <li>Best practices for readability</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Session 7: Advanced Techniques <span>July 26, 8 PM–8:45 PM</span></summary>
+        <ul>
+          <li>Window functions overview</li>
+          <li>Common table expressions (CTEs)</li>
+          <li>Query performance basics</li>
+        </ul>
+      </details>
+      <details>
+        <summary>Session 8: Final Project & Wrap-Up <span>July 27, 11 AM–12 PM</span></summary>
+        <ul>
+          <li>Building a mini project with real data</li>
+          <li>Reviewing key concepts</li>
+          <li>Next steps for learning</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+  <div class="container">
+    <h2 class="section-title">Contact Us</h2>
+    <p><strong>Email:</strong> <a href="mailto:mayur@siliconmango.com">mayur@siliconmango.com</a></p>
+    <p><strong>Phone/WhatsApp:</strong> <a href="https://wa.me/919503633029">+91 95036 33029</a></p>
+  </div>
+  <div class="footer">
+    Let's make SQL fun, fast, and practical! | &copy; 2025 Silicon Mango
+  </div>
+  <a href="https://wa.me/919503633029" class="floating-button" title="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+</body>
+</html>
