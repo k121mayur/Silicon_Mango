@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Scheme Data Manual Verifier</title>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    .container { display: flex; height: 100vh; }
+    .left-panel, .right-panel {
+      padding: 20px;
+      overflow-y: auto;
+    }
+    .left-panel {
+      width: 50%; border-right: 2px solid #ccc; display: flex; flex-direction: column; flex-wrap: wrap; }
+    .right-panel {
+      width: 50%; text-align: center; background: #f9f9f9; }
+    .form-group {
+      margin: 10px 15px;
+      width: 47%;
+      display: inline-block;
+      vertical-align: top;
+    }
+    label { font-weight: bold; display: block; margin-bottom: 3px; font-size: 14px; }
+    .highlight { background-color: #eef; padding: 6px 8px; border-radius: 5px; min-height: 22px; font-size: 14px; }
+    .actions {
+      margin-top: 10px;
+    }
+    .actions button {
+      margin-right: 10px;
+      padding: 10px 15px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .match { background-color: #4CAF50; color: white; }
+    .wrong { background-color: #f44336; color: white; }
+    .missing { background-color: #ff9800; color: white; }
+    input[type=file] { margin-bottom: 20px; }
+    .progress { font-size: 16px; font-weight: bold; padding: 10px 0; color: #333; }
+    .zoom-container {
+      overflow: hidden;
+      width: 100%;
+      height: 80vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    #recordImage {
+      transition: transform 0.2s ease;
+      max-width: 90%;
+      max-height: 100%;
+    }
+  </style>
+</head>
+<body>
+
+  <div style="padding: 20px;" id="uploadSection">
+    <h2>Upload Schemes Data (CSV)</h2>
+    <input type="file" id="csvFileInput" accept=".csv" />
+  </div>
+
+  <div class="container" id="mainContent" style="display: none;">
+    <div class="left-panel" id="infoPanel">
+      <h3>Record Info</h3>
+      <div class="progress" id="progressCounter"></div>
+      <div id="recordDetails"></div>
+      <div class="form-group" style="width: 95%;">
+        <label>Extracted Text:</label>
+        <div class="highlight" id="extractedText"></div>
+      </div>
+      <div class="form-group" style="width: 95%;">
+        <label>Verification Status:</label>
+        <div class="highlight" id="verificationStatus"></div>
+      </div>
+      <div class="actions">
+        <button class="match" onclick="updateStatus('Match')">Matched (Ctrl+1)</button>
+        <button class="wrong" onclick="updateStatus('Wrong Entry')">Wrong Entry (Ctrl+2)</button>
+        <button class="missing" onclick="updateStatus('Missing Image')">Missing Image (Ctrl+3)</button>
+        <button onclick="saveCSV()">💾 Save (Ctrl+S)</button>
+      </div>
+    </div>
+    <div class="right-panel">
+      <h3>Document Image</h3>
+      <div class="zoom-container">
+        <img id="recordImage" src="" alt="Image" />
+      </div>
+    </div>
+  </div>
+
+  <script>
+    let data = [], filtered = [], currentIndex = 0;
+
+    document.getElementById('csvFileInput').addEventListener('change', function(e) {
+      const file = e.target.files[0];
+      if (!file || !file.name.endsWith('.csv')) {
+        alert('Please upload a valid CSV file.');
+        return;
+      }
+
+      Papa.parse(file, {
+        header: true,
+        skipEmptyLines: true,
+        complete: function(results) {
+          data = results.data;
+          filtered = data.filter(row => !row['Extracted Text'] || row['Verification Status'] === 'Unmatched');
+          currentIndex = 0;
+          document.getElementById('mainContent').style.display = 'flex';
+          document.getElementById('uploadSection').style.display = 'none';
+          showRecord();
+        }
+      });
+    });
+
+    function showRecord() {
+      const total = filtered.length;
+      if (currentIndex >= total) {
+        alert('✅ Verification complete.');
+        document.getElementById('mainContent').style.display = 'none';
+        document.getElementById('uploadSection').style.display = 'block';
+        return;
+      }
+
+      const record = filtered[currentIndex];
+      document.getElementById('progressCounter').innerText = `Record ${currentIndex + 1} of ${total}`;
+
+      const fieldsToShow = [
+        "Name", "Beneficiary Details",
+        "Father/Spouse name of the beneficiary ", "Enter Date of Birth", "Age", "Phone Number",
+        "Gender", "Scheme Application", "Eligible Schemes", "Scheme Category"
+      ];
+
+      const detailHTML = fieldsToShow.map(field =>
+        `<div class='form-group'><label>${field}:</label><div class='highlight'>${record[field] || ''}</div></div>`
+      ).join('');
+
+      document.getElementById('recordDetails').innerHTML = detailHTML;
+      document.getElementById('extractedText').innerText = record['Extracted Text'] || '(empty)';
+      document.getElementById('verificationStatus').innerText = record['Verification Status'] || 'Pending';
+      document.getElementById('recordImage').src = (record['Input an image for evidence of benefit'] || '').replace(/^"|"$/g, '');
+    }
+
+    function updateStatus(status) {
+      filtered[currentIndex]['Verification Status'] = status;
+      const originalIndex = data.findIndex(d => d['Transaction Id'] === filtered[currentIndex]['Transaction Id']);
+      if (originalIndex >= 0) data[originalIndex]['Verification Status'] = status;
+      currentIndex++;
+      showRecord();
+    }
+
+    function saveCSV() {
+      const csv = Papa.unparse(data);
+      const blob = new Blob([csv], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement('a');
+      link.href = URL.createObjectURL(blob);
+      link.download = 'Verified_Schemes_Data.csv';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+
+    document.addEventListener('keydown', function(e) {
+      if (e.ctrlKey) {
+        switch (e.key) {
+          case '1': e.preventDefault(); updateStatus('Match'); break;
+          case '2': e.preventDefault(); updateStatus('Wrong Entry'); break;
+          case '3': e.preventDefault(); updateStatus('Missing Image'); break;
+          case 's': e.preventDefault(); saveCSV(); break;
+        }
+      }
+    });
+
+    // Zoom on scroll for image
+    const img = document.getElementById('recordImage');
+    let scale = 1;
+    document.querySelector('.zoom-container').addEventListener('wheel', function(e) {
+      e.preventDefault();
+      scale += e.deltaY * -0.0015;
+      scale = Math.min(Math.max(1, scale), 3);
+      img.style.transform = `scale(${scale})`;
+    });
+
+  </script>
+</body>
+</html>
