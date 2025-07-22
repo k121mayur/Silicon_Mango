@@ -1,20 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>Scheme Data Manual Verifier</title>
   <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
   <style>
     body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
     .container { display: flex; height: 100vh; }
     .left-panel, .right-panel {
-      padding: 20px;
-      overflow-y: auto;
+      padding: 20px; overflow-y: auto;
     }
     .left-panel {
-      width: 50%; border-right: 2px solid #ccc; display: flex; flex-direction: column; flex-wrap: wrap; }
+      width: 50%; border-right: 2px solid #ccc; display: flex; flex-direction: column; flex-wrap: wrap;
+    }
     .right-panel {
-      width: 50%; text-align: center; background: #f9f9f9; }
+      width: 50%; text-align: center; background: #f9f9f9;
+    }
     .form-group {
       margin: 10px 15px;
       width: 47%;
@@ -23,14 +24,15 @@
     }
     label { font-weight: bold; display: block; margin-bottom: 3px; font-size: 14px; }
     .highlight { background-color: #eef; padding: 6px 8px; border-radius: 5px; min-height: 22px; font-size: 14px; }
+    .highlight.status-match { background-color: #d4edda; color: #155724; }
+    .highlight.status-wrong { background-color: #f8d7da; color: #721c24; }
+    .highlight.status-missing { background-color: #fff3cd; color: #856404; }
     .actions {
       margin-top: 10px;
     }
     .actions button {
-      margin-right: 10px;
-      padding: 10px 15px;
-      border: none;
-      border-radius: 5px;
+      margin-right: 10px; padding: 10px 15px;
+      border: none; border-radius: 5px;
       cursor: pointer;
     }
     .match { background-color: #4CAF50; color: white; }
@@ -90,6 +92,7 @@
 
   <script>
     let data = [], filtered = [], currentIndex = 0;
+    let unsavedChanges = false;
 
     document.getElementById('csvFileInput').addEventListener('change', function(e) {
       const file = e.target.files[0];
@@ -103,8 +106,30 @@
         skipEmptyLines: true,
         complete: function(results) {
           data = results.data;
+
+          const required = ['Transaction Id', 'Extracted Text', 'Verification Status'];
+          const missing = required.filter(f => !(f in data[0]));
+          if (missing.length > 0) {
+            alert('Missing required fields: ' + missing.join(', '));
+            return;
+          }
+
+          const seen = new Set();
+          const duplicates = data.filter(r => {
+            const id = r['Transaction Id'];
+            if (!id) return false;
+            if (seen.has(id)) return true;
+            seen.add(id);
+            return false;
+          });
+          if (duplicates.length > 0) {
+            alert('Duplicate Transaction Ids found. Please clean the data and re-upload.');
+            return;
+          }
+
           filtered = data.filter(row => !row['Extracted Text'] || row['Verification Status'] === 'Unmatched');
           currentIndex = 0;
+          unsavedChanges = false;
           document.getElementById('mainContent').style.display = 'flex';
           document.getElementById('uploadSection').style.display = 'none';
           showRecord();
@@ -115,7 +140,8 @@
     function showRecord() {
       const total = filtered.length;
       if (currentIndex >= total) {
-        alert('✅ Verification complete.');
+        const confirmed = confirm('✅ Verification complete.\n\nWould you like to download the updated CSV?');
+        if (confirmed) saveCSV();
         document.getElementById('mainContent').style.display = 'none';
         document.getElementById('uploadSection').style.display = 'block';
         return;
@@ -136,7 +162,15 @@
 
       document.getElementById('recordDetails').innerHTML = detailHTML;
       document.getElementById('extractedText').innerText = record['Extracted Text'] || '(empty)';
-      document.getElementById('verificationStatus').innerText = record['Verification Status'] || 'Pending';
+
+      const statusEl = document.getElementById('verificationStatus');
+      const status = record['Verification Status'] || 'Pending';
+      statusEl.innerText = status;
+      statusEl.className = 'highlight';
+      if (status === 'Match') statusEl.classList.add('status-match');
+      else if (status === 'Wrong Entry') statusEl.classList.add('status-wrong');
+      else if (status === 'Missing Image') statusEl.classList.add('status-missing');
+
       document.getElementById('recordImage').src = (record['Input an image for evidence of benefit'] || '').replace(/^"|"$/g, '');
     }
 
@@ -144,6 +178,7 @@
       filtered[currentIndex]['Verification Status'] = status;
       const originalIndex = data.findIndex(d => d['Transaction Id'] === filtered[currentIndex]['Transaction Id']);
       if (originalIndex >= 0) data[originalIndex]['Verification Status'] = status;
+      unsavedChanges = true;
       currentIndex++;
       showRecord();
     }
@@ -157,6 +192,7 @@
       document.body.appendChild(link);
       link.click();
       document.body.removeChild(link);
+      unsavedChanges = false;
     }
 
     document.addEventListener('keydown', function(e) {
@@ -170,7 +206,6 @@
       }
     });
 
-    // Zoom on scroll for image
     const img = document.getElementById('recordImage');
     let scale = 1;
     document.querySelector('.zoom-container').addEventListener('wheel', function(e) {
@@ -180,6 +215,9 @@
       img.style.transform = `scale(${scale})`;
     });
 
+    window.onbeforeunload = function() {
+      if (unsavedChanges) return 'You have unsaved changes. Are you sure you want to leave?';
+    };
   </script>
 </body>
 </html>
