@@ -89,7 +89,6 @@
       </div>
     </div>
   </div>
-
   <script>
     let data = [], filtered = [], currentIndex = 0;
     let unsavedChanges = false;
@@ -127,7 +126,7 @@
             return;
           }
 
-          filtered = data.filter(row => !row['Extracted Text'] || row['Verification Status'] === 'Unmatched');
+          filtered = data.filter(row => !row['Extracted Text'] || row['Verification Status'] === 'Wrong Entry');
           currentIndex = 0;
           unsavedChanges = false;
           document.getElementById('mainContent').style.display = 'flex';

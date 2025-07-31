@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ .Campaign.Subject }}</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+    <base target="_blank" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
+    <style>
+      body {
+        background-color: #f7f7f7;
+        font-family: "Helvetica Neue", "Segoe UI", Helvetica, sans-serif;
+        font-size: 15px;
+        line-height: 26px;
+        margin: 0;
+        color: #444;
+      }
+      .wrap {
+        background-color: #ffffff;
+        padding: 30px;
+        max-width: 525px;
+        margin: 0 auto;
+        border-radius: 5px;
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
+      }
+      .header {
+        text-align: center;
+        padding: 20px 0;
+        border-top-left-radius: 5px;
+        border-top-right-radius: 5px;
+        margin-left: -30px;
+        margin-right: -30px;
+        margin-top: -30px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      .header img {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+        display: inline-block;
+      }
+      .email-body {
+        padding: 0 0 20px 0;
+      }
+      .button {
+        background: #0055d4;
+        border-radius: 3px;
+        text-decoration: none !important;
+        color: #fff !important;
+        font-weight: bold;
+        padding: 10px 30px;
+        display: inline-block;
+      }
+      .button:hover {
+        background: #111;
+      }
+      .footer {
+        text-align: center;
+        font-size: 14px;
+        color: #777;
+        padding: 20px 0 10px;
+        margin-left: -30px;
+        margin-right: -30px;
+        margin-bottom: -30px;
+        padding-left: 30px;
+        padding-right: 30px;
+      }
+      .footer a {
+        color: #0055d4;
+        text-decoration: none;
+      }
+      .footer a:hover {
+        text-decoration: underline;
+      }
+      .social-icons img {
+        width: 20px;
+        height: 20px;
+        vertical-align: middle;
+        margin-right: 4px;
+      }
+      .footer-links {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 5px;
+      }
+      .linkedin-combined {
+        display: flex;
+        align-items: center;
+        gap: 4px;
+      }
+      @media screen and (max-width: 600px) {
+        .wrap {
+          max-width: 100%;
+          margin: 10px;
+          padding: 15px;
+        }
+        .header, .footer {
+          margin-left: -15px;
+          margin-right: -15px;
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+        .header {
+          margin-top: -15px;
+        }
+        .footer {
+          margin-bottom: -15px;
+        }
+        .footer-links {
+          flex-direction: column;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="gutter">&nbsp;</div>
+    <div class="wrap">
+      <div class="header">
+        <a href="https://dodm.isdm.org.in/#/?affl=tamuku">
+          <img src="https://i.ibb.co/vvRC27Bj/Feature-Graphic.png" alt="DoDM" />
+        </a>
+      </div>
+      <div class="email-body">
+        <p class="text-gray-700 mb-4 leading-relaxed font-semibold">
+          Dear Team {{ .Subscriber.Name }},
+        </p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          We’re excited to share an invitation to
+          <strong class="font-semibold text-indigo-700">Dialogues on Development Management (DoDM) 2025</strong> — one of India’s leading convenings dedicated to reimagining how we build, manage, and lead Social Purpose Organisations for systemic and lasting impact.
+        </p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Hosted by the Indian School of Development Management (ISDM) in partnership with over 20 leading organizations from the sector, DoDM 2025 will be held on
+          <strong class="font-semibold">21 August, 2025</strong> at the
+          <strong class="font-semibold">Dr Ambedkar International Centre, New Delhi</strong>.
+        </p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          The day will open with a powerful plenary on <strong class="font-semibold">“Viksit Bharat and The Role of Development Management”</strong>, setting the stage for critical dialogue around equity, inclusion, and long-term transformation.
+        </p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          The day features 4 tracks and 20 thoughtfully curated sessions, each designed to dive deep into key themes shaping the sector today:
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2 pl-4">
+          <li><strong class="font-medium">The Art and Science of Decision Making</strong></li>
+          <li><strong class="font-medium">Strengthening the Core for Social Change</strong></li>
+          <li><strong class="font-medium">Financing the Future of Social Change</strong></li>
+          <li><strong class="font-medium">Delivering Social Impact at Scale</strong></li>
+        </ul>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          These include research paper presentations, masterclasses, and rich practitioner dialogues — all co-created with organisations working on real-world challenges across communities and systems.
+        </p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Adding a special energy to the day, we’re also thrilled to feature <strong class="font-semibold">"Beats of Change"</strong> — a live performance by rapper and poet <strong class="font-semibold">Mahi G</strong>, whose bold, grounded storytelling captures the spirit of youth, resistance, and real change.
+        </p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          The confirmed speaker line-up features some of the most respected voices in the sector, including:
+        </p>
+        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2 pl-4">
+          <li>Amit Chandra (A.T.E. Chandra Foundation)</li>
+          <li>Ashish Dhawan (The Convergence Foundation)</li>
+          <li>Dhruvi Shah (Axis Bank Foundation)</li>
+          <li>Biraj Patnaik (National Foundation for India)</li>
+          <li>Yamini Mishra (MacArthur Foundation)</li>
+          <li>Suneeta Krishnan (Gates Foundation)</li>
+          <li>Venkat Krishnan (India Welfare Trust)</li>
+          <li>Reshma Anand (Ford Foundation)</li>
+          <li>...and many more speakers from across Samaaj, Sarkaar, and Bazaar.</li>
+        </ul>
+        <p class="text-gray-700 mb-6 leading-relaxed">
+          In the spirit of equity and accessibility, DoDM 2025 follows a <strong class="font-semibold">“Pay What Feels Right”</strong> model — so that participation is open to all, regardless of financial capacity.
+        </p>
+        <div class="text-center mb-6">
+          <a href="https://dodm.isdm.org.in#/?affl=tamuku" target="_blank" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
+            Register now
+          </a>
+        </div>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          Whether you work in strategy, implementation, governance, or funding — DoDM is a space to connect, reflect, and shape what’s next for the sector.
+        </p>
+        <p class="text-gray-700 mb-4 leading-relaxed">
+          We hope you’ll be there.
+        </p>
+        <p class="text-gray-700 leading-relaxed">Warmly,</p>
+        <p class="text-gray-700 font-semibold">Narendran T, <br>Founder, Tamuku</p>
+      </div>
+      <div class="footer">
+        <div class="footer-links social-icons">
+          <a href="https://dodm.isdm.org.in/#/?affl=tamuku" target="_blank">🌐 dodm.isdm.org.in</a> &nbsp;
+          <a href="https://www.linkedin.com/company/tamuku" target="_blank" class="linkedin-combined social-icons">
+            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
+            LinkedIn
+          </a>
+        </div>
+        <p>© 2025 Tamuku. All rights reserved.</p>
+        <p>
+          <a href="{{ UnsubscribeURL }}">Unsubscribe</a> |
+          <a href="{{ MessageURL }}">Open in Browser</a>
+        </p>
+      </div>
+    </div>
+    <div style="display:none;">{{ TrackView }}</div>
+  </body>
+</html>
