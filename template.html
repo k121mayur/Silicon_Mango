@@ -1,207 +1,146 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
   <head>
-    <title>{{ .Campaign.Subject }}</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
-    <base target="_blank" />
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
-    <style>
-      body {
-        background-color: #f7f7f7;
-        font-family: "Helvetica Neue", "Segoe UI", Helvetica, sans-serif;
-        font-size: 15px;
-        line-height: 26px;
-        margin: 0;
-        color: #444;
-      }
-      .wrap {
-        background-color: #ffffff;
-        padding: 30px;
-        max-width: 525px;
-        margin: 0 auto;
-        border-radius: 5px;
-        box-shadow: 0 0 5px rgba(0, 0, 0, 0.05);
-      }
-      .header {
-        text-align: center;
-        padding: 20px 0;
-        border-top-left-radius: 5px;
-        border-top-right-radius: 5px;
-        margin-left: -30px;
-        margin-right: -30px;
-        margin-top: -30px;
-        padding-left: 30px;
-        padding-right: 30px;
-      }
-      .header img {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-        display: inline-block;
-      }
-      .email-body {
-        padding: 0 0 20px 0;
-      }
-      .button {
-        background: #0055d4;
-        border-radius: 3px;
-        text-decoration: none !important;
-        color: #fff !important;
-        font-weight: bold;
-        padding: 10px 30px;
-        display: inline-block;
-      }
-      .button:hover {
-        background: #111;
-      }
-      .footer {
-        text-align: center;
-        font-size: 14px;
-        color: #777;
-        padding: 20px 0 10px;
-        margin-left: -30px;
-        margin-right: -30px;
-        margin-bottom: -30px;
-        padding-left: 30px;
-        padding-right: 30px;
-      }
-      .footer a {
-        color: #0055d4;
-        text-decoration: none;
-      }
-      .footer a:hover {
-        text-decoration: underline;
-      }
-      .social-icons img {
-        width: 20px;
-        height: 20px;
-        vertical-align: middle;
-        margin-right: 4px;
-      }
-      .footer-links {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-wrap: wrap;
-        gap: 10px;
-        margin-bottom: 5px;
-      }
-      .linkedin-combined {
-        display: flex;
-        align-items: center;
-        gap: 4px;
-      }
-      @media screen and (max-width: 600px) {
-        .wrap {
-          max-width: 100%;
-          margin: 10px;
-          padding: 15px;
-        }
-        .header, .footer {
-          margin-left: -15px;
-          margin-right: -15px;
-          padding-left: 15px;
-          padding-right: 15px;
-        }
-        .header {
-          margin-top: -15px;
-        }
-        .footer {
-          margin-bottom: -15px;
-        }
-        .footer-links {
-          flex-direction: column;
-        }
-      }
-    </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>ISDM DataShakti — SDG data made simple</title>
   </head>
-  <body>
-    <div class="gutter">&nbsp;</div>
-    <div class="wrap">
-      <div class="header">
-        <a href="https://dodm.isdm.org.in/#/?affl=tamuku">
-          <img src="https://i.ibb.co/vvRC27Bj/Feature-Graphic.png" alt="DoDM" />
-        </a>
-      </div>
-      <div class="email-body">
-        <p class="text-gray-700 mb-4 leading-relaxed font-semibold">
-          Dear Team {{ .Subscriber.Name }},
-        </p>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-          We’re excited to share an invitation to
-          <strong class="font-semibold text-indigo-700">Dialogues on Development Management (DoDM) 2025</strong> — one of India’s leading convenings dedicated to reimagining how we build, manage, and lead Social Purpose Organisations for systemic and lasting impact.
-        </p>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-          Hosted by the Indian School of Development Management (ISDM) in partnership with over 20 leading organizations from the sector, DoDM 2025 will be held on
-          <strong class="font-semibold">21 August, 2025</strong> at the
-          <strong class="font-semibold">Dr Ambedkar International Centre, New Delhi</strong>.
-        </p>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-          The day will open with a powerful plenary on <strong class="font-semibold">“Viksit Bharat and The Role of Development Management”</strong>, setting the stage for critical dialogue around equity, inclusion, and long-term transformation.
-        </p>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-          The day features 4 tracks and 20 thoughtfully curated sessions, each designed to dive deep into key themes shaping the sector today:
-        </p>
-        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2 pl-4">
-          <li><strong class="font-medium">The Art and Science of Decision Making</strong></li>
-          <li><strong class="font-medium">Strengthening the Core for Social Change</strong></li>
-          <li><strong class="font-medium">Financing the Future of Social Change</strong></li>
-          <li><strong class="font-medium">Delivering Social Impact at Scale</strong></li>
-        </ul>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-          These include research paper presentations, masterclasses, and rich practitioner dialogues — all co-created with organisations working on real-world challenges across communities and systems.
-        </p>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-          Adding a special energy to the day, we’re also thrilled to feature <strong class="font-semibold">"Beats of Change"</strong> — a live performance by rapper and poet <strong class="font-semibold">Mahi G</strong>, whose bold, grounded storytelling captures the spirit of youth, resistance, and real change.
-        </p>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-          The confirmed speaker line-up features some of the most respected voices in the sector, including:
-        </p>
-        <ul class="list-disc list-inside text-gray-700 mb-4 space-y-2 pl-4">
-          <li>Amit Chandra (A.T.E. Chandra Foundation)</li>
-          <li>Ashish Dhawan (The Convergence Foundation)</li>
-          <li>Dhruvi Shah (Axis Bank Foundation)</li>
-          <li>Biraj Patnaik (National Foundation for India)</li>
-          <li>Yamini Mishra (MacArthur Foundation)</li>
-          <li>Suneeta Krishnan (Gates Foundation)</li>
-          <li>Venkat Krishnan (India Welfare Trust)</li>
-          <li>Reshma Anand (Ford Foundation)</li>
-          <li>...and many more speakers from across Samaaj, Sarkaar, and Bazaar.</li>
-        </ul>
-        <p class="text-gray-700 mb-6 leading-relaxed">
-          In the spirit of equity and accessibility, DoDM 2025 follows a <strong class="font-semibold">“Pay What Feels Right”</strong> model — so that participation is open to all, regardless of financial capacity.
-        </p>
-        <div class="text-center mb-6">
-          <a href="https://dodm.isdm.org.in#/?affl=tamuku" target="_blank" class="inline-block bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:scale-105">
-            Register now
-          </a>
-        </div>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-          Whether you work in strategy, implementation, governance, or funding — DoDM is a space to connect, reflect, and shape what’s next for the sector.
-        </p>
-        <p class="text-gray-700 mb-4 leading-relaxed">
-          We hope you’ll be there.
-        </p>
-        <p class="text-gray-700 leading-relaxed">Warmly,</p>
-        <p class="text-gray-700 font-semibold">Narendran T, <br>Founder, Tamuku</p>
-      </div>
-      <div class="footer">
-        <div class="footer-links social-icons">
-          <a href="https://dodm.isdm.org.in/#/?affl=tamuku" target="_blank">🌐 dodm.isdm.org.in</a> &nbsp;
-          <a href="https://www.linkedin.com/company/tamuku" target="_blank" class="linkedin-combined social-icons">
-            <img src="https://cdn-icons-png.flaticon.com/512/174/174857.png" alt="LinkedIn" />
-            LinkedIn
-          </a>
-        </div>
-        <p>© 2025 Tamuku. All rights reserved.</p>
-        <p>
-          <a href="{{ UnsubscribeURL }}">Unsubscribe</a> |
-          <a href="{{ MessageURL }}">Open in Browser</a>
-        </p>
-      </div>
+  <body style="margin:0; padding:0; background:#f3f6fb;">
+    <!-- Preheader (hidden preview text) -->
+    <div style="display:none; font-size:1px; line-height:1px; max-height:0; max-width:0; opacity:0; overflow:hidden; mso-hide:all;">
+      Free, searchable SDG data—structured and unstructured—in one place. Save time and focus on impact.
     </div>
-    <div style="display:none;">{{ TrackView }}</div>
+
+    <!-- Wrapper -->
+    <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f3f6fb;">
+      <tr>
+        <td align="center" style="padding:24px 12px;">
+          
+          <!-- Container -->
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px; background:#ffffff; border-radius:12px; overflow:hidden;">
+            
+            <!-- Header / Logo Bar -->
+            <tr>
+              <td style="padding:24px 24px 0 24px; background:#0d2a4a;">
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%">
+                  <tr>
+                    <td align="left" style="font-family:Arial, Helvetica, sans-serif;">
+                      <!-- Replace logo src -->
+                      <img src="https://via.placeholder.com/160x40?text=ISDM+DataShakti" width="160" height="40" alt="ISDM DataShakti" style="display:block; border:0; outline:none; text-decoration:none; height:40px;">
+                    </td>
+                    <td align="right" style="font-family:Arial, Helvetica, sans-serif; color:#cfe3ff; font-size:12px;">
+                      Powered by Capgemini
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Hero -->
+            <tr>
+              <td style="padding:24px; background:#0d2a4a;">
+                <h1 style="margin:0; font-family:Arial, Helvetica, sans-serif; color:#ffffff; font-size:24px; line-height:1.3; font-weight:700;">
+                  SDG data made simple — and free to use
+                </h1>
+                <p style="margin:12px 0 0; font-family:Arial, Helvetica, sans-serif; color:#e8eef5; font-size:15px; line-height:1.6;">
+                  ISDM DataShakti brings structured and unstructured SDG data into one searchable, easy-to-use platform.
+                </p>
+              </td>
+            </tr>
+
+            <!-- Body Copy -->
+            <tr>
+              <td style="padding:24px;">
+                <p style="margin:0 0 12px; font-family:Arial, Helvetica, sans-serif; color:#0f172a; font-size:15px; line-height:1.7;">
+                  Finding reliable data for social impact work can be frustrating. Scraping government websites, paying for reports, or hiring analysts takes time, effort, and money.
+                </p>
+                <p style="margin:0 0 16px; font-family:Arial, Helvetica, sans-serif; color:#0f172a; font-size:15px; line-height:1.7;">
+                  <strong>ISDM DataShakti, powered by Capgemini</strong>, changes that. It is a free-to-use platform that offers SDG data—both structured and unstructured—in one place. It is simple to use and easy to search for the data you need.
+                </p>
+
+                <!-- Feature Card -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="100%" style="background:#f7fafc; border:1px solid #e6edf5; border-radius:10px;">
+                  <tr>
+                    <td style="padding:16px 18px;">
+                      <p style="margin:0 0 8px; font-family:Arial, Helvetica, sans-serif; color:#0f172a; font-size:15px; line-height:1.6;">
+                        <strong>With ISDM DataShakti, you can:</strong>
+                      </p>
+                      <ul style="margin:0; padding:0 0 0 20px; font-family:Arial, Helvetica, sans-serif; color:#0f172a; font-size:15px; line-height:1.7;">
+                        <li style="margin:6px 0;">Access SDG data across education, health, gender, climate, and more</li>
+                        <li style="margin:6px 0;">Search quickly using keywords, SDGs, or natural language</li>
+                        <li style="margin:6px 0;">Visualise insights without needing technical skills</li>
+                        <li style="margin:6px 0;">Share findings and co-create knowledge</li>
+                      </ul>
+                    </td>
+                  </tr>
+                </table>
+
+                <p style="margin:16px 0 0; font-family:Arial, Helvetica, sans-serif; color:#0f172a; font-size:15px; line-height:1.7;">
+                  Save time and focus on what really matters: creating impact.
+                </p>
+
+                <!-- CTAs -->
+                <table role="presentation" cellpadding="0" cellspacing="0" border="0" style="margin:20px 0 0;">
+                  <tr>
+                    <td align="left" style="padding-right:10px;">
+                      <!--[if mso]>
+                        <v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" href="https://datashakti.isdm.org.in" style="height:44px; v-text-anchor:middle; width:220px;" arcsize="12%" strokecolor="#2563eb" strokeweight="0" fillcolor="#2563eb">
+                          <w:anchorlock/>
+                          <center style="color:#ffffff; font-family:Arial, sans-serif; font-size:15px; font-weight:bold;">Subscribe now</center>
+                        </v:roundrect>
+                      <![endif]-->
+                      <!--[if !mso]><!-- -->
+                      <a href="https://datashakti.isdm.org.in"
+                         style="display:inline-block; background:#2563eb; color:#ffffff; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:700; line-height:44px; text-align:center; border-radius:8px; padding:0 18px; min-width:220px;">
+                        Subscribe now
+                      </a>
+                      <!--<![endif]-->
+                    </td>
+                    <td align="left" style="padding-top:10px;">
+                      <a href="mailto:datashakti@isdm.org.in"
+                         style="display:inline-block; background:#e8eef5; color:#0d2a4a; font-family:Arial, Helvetica, sans-serif; font-size:15px; font-weight:700; line-height:44px; text-align:center; border-radius:8px; padding:0 18px; min-width:220px; border:1px solid #cfe3ff;">
+                        Write to us
+                      </a>
+                    </td>
+                  </tr>
+                </table>
+              </td>
+            </tr>
+
+            <!-- Divider -->
+            <tr>
+              <td style="padding:0 24px;">
+                <hr style="border:0; border-top:1px solid #e6edf5; margin:0;">
+              </td>
+            </tr>
+
+            <!-- Footer -->
+            <tr>
+              <td style="padding:20px 24px 28px 24px;">
+                <p style="margin:0; font-family:Arial, Helvetica, sans-serif; color:#5b6573; font-size:12px; line-height:1.6;">
+                  You’re receiving this because you showed interest in ISDM DataShakti. If this wasn’t you, please ignore this email.
+                </p>
+                <p style="margin:10px 0 0; font-family:Arial, Helvetica, sans-serif; color:#5b6573; font-size:12px; line-height:1.6;">
+                  &copy; 2025 ISDM DataShakti. All rights reserved.
+                </p>
+              </td>
+            </tr>
+          </table>
+
+          <!-- Optional: View in browser / Unsubscribe -->
+          <table role="presentation" cellpadding="0" cellspacing="0" border="0" width="600" style="width:600px; margin-top:12px;">
+            <tr>
+              <td align="center" style="font-family:Arial, Helvetica, sans-serif; font-size:11px; color:#6b7280; padding:6px 0;">
+                <a href="#" style="color:#6b7280; text-decoration:underline;">View in browser</a>
+                &nbsp;&bull;&nbsp;
+                <a href="#" style="color:#6b7280; text-decoration:underline;">Unsubscribe</a>
+              </td>
+            </tr>
+          </table>
+
+        </td>
+      </tr>
+    </table>
   </body>
 </html>
