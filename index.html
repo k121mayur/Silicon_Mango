@@ -1,14 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Required meta tags -->
     <meta charset="utf-8" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Silicon Mango</title>
+    <title>Silicon Mango | Purpose-Built Technology &amp; Data Solutions for Non-Profits</title>
+    <meta
+      name="description"
+      content="Silicon Mango empowers NGOs, Non-Profits, and CSR initiatives with custom offline field apps, open-source platforms (ERPNext, CiviCRM), workflow automation, and applied AI."
+    />
+    <meta
+      name="keywords"
+      content="tech for NGOs, NGO software development India, open source NGO, CiviCRM India, ERPNext for nonprofits, offline mobile app for NGOs, 80G receipt automation, AI for social impact"
+    />
+    <link rel="canonical" href="https://siliconmango.com/" />
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://siliconmango.com/" />
+    <meta property="og:title" content="Silicon Mango | Empowering Social Impact Through Technology" />
+    <meta property="og:description" content="10x Better. 10x Cheaper. Purpose-built web apps, open-source platforms, and AI tools for the development sector." />
+    <meta property="og:image" content="https://siliconmango.com/images/hero-social-tech.jpg" />
+
+    <!-- Twitter -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Silicon Mango | Tech for Non-Profits" />
+    <meta name="twitter:description" content="80% of our team has direct social-sector experience. We build custom apps, open source ERP/CRM, and AI for NGOs." />
+    <meta name="twitter:image" content="https://siliconmango.com/images/hero-social-tech.jpg" />
+
     <link rel="icon" href="images/favicon-32x32.png" />
+
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Stylesheets -->
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
@@ -20,33 +52,45 @@
       integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="style.css" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="style.css?v=2.2" />
+
+    <!-- JSON-LD Structured Data: Organization & WebSite -->
     <script type="application/ld+json">
-      {
-        "@context": "https://schema.org",
-        "@type": "Company",
-        "name": "Silicon Mango",
-        "url": "https://siliconmango.com",
-        "logo": "https://www.siliconmango.com/images/logo%201.png"
-      }
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://siliconmango.com/#organization",
+          "name": "Silicon Mango",
+          "url": "https://siliconmango.com",
+          "logo": "https://siliconmango.com/images/logo%201.png",
+          "email": "mayur@siliconmango.com",
+          "telephone": "+919503633029",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Pune",
+            "addressRegion": "Maharashtra",
+            "addressCountry": "India"
+          },
+          "description": "IT and Data Services Company dedicated to the Non-Profit sector. 80% of our team has direct social-sector experience.",
+          "slogan": "10x Better. 10x Cheaper. Empowering Social Impact Through Technology."
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://siliconmango.com/#website",
+          "url": "https://siliconmango.com",
+          "name": "Silicon Mango",
+          "publisher": { "@id": "https://siliconmango.com/#organization" }
+        }
+      ]
+    }
     </script>
-    <style>
-      @media screen and (max-width: 768px) {
-        .partner-slide,
-        .partner-slide div {
-          display: inline-block !important;
-        }
-
-        .partner-logos {
-          padding: 15px 0;
-          margin: 0 15px;
-        }
-
-        .partner-slide p {
-          padding: 10px 0px 0;
-        }
-      }
-    </style>
   </head>
 
   <!-- Google tag (gtag.js) -->
@@ -65,16 +109,32 @@
   </script>
 
   <body>
-    <!-- Navbar -->
-    <div class="container-fluid">
-      <div class="nav-bg-img">
-        <nav class="navbar navbar-expand-lg navbar-dark pr-0">
-          <a class="navbar-brand d-flex align-items-center" href="#">
-            <img src="images/logo 1.png" alt="Logo" class="logo-h" />
-            <span class="head-text">Silicon Mango</span>
+    <!-- Navbar & Hero Container (Full-Bleed Edge-to-Edge) -->
+    <header class="home-hero-wrapper">
+      <div class="nav-bg-img home-hero-bg">
+        <!-- Ambient Cinematic Video Background: The Boy Who Harnessed the Wind (2019) -->
+        <video
+          class="hero-bg-video"
+          autoplay
+          loop
+          muted
+          playsinline
+          poster="images/hero-windmill-bg.jpg"
+        >
+          <source src="images/hero-windmill-loop.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-video-overlay"></div>
+
+        <nav class="navbar navbar-expand-lg navbar-dark pl-3 pl-md-5 pr-0 pt-3">
+          <a class="navbar-brand d-flex align-items-center" href="index.html">
+            <img src="images/logo 1.png" alt="Silicon Mango Logo" class="logo-h" />
+            <div class="brand-text-wrapper">
+              <span class="head-text">Silicon Mango</span>
+              <span class="brand-tagline">10x Better <span class="tagline-pipe">|</span> 10x Cheaper</span>
+            </div>
           </a>
           <button
-            class="navbar-toggler"
+            class="navbar-toggler mr-3 mr-lg-0"
             type="button"
             data-toggle="collapse"
             data-target="#navbarNav"
@@ -82,577 +142,1026 @@
             aria-expanded="false"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon bg-toggler"></span>
+            <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto bg-clr">
               <li class="nav-item menu-head">
-                <a class="nav-link text-white" href="index.html">Home</a>
+                <a class="nav-link active" href="index.html">Home</a>
               </li>
               <li class="nav-item menu-head">
-                <a class="nav-link text-white" href="about.html"> About Us </a>
+                <a class="nav-link" href="services.html">Services</a>
               </li>
               <li class="nav-item menu-head">
-                <a class="nav-link text-white" href="services.html">
-                  Services
-                </a>
+                <a class="nav-link" href="about.html">About Us</a>
               </li>
               <li class="nav-item menu-head">
-                <a class="nav-link text-white" href="excel.html"
-                  >Excel Course</a
-                >
+                <a class="nav-link" href="blog.html">Resources</a>
               </li>
               <li class="nav-item menu-head">
-                <a class="nav-link text-white" href="contact.html"
-                  >Contact Us</a
-                >
+                <a class="nav-link" href="contact.html">Contact Us</a>
               </li>
               <li class="nav-item menu-head">
-                <a class="nav-link text-white" href="login.html" target="_blank"
-                  >Login</a
+                <a
+                  class="nav-link"
+                  href="https://academy.siliconmango.in"
+                  target="_blank"
+                  rel="noopener"
+                  >Academy</a
                 >
               </li>
             </ul>
           </div>
         </nav>
 
-        <!-- hero section -->
-        <div class="head-content">
-          <div class="row">
-            <div class="col-lg-6 p-70">
+        <!-- Hero Content -->
+        <div class="head-content hero-home-content">
+          <div class="row align-items-center">
+            <div class="col-lg-8 col-xl-7 hero-left-col">
+              <div class="hero-badge mb-2">
+                <span class="badge-tag">
+                  <i class="fas fa-hands-helping mr-1"></i> 80% Social-Sector Experienced Team
+                </span>
+              </div>
               <h1 class="head-white">
-                "Empowering Social and Technology Sectors with Innovative
-                Solutions"
+                Empowering Social Impact Through <span class="text-nowrap">Purpose-Built</span> Technology
               </h1>
-              <div class="py-3">
+              <div class="py-2">
                 <p class="head-para">
-                  "Bridging the Gap Between Social <br />
-                  Impact and Technological <br />
-                  Advancement"
+                  Creating solutions to build efficient, future-ready Non-Profits. We combine deep social sector understanding with cutting-edge data, open-source platforms, and applied AI.
                 </p>
+                <div class="hero-philosophy">
+                  <span>"More from Less."</span> &mdash; Gandhian Engineering<br>
+                  <span>"10x Better. 10x Cheaper."</span> &mdash; Dr. R.A. Mashelkar
+                </div>
               </div>
 
-              <div class="head-services">
-                <span>Our Services</span>
-                <ul class="p-0 pt-3">
-                  <li>
-                    <a href="services.html#webapp"
-                      >■ &nbsp&nbsp Website / Software / App Development</a
-                    >
-                  </li>
-                  <li>
-                    <a href="services.html#data-sol"
-                      >■ &nbsp&nbsp Data Solutions</a
-                    >
-                  </li>
-                  <li>
-                    <a href="services.html#training">■ &nbsp&nbsp Training</a>
-                  </li>
-                </ul>
+              <!-- High-converting CTA buttons -->
+              <div class="hero-cta-actions my-4" style="display: flex !important; flex-direction: row !important; flex-wrap: nowrap !important; align-items: center; gap: 12px;">
+                <a href="contact.html" class="btn-hero-primary" style="white-space: nowrap;">
+                  Book a Discovery Call <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="services.html" class="btn-hero-outline" style="white-space: nowrap;">
+                  Explore Our Solutions
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
+    </header>
 
-      <!-- why choose us -->
-      <section>
-        <div class="row justify-content-center">
-          <div class="col-lg-6">
-            <div class="choose-img text-center">
-              <img src="images/d 1.jpg" alt="img" />
-            </div>
+    <!-- Section 2: Impact Multiplier & Annual Savings Bar -->
+    <section class="metrics-bar py-4">
+      <div class="container">
+        <div class="row align-items-center text-center">
+          <div class="col-6 col-lg-3 metric-card metric-border-right">
+            <div class="metric-val">&#8377;40k&ndash;&#8377;50k+</div>
+            <p class="metric-lbl">Avg. Annual Software Savings / NGO</p>
           </div>
-          <div class="col-lg-6 pt-150">
-            <div class="why-choose pt-5">
-              <div class="center">
-                <span>Why Choose Us?</span>
-              </div>
-              <ul class="p-0 pt-4">
-                <li>
-                  ■ &nbsp&nbsp Expertise in both Social and Technology sectors
-                </li>
-                <li>■ &nbsp&nbsp Long-term partnership approach</li>
-                <li>
-                  ■ &nbsp&nbsp High professionalism and resource efficiency
-                </li>
-                <li>■ &nbsp&nbsp Experts from both Social and IT sectors</li>
-              </ul>
-            </div>
+          <div class="col-6 col-lg-3 metric-card metric-border-right">
+            <div class="metric-val">2x Impact</div>
+            <p class="metric-lbl">With Existing Team Workforce</p>
+          </div>
+          <div class="col-6 col-lg-3 metric-card metric-border-right">
+            <div class="metric-val">&#8377;0.04</div>
+            <p class="metric-lbl">Outreach Email Cost (Down by 80%)</p>
+          </div>
+          <div class="col-6 col-lg-3 metric-card">
+            <div class="metric-val">400+</div>
+            <p class="metric-lbl">Research Reports Indexed with AI</p>
           </div>
         </div>
-      </section>
-      <!-- partners -->
-      <section class="partner-bg py-3">
-        <div class="slider-sec">
-          <h5 class="text-white pt-4 pl-5 pb-0">Our Partners</h5>
-          <div class="pb-3">
-            <img src="images/Line 6.png" alt="line" class="line6" />
-          </div>
-
-          <div class="partner-logos">
-            <div class="partner-slide">
-              <div class="text-center">
-                <a href="https://www.shgplus.in/" target="_blank">
-                  <img
-                    src="images/AKRSP_Logo.jpeg"
-                    alt="AKRSP_Logo"
-                    width="100%"
-                /></a>
-                <p>
-                  Aga Khan Rural Support Programme <br />
-                  (India), Bihar
-                </p>
-              </div>
-              <div class="text-center">
-                <a href="https://www.soilfoundation.org.in/" target="_blank"
-                  ><img
-                    src="images/SOIL Foundation Logo.jpg"
-                    alt="soil logo"
-                    width="100%"
-                /></a>
-                <p>
-                  SOIL Foundation Sirsi,<br />
-                  Karnataka
-                </p>
-              </div>
-              <div class="text-center">
-                <a href="https://www.dhwani.org.in/" target="_blank"
-                  ><img
-                    src="images/Dhwani Foundation Logo.jpg"
-                    alt="dhwani logo"
-                    width="100%"
-                /></a>
-                <p>
-                  DHWANI Foundation, <br />
-                  Mysuru, Karnataka
-                </p>
-              </div>
-
-              <div class="text-center">
-                <a href="https://www.ecobasketconsultancy.com/" target="_blank"
-                  ><img
-                    src="images/eco-basket.jpeg"
-                    alt="eco-basket"
-                    width="100%"
-                /></a>
-                <p>Eco Basket Consultancy</p>
-              </div>
-              <div class="text-center">
-                <a href="https://www.nitiniketan.org/" target="_blank"
-                  ><img
-                    src="images/niti niketan.jpeg"
-                    alt="eco-basket"
-                    width="100%"
-                /></a>
-                <p>Niti Niketan Trust</p>
-              </div>
-              <div class="text-center">
-                <a href="https://www.tamuku.org/" target="_blank"
-                  ><img src="images/tamuku.jpeg" alt="tamuku" width="100%"
-                /></a>
-                <p>Tamuku</p>
-              </div>
-              <div class="text-center">
-                <a
-                  href="https://www.karta-initiative.org.uk/index.html"
-                  target="_blank"
-                  ><img
-                    src="images/karta.jpeg"
-                    alt="karta-initiative"
-                    width="100%"
-                /></a>
-                <p>The Karta Initiative</p>
-              </div>
-              <div class="text-center">
-                <a href="https://www.shgplus.in/" target="_blank">
-                  <img
-                    src="images/AKRSP_Logo.jpeg"
-                    alt="AKRSP_Logo"
-                    width="100%"
-                /></a>
-                <p>
-                  Aga Khan Rural Support Programme <br />
-                  (India), Bihar
-                </p>
-              </div>
-              <div class="text-center">
-                <a href="https://www.soilfoundation.org.in/" target="_blank"
-                  ><img
-                    src="images/SOIL Foundation Logo.jpg"
-                    alt="soil logo"
-                    width="100%"
-                /></a>
-                <p>
-                  SOIL Foundation Sirsi,<br />
-                  Karnataka
-                </p>
-              </div>
-              <div class="text-center">
-                <a href="https://www.dhwani.org.in/" target="_blank"
-                  ><img
-                    src="images/Dhwani Foundation Logo.jpg"
-                    alt="dhwani logo"
-                    width="100%"
-                /></a>
-                <p>
-                  DHWANI Foundation, <br />
-                  Mysuru, Karnataka
-                </p>
-              </div>
-
-              <div class="text-center">
-                <a href="https://www.ecobasketconsultancy.com/" target="_blank"
-                  ><img
-                    src="images/eco-basket.jpeg"
-                    alt="eco-basket"
-                    width="100%"
-                /></a>
-                <p>Eco Basket Consultancy</p>
-              </div>
-              <div class="text-center">
-                <a href="https://www.nitiniketan.org/" target="_blank"
-                  ><img
-                    src="images/niti niketan.jpeg"
-                    alt="eco-basket"
-                    width="100%"
-                /></a>
-                <p>Niti Niketan Trust</p>
-              </div>
-              <div class="text-center">
-                <a href="https://www.tamuku.org/" target="_blank"
-                  ><img src="images/tamuku.jpeg" alt="tamuku" width="100%"
-                /></a>
-                <p>Tamuku</p>
-              </div>
-              <div class="text-center">
-                <a
-                  href="https://www.karta-initiative.org.uk/index.html"
-                  target="_blank"
-                  ><img
-                    src="images/karta.jpeg"
-                    alt="karta-initiative"
-                    width="100%"
-                /></a>
-                <p>The Karta Initiative</p>
-              </div>
-            </div>
-          </div>
-          <!-- duplicate -->
-
-          <!-- <div class="slider my-3">
-
-          <div class="slider-items">
-            <div class="text-center">
-              <a href="https://www.shgplus.in/" target="_blank">
-                <img src="images/AKRSP_Logo.jpeg" alt="AKRSP_Logo" width="100%" /></a>
-              <p>Aga Khan Rural Support Programme (India), Bihar</p>
-            </div>
-            <div class="text-center">
-              <a href="https://www.soilfoundation.org.in/" target="_blank"><img src="images/SOIL Foundation Logo.jpg"
-                  alt="soil logo" width="100%" /></a>
-              <p>SOIL Foundation Sirsi, Karnataka</p>
-            </div>
-            <div class="text-center">
-              <a href="https://www.dhwani.org.in/" target="_blank"><img src="images/Dhwani Foundation Logo.jpg"
-                  alt="dhwani logo" width="100%" /></a>
-              <p>DHWANI Foundation, Mysuru, Karnataka</p>
-            </div>
-
-            <div class="text-center">
-              <a href="https://www.ecobasketconsultancy.com/" target="_blank"><img src="images/eco-basket.jpeg"
-                  alt="eco-basket" width="100%" /></a>
-              <p> Eco Basket Consultancy</p>
-            </div>
-            <div class="text-center">
-              <a href="https://www.nitiniketan.org/" target="_blank"><img src="images/niti niketan.jpeg"
-                  alt="eco-basket" width="100%" /></a>
-              <p> Niti Niketan Trust</p>
-            </div>
-            <div class="text-center">
-              <a href="https://www.tamuku.org/" target="_blank"><img src="images/tamuku.jpeg" alt="tamuku"
-                  width="100%" /></a>
-              <p> Tamuku </p>
-            </div>
-            <div class="text-center">
-              <a href="https://www.karta-initiative.org.uk/index.html" target="_blank"><img src="images/karta.jpeg"
-                  alt="karta-initiative" width="100%" /></a>
-              <p>The Karta Initiative </p>
-            </div>
-          </div>
-          -- <div class="slider">
-            <div class="slider-track text-center">
-              <div class="slide">
-                <a href="https://www.shgplus.in/" target="_blank">
-                  <img src="images/AKRSP_Logo.jpeg" alt="AKRSP_Logo" width="100%" /></a>
-                <p>Aga Khan Rural Support Programme <br> (India), Bihar</p>
-              </div>
-              <div class="slide">
-                <a href="https://www.soilfoundation.org.in/" target="_blank"><img src="images/SOIL Foundation Logo.jpg"
-                    alt="soil logo" width="100%" /></a>
-                <p>SOIL Foundation Sirsi, <br> Karnataka</p>
-              </div>
-              <div class="slide">
-                <a href="https://www.dhwani.org.in/" target="_blank"><img src="images/Dhwani Foundation Logo.jpg"
-                    alt="dhwani logo" width="100%" /></a>
-                <p>DHWANI Foundation, <br> Mysuru, Karnataka</p>
-              </div>
-              <div class="slide">
-                <a href="https://www.nitiniketan.org/" target="_blank"><img src="images/niti niketan.jpeg"
-                    alt="nitiniketan" width="100%" /></a>
-                <p> Niti Niketan Trust</p>
-              </div>
-              <div class="slide">
-                <a href="https://www.tamuku.org/" target="_blank"><img src="images/tamuku.jpeg" alt="tamuku"
-                    width="100%" /></a>
-                <p> Tamuku </p>
-              </div>
-              <div class="slide">
-                <a href="https://www.karta-initiative.org.uk/index.html" target="_blank"><img src="images/karta.jpeg"
-                    alt="karta-initiative" width="100%" /></a>
-                <p>The Karta Initiative </p>
-              </div>
-            </div>
-          </div> 
-
-
-        </div> -->
-          <!-- <div class="col-lg-5 mx-0 px-0">
-            <div>
-              <img src="images/patnars 1.jpg" alt="partner" />
-            </div>
-          </div> -->
-        </div>
-      </section>
-
-      <!-- about us -->
-
-      <section class="about-bg my-5 py-4">
-        <div>
-          <span class="head-about">About Us</span>
-        </div>
-        <div class="row pt-2">
-          <div class="col-lg-6 abt-vision">
-            <h3 class="text-center text-white">Vision</h3>
-            <div
-              class="vision animate__animated animate__fadeInRight animate__delay-3s"
-            >
-              <p>
-                To empower India's development by becoming the leading provider
-                of innovative data, training, and web solutions, enabling
-                organisations to achieve greater impact and sustainable growth.
-              </p>
-            </div>
-          </div>
-          <div class="col-lg-6 abt-mission">
-            <h3 class="text-center text-white">Mission</h3>
-            <div
-              class="mission animate__animated animate__fadeInLeft animate__delay-3s"
-            >
-              <p>
-                To increase the efficiency and effectiveness of organisations
-                through cutting-edge data and web solutions, along with
-                comprehensive training programs that drive meaningful change,
-                foster long-term success, and ensure efficient resource
-                utilisation.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Philosophy -->
-      <section>
-        <div style="background-color: #d9d9d9">
-          <div class="text-center">
-            <span class="philo-head">Philosophy</span>
-          </div>
-          <div class="row">
-            <div class="col-lg-12">
-              <div class="philo-para">
-                <p>
-                  At the core of our work is a deep commitment to empowering
-                  India's growth by delivering innovative data, training, and
-                  web solutions that drive meaningful impact. We believe that
-                  every organisation, whether an NGO or a business, has the
-                  potential to contribute to sustainable development. By
-                  increasing their efficiency and effectiveness through
-                  cutting-edge technology and comprehensive training, we help
-                  them unlock that potential and achieve long-term success.
-                  <br />
-                  Guided by our values of transparency, progressiveness,
-                  perfection, proactiveness, and efficiency, we approach each
-                  project with a focus on excellence and integrity. We are
-                  dedicated to fostering open communication, embracing
-                  innovation, and anticipating challenges, all while optimising
-                  resources to deliver exceptional results. Our philosophy is
-                  rooted in the belief that by empowering organisations with the
-                  right tools and knowledge, we can create lasting change and
-                  contribute to the development of a more prosperous and
-                  equitable India.
-                </p>
-              </div>
-            </div>
-            <!-- <div class="col-lg-6">
-              <img src="images/p.png" alt="" width="100%" />
-            </div> -->
-          </div>
-        </div>
-      </section>
-
-      <!-- services -->
-      <section class="services-bg my-5">
-        <div class="row">
-          <div class="col-lg-6"></div>
-          <div class="col-lg-6">
-            <div class="services-head p-130">
-              <h5>Our Services</h5>
-              <div class="pb-3">
-                <img src="images/Line 4.png" alt="line" class="line" />
-              </div>
-              <ul class="p-0 pt-3">
-                <li>
-                  <a href="services.html#webapp">
-                    ■ &nbsp&nbsp Website / Software / App Development
-                  </a>
-                </li>
-                <li>
-                  <a href="services.html#data-sol">
-                    ■ &nbsp&nbsp Data Solutions
-                  </a>
-                </li>
-                <li>
-                  <a href="services.html#training"> ■ &nbsp&nbsp Training</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Blog
-      <section class="blog-bg">
-        <div class="row">
-          <div class="col-lg-7"></div>
-          <div class="col-lg-5">
-            <div class="blog p-70">
-              <h5 class="blog-head">Blog</h5>
-              <div>
-                <img src="images/Line 5.png" alt="line" class="line" />
-              </div>
-            </div>
-          </div>
-        </div>
-      </section> -->
-
-      <!-- contact -->
-      <section class="contact-bg my-5">
-        <h4 class="text-white pl-5 pb-0 pt-4">Contact</h4>
-        <div class="pl-5">
-          <img
-            src="images/envelope-back.png"
-            alt="email-logo"
-            class="email-img"
-          />
-          <a
-            href="mailto:siliconmango.com@gmail.com"
-            style="
-              color: #fff;
-              vertical-align: middle;
-              font-size: 14px;
-              padding-left: 3px;
-            "
-            >siliconmango.com@gmail.com</a
-          >
-        </div>
-        <div class="pb-3">
-          <img src="images/Line 6.png" alt="line" class="line6" />
-        </div>
-        <div class="contact-head p-50">
-          <div class="row">
-            <div class="col-lg-4 contact-form">
-              <h6 class="mb-3">Contact Form</h6>
-              <form>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Name -</label>
-                  <input
-                    type="text"
-                    name="name"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Email -</label>
-                  <input
-                    name="email"
-                    type="email"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputPassword1">Subject -</label>
-                  <input
-                    type="text"
-                    name="subject"
-                    class="form-control"
-                    id="exampleInputPassword1"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="exampleInputEmail1">Message -</label>
-                  <textarea
-                    name="message"
-                    rows="3"
-                    cols="5"
-                    class="form-control"
-                    id="exampleInputEmail1"
-                    aria-describedby="emailHelp"
-                  ></textarea>
-                </div>
-                <div class="text-center py-3">
-                  <button type="submit" class="btn">Send Message</button>
-                </div>
-              </form>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section class="test mb-5">
-        <img src="images/image 3.jpg" alt="img" class="image" />
-        <a href="contact.html"><button class="text">Get a Quote</button></a>
-      </section>
-      <div
-        style="
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          background-color: beige;
-          padding: 10px;
-        "
-      >
-        <a
-          href="https://www.refrens.com/free-online-invoicing-software"
-          target="_blank"
-          ><img
-            src="images/accounting-software-by-refrens.png"
-            alt="img"
-            height="70px"
-        /></a>
-        <!--email_off-->21f1006961@ds.study.iitm.ac.in<!--/email_off-->
       </div>
-    </div>
+    </section>
 
-    <!-- script -->
+    <!-- Section 3: Why Silicon Mango? (Diagram matching User Sketch) -->
+    <section class="connecting-section" id="why-silicon-mango">
+      <div class="container-fluid connecting-outer-container">
+        
+        <!-- Header -->
+        <div class="connecting-header text-center">
+          <div class="connecting-badge-pill">THE CHALLENGE &amp; OUR SOLUTION</div>
+          <h2 class="connecting-title">
+            Connecting Village Work<br />
+            with <span class="connecting-title-highlight">Modern Technology</span>
+          </h2>
+          <p class="connecting-subtitle">
+            We understand the real challenges NGOs face in the field and build practical, low-cost technology solutions that actually work.
+          </p>
+        </div>
 
-    <script>
-      var copy = document.querySelector(".logos-slide").cloneNode(true);
-      document.querySelector(".logos").appendChild(copy);
-    </script>
+        <!-- Diagram Canvas / Wrapper -->
+        <div class="connecting-diagram-wrapper">
+          
+          <!-- Dynamic SVG Connecting Curved Lines -->
+          <svg class="connecting-lines-svg" aria-hidden="true"></svg>
+
+          <!-- Diagram Grid -->
+          <div class="connecting-diagram-grid">
+            
+            <!-- Left Column: 3 Problem Cards -->
+            <div class="connecting-col connecting-col-problems">
+              
+              <!-- Problem 01 -->
+              <div class="connecting-card connecting-card-problem" id="diag-card-p1">
+                <div class="connecting-card-icon-box icon-box-problem">
+                  <i class="fas fa-coins"></i>
+                </div>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-problem">
+                    <span class="badge-dot dot-red"></span> PROBLEM 01
+                  </div>
+                  <h3 class="connecting-card-title">Software Costs Too Much Money</h3>
+                  <p class="connecting-card-desc">
+                    Big computer software companies charge huge fees every year. This drains away money that NGOs need to help poor families and village children.
+                  </p>
+                </div>
+                <div class="connecting-node node-problem" aria-hidden="true"></div>
+              </div>
+
+              <!-- Problem 02 -->
+              <div class="connecting-card connecting-card-problem" id="diag-card-p2">
+                <div class="connecting-card-icon-box icon-box-problem">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-problem">
+                    <span class="badge-dot dot-red"></span> PROBLEM 02
+                  </div>
+                  <h3 class="connecting-card-title">City Tech Companies Don't Understand Villages</h3>
+                  <p class="connecting-card-desc">
+                    City developers don't know village reality. They don't understand that mobile network is weak in villages, or how field workers and women's Bachat Gat (SHG) work.
+                  </p>
+                </div>
+                <div class="connecting-node node-problem" aria-hidden="true"></div>
+              </div>
+
+              <!-- Problem 03 -->
+              <div class="connecting-card connecting-card-problem" id="diag-card-p3">
+                <div class="connecting-card-icon-box icon-box-problem">
+                  <i class="fas fa-users"></i>
+                </div>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-problem">
+                    <span class="badge-dot dot-red"></span> PROBLEM 03
+                  </div>
+                  <h3 class="connecting-card-title">Outside Developers Leave You Alone</h3>
+                  <p class="connecting-card-desc">
+                    Freelancers build a quick tool, take money, and disappear. When something stops working, nobody is there to help or fix the computer software.
+                  </p>
+                </div>
+                <div class="connecting-node node-problem" aria-hidden="true"></div>
+              </div>
+
+            </div>
+
+            <!-- Center Silicon Mango Hub -->
+            <div class="connecting-hub-wrapper">
+              <div class="connecting-hub-circle">
+                <img src="images/logo 1.png" alt="Silicon Mango Emblem" class="connecting-hub-logo" />
+              </div>
+              <div class="connecting-hub-badge">SILICON MANGO</div>
+            </div>
+
+            <!-- Right Column: 3 Solution Cards -->
+            <div class="connecting-col connecting-col-solutions">
+              
+              <!-- Solution 01 -->
+              <div class="connecting-card connecting-card-solution" id="diag-card-s1">
+                <div class="connecting-card-icon-box icon-box-solution-1">
+                  <i class="fas fa-wrench"></i>
+                </div>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-solution-1">
+                    <span class="badge-dot dot-blue"></span> SOLUTION 01
+                  </div>
+                  <h3 class="connecting-card-title">Smart Tools at Very Low Cost</h3>
+                  <p class="connecting-card-desc">
+                    We use high-quality, free and open-source tools. NGOs get 10 times better software at a very low cost, saving your money for real social work.
+                  </p>
+                </div>
+                <div class="connecting-node node-solution-1" aria-hidden="true"></div>
+              </div>
+
+              <!-- Solution 02 -->
+              <div class="connecting-card connecting-card-solution" id="diag-card-s2">
+                <div class="connecting-card-icon-box icon-box-solution-2">
+                  <i class="fas fa-chart-bar"></i>
+                </div>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-solution-2">
+                    <span class="badge-dot dot-green"></span> SOLUTION 02
+                  </div>
+                  <h3 class="connecting-card-title">We Know Villages &amp; Build Offline Apps</h3>
+                  <p class="connecting-card-desc">
+                    80% of our team has directly worked in villages with NGOs. We make mobile apps that work smoothly even when there is no internet network.
+                  </p>
+                </div>
+                <div class="connecting-node node-solution-2" aria-hidden="true"></div>
+              </div>
+
+              <!-- Solution 03 -->
+              <div class="connecting-card connecting-card-solution" id="diag-card-s3">
+                <div class="connecting-card-icon-box icon-box-solution-3">
+                  <i class="fas fa-handshake"></i>
+                </div>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-solution-3">
+                    <span class="badge-dot dot-blue"></span> SOLUTION 03
+                  </div>
+                  <h3 class="connecting-card-title">We Stay With You as True Partners</h3>
+                  <p class="connecting-card-desc">
+                    We never leave you alone. We train your staff with patience, stay with your organization, and keep your software running smoothly year after year.
+                  </p>
+                </div>
+                <div class="connecting-node node-solution-3" aria-hidden="true"></div>
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: The 4 Technology Pillars (Framer CardShowcase Component) -->
+    <section class="section-padding bg-surface-light pillar-showcase-section" id="technology-pillars">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">
+            <i class="fas fa-layer-group mr-1"></i> Core Capabilities
+          </span>
+          <h2 class="section-title">The Four Technology Pillars</h2>
+          <p class="section-subtitle">
+            Modular, sector-proven technology blocks designed to eliminate operational friction and scale non-profit capacity.
+          </p>
+        </div>
+
+        <!-- Framer-style CardShowcase Component -->
+        <div class="card-showcase-wrapper" data-animation-speed="5.5" data-loop="true">
+          
+          <!-- Interactive Showcase Track -->
+          <div class="card-showcase-track" role="tablist" aria-label="Technology Pillars Showcase">
+            
+            <!-- Pillar Card 01 -->
+            <div class="showcase-card active" data-index="0" role="tab" aria-selected="true" tabindex="0">
+              <!-- Left Vertical Progress Bar (Framer CardShowcase signature) -->
+              <div class="showcase-progress-track" aria-hidden="true">
+                <div class="showcase-progress-fill" style="height: 0%;"></div>
+              </div>
+
+              <!-- Card Header -->
+              <div class="showcase-card-header">
+                <div class="showcase-header-meta">
+                  <span class="showcase-number">01</span>
+                  <span class="showcase-pillar-badge">Pillar 01</span>
+                </div>
+                <div class="showcase-icon-box">
+                  <i class="fas fa-mobile-alt"></i>
+                </div>
+              </div>
+              
+              <h3 class="showcase-title">Web &amp; Offline Android Apps</h3>
+
+              <!-- Expanded Active Body -->
+              <div class="showcase-expanded-body">
+                <p class="showcase-description">
+                  Field-tested mobile and web applications, engineered to operate seamlessly in remote, low-bandwidth, and offline environments with zero data loss.
+                </p>
+
+                <!-- Key Capabilities Grid -->
+                <div class="showcase-points-grid">
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Beneficiary Tracking:</strong> Dynamic livelihood &amp; program monitoring portals
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Digital SHG Registers:</strong> Paperless micro-savings &amp; ledger management
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Offline-First Sync:</strong> Two-way caching with automated conflict resolution
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Donor Dashboards:</strong> Real-time field indicators and verifiable analytics
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visual Showcase Mockup Panel -->
+                <div class="showcase-visual-panel">
+                  <div class="visual-mockup-header">
+                    <div class="mockup-indicator">
+                      <span class="mockup-status-dot dot-pulse"></span>
+                      <span class="mockup-status-text">Field Sync Engine &bull; Offline Cache Active</span>
+                    </div>
+                    <span class="mockup-net-badge"><i class="fas fa-wifi-slash mr-1"></i> No Network Needed</span>
+                  </div>
+                  <div class="visual-mockup-body">
+                    <div class="mockup-metric-row">
+                      <div class="mockup-metric-chip">
+                        <span class="chip-label">Cached Records</span>
+                        <span class="chip-val">148 Surveys</span>
+                      </div>
+                      <div class="mockup-metric-chip">
+                        <span class="chip-label">Sync Protocol</span>
+                        <span class="chip-val">Auto 2G / Wi-Fi</span>
+                      </div>
+                      <div class="mockup-metric-chip highlight">
+                        <span class="chip-label">Data Integrity</span>
+                        <span class="chip-val text-success">100% Guaranteed</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Tag & Action -->
+                <div class="showcase-card-footer">
+                  <div class="showcase-tag tag-success">
+                    <i class="fas fa-check-double mr-1"></i> 100% Reliable Field Data
+                  </div>
+                  <a href="services.html" class="showcase-link">
+                    Specifications <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pillar Card 02 -->
+            <div class="showcase-card" data-index="1" role="tab" aria-selected="false" tabindex="0">
+              <!-- Left Vertical Progress Bar -->
+              <div class="showcase-progress-track" aria-hidden="true">
+                <div class="showcase-progress-fill" style="height: 0%;"></div>
+              </div>
+
+              <!-- Card Header -->
+              <div class="showcase-card-header">
+                <div class="showcase-header-meta">
+                  <span class="showcase-number">02</span>
+                  <span class="showcase-pillar-badge">Pillar 02</span>
+                </div>
+                <div class="showcase-icon-box">
+                  <i class="fas fa-cubes"></i>
+                </div>
+              </div>
+              
+              <h3 class="showcase-title">Open Source Deployments</h3>
+
+              <!-- Expanded Active Body -->
+              <div class="showcase-expanded-body">
+                <p class="showcase-description">
+                  World-class enterprise platforms customized and deployed for your non-profit, delivering sovereign data control with zero ongoing monthly software license fees.
+                </p>
+
+                <!-- Key Capabilities Grid -->
+                <div class="showcase-points-grid">
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>ERPNext:</strong> Complete accounts, HR, payroll, inventory, and procurement
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Nextcloud:</strong> Private self-hosted cloud storage and collaborative workspace
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>CiviCRM:</strong> Donor relationship management &amp; automated 80G tax receipts
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>KoBoToolbox:</strong> Grassroots mobile survey forms and demographic data collection
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visual Showcase Mockup Panel -->
+                <div class="showcase-visual-panel">
+                  <div class="visual-mockup-header">
+                    <div class="mockup-indicator">
+                      <span class="mockup-status-dot dot-green"></span>
+                      <span class="mockup-status-text">Production Open-Source Stack</span>
+                    </div>
+                    <span class="mockup-net-badge badge-green"><i class="fas fa-lock mr-1"></i> Zero Vendor Lock-in</span>
+                  </div>
+                  <div class="visual-mockup-body">
+                    <div class="mockup-stack-pills">
+                      <span class="stack-badge"><i class="fas fa-file-invoice-dollar mr-1"></i> ERPNext</span>
+                      <span class="stack-badge"><i class="fas fa-cloud mr-1"></i> Nextcloud</span>
+                      <span class="stack-badge"><i class="fas fa-hand-holding-heart mr-1"></i> CiviCRM</span>
+                      <span class="stack-badge"><i class="fas fa-poll-h mr-1"></i> KoBoToolbox</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Tag & Action -->
+                <div class="showcase-card-footer">
+                  <div class="showcase-tag tag-primary">
+                    <i class="fas fa-wallet mr-1"></i> Saves &#8377;40,000+ / Year
+                  </div>
+                  <a href="services.html" class="showcase-link">
+                    Specifications <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pillar Card 03 -->
+            <div class="showcase-card" data-index="2" role="tab" aria-selected="false" tabindex="0">
+              <!-- Left Vertical Progress Bar -->
+              <div class="showcase-progress-track" aria-hidden="true">
+                <div class="showcase-progress-fill" style="height: 0%;"></div>
+              </div>
+
+              <!-- Card Header -->
+              <div class="showcase-card-header">
+                <div class="showcase-header-meta">
+                  <span class="showcase-number">03</span>
+                  <span class="showcase-pillar-badge">Pillar 03</span>
+                </div>
+                <div class="showcase-icon-box">
+                  <i class="fas fa-sync-alt"></i>
+                </div>
+              </div>
+              
+              <h3 class="showcase-title">Workflow Automation</h3>
+
+              <!-- Expanded Active Body -->
+              <div class="showcase-expanded-body">
+                <p class="showcase-description">
+                  Connecting disparate software tools into seamless, automated pipelines that eliminate error-prone manual data entry and reclaim hundreds of hours.
+                </p>
+
+                <!-- Key Capabilities Grid -->
+                <div class="showcase-points-grid">
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Instant 80G Tax Receipts:</strong> Dynamic PDF generation with instant WhatsApp / email dispatch
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Central MIS Auto-Sync:</strong> Continuous mobile field data consolidation into main databases
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Automated WhatsApp Alerts:</strong> Milestone triggers and operational reminders for field teams
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Scheduled Compliance:</strong> Automated donor reporting, grant utilization, and audit logs
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visual Showcase Mockup Panel -->
+                <div class="showcase-visual-panel">
+                  <div class="visual-mockup-header">
+                    <div class="mockup-indicator">
+                      <span class="mockup-status-dot dot-cyan"></span>
+                      <span class="mockup-status-text">Active Event Pipeline</span>
+                    </div>
+                    <span class="mockup-net-badge"><i class="fas fa-bolt mr-1"></i> Instant Execution (&lt;1.5s)</span>
+                  </div>
+                  <div class="visual-mockup-body">
+                    <div class="mockup-pipeline-flow">
+                      <div class="pipe-step"><i class="fas fa-wpforms mr-1"></i> Form Submit</div>
+                      <div class="pipe-arrow"><i class="fas fa-angle-right"></i></div>
+                      <div class="pipe-step"><i class="fas fa-cogs mr-1"></i> Auto 80G PDF</div>
+                      <div class="pipe-arrow"><i class="fas fa-angle-right"></i></div>
+                      <div class="pipe-step highlight"><i class="fab fa-whatsapp mr-1"></i> Donor Alert</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Tag & Action -->
+                <div class="showcase-card-footer">
+                  <div class="showcase-tag tag-cyan">
+                    <i class="fas fa-clock mr-1"></i> 10+ Hours Saved / Week
+                  </div>
+                  <a href="services.html" class="showcase-link">
+                    Specifications <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Pillar Card 04 -->
+            <div class="showcase-card" data-index="3" role="tab" aria-selected="false" tabindex="0">
+              <!-- Left Vertical Progress Bar -->
+              <div class="showcase-progress-track" aria-hidden="true">
+                <div class="showcase-progress-fill" style="height: 0%;"></div>
+              </div>
+
+              <!-- Card Header -->
+              <div class="showcase-card-header">
+                <div class="showcase-header-meta">
+                  <span class="showcase-number">04</span>
+                  <span class="showcase-pillar-badge">Pillar 04</span>
+                </div>
+                <div class="showcase-icon-box">
+                  <i class="fas fa-brain"></i>
+                </div>
+              </div>
+              
+              <h3 class="showcase-title">Applied AI Integration</h3>
+
+              <!-- Expanded Active Body -->
+              <div class="showcase-expanded-body">
+                <p class="showcase-description">
+                  Pragmatic, private artificial intelligence tailored specifically for non-profit knowledge bases, bilingual education assessment, and automated recruitment.
+                </p>
+
+                <!-- Key Capabilities Grid -->
+                <div class="showcase-points-grid">
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>AI Knowledge Agent (RAG):</strong> Natural English Q&amp;A synthesized across 400+ research papers
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>AI Education Assistant:</strong> Automated student audio speech &amp; pronunciation evaluation
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>AI Hiring Assistant:</strong> Unbiased, objective resume and candidate screening for field staff
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Sovereign Data Privacy:</strong> 100% on-premise inference with zero external model training
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visual Showcase Mockup Panel -->
+                <div class="showcase-visual-panel">
+                  <div class="visual-mockup-header">
+                    <div class="mockup-indicator">
+                      <span class="mockup-status-dot dot-purple"></span>
+                      <span class="mockup-status-text">Private RAG Knowledge Engine</span>
+                    </div>
+                    <span class="mockup-net-badge badge-purple"><i class="fas fa-shield-alt mr-1"></i> 100% Local Inference</span>
+                  </div>
+                  <div class="visual-mockup-body">
+                    <div class="mockup-ai-query">
+                      <span class="query-prompt"><i class="fas fa-search mr-1"></i> &ldquo;Extract key livelihood outcomes across rural clusters&rdquo;</span>
+                      <span class="query-reply"><i class="fas fa-magic mr-1"></i> Synthesized from 400+ papers with verified citations</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Tag & Action -->
+                <div class="showcase-card-footer">
+                  <div class="showcase-tag tag-purple">
+                    <i class="fas fa-bolt mr-1"></i> Instant Proposal Answers
+                  </div>
+                  <a href="services.html" class="showcase-link">
+                    Specifications <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Quick Navigation Bar below cards -->
+          <div class="showcase-nav-bar" aria-label="Showcase Navigation">
+            <button type="button" class="showcase-nav-btn active" data-index="0" aria-label="Go to Pillar 01">
+              <span class="nav-btn-num">01</span> Web &amp; Offline Apps
+            </button>
+            <button type="button" class="showcase-nav-btn" data-index="1" aria-label="Go to Pillar 02">
+              <span class="nav-btn-num">02</span> Open Source
+            </button>
+            <button type="button" class="showcase-nav-btn" data-index="2" aria-label="Go to Pillar 03">
+              <span class="nav-btn-num">03</span> Automation
+            </button>
+            <button type="button" class="showcase-nav-btn" data-index="3" aria-label="Go to Pillar 04">
+              <span class="nav-btn-num">04</span> Applied AI
+            </button>
+          </div>
+
+        </div>
+
+        <div class="text-center mt-4">
+          <a href="services.html" class="btn btn-outline-primary font-weight-bold px-4 py-2">
+            Explore All Pillar Specifications <i class="fas fa-arrow-right ml-2"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 5: Hardware & Private Infrastructure -->
+    <section class="section-padding bg-surface-light">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">
+            <i class="fas fa-server mr-1"></i> Sovereign Infrastructure
+          </span>
+          <h2 class="section-title">Affordable On-Premise Infrastructure</h2>
+          <p class="section-subtitle">
+            Eliminate recurring cloud bills and secure 100% beneficiary data privacy by hosting tools on compact, low-power local hardware in your office.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="hw-card">
+              <div class="hw-icon">
+                <i class="fas fa-hdd"></i>
+              </div>
+              <h3 class="hw-title">NAS Private Cloud Storage</h3>
+              <p class="hw-desc">Your organization's private cloud located in your office. Replace recurring Google Workspace or Dropbox charges while retaining complete custody of sensitive beneficiary files.</p>
+              <span class="hw-badge"><i class="fas fa-piggy-bank mr-1"></i> Saves &#8377;15,000&ndash;&#8377;40,000/year</span>
+            </div>
+          </div>
+
+          <div class="col-md-4 mb-4 mb-md-0">
+            <div class="hw-card">
+              <div class="hw-icon">
+                <i class="fas fa-microchip"></i>
+              </div>
+              <h3 class="hw-title">Raspberry Pi Office Server</h3>
+              <p class="hw-desc">Ultra-compact, low-power hardware hosting internal productivity tools, local CiviCRM instances, or offline inventory systems accessible directly on your local office network.</p>
+              <span class="hw-badge"><i class="fas fa-plug mr-1"></i> Low Power &bull; Zero Server Rent</span>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="hw-card">
+              <div class="hw-icon">
+                <i class="fas fa-shield-alt"></i>
+              </div>
+              <h3 class="hw-title">Private GPU AI Server</h3>
+              <p class="hw-desc">Execute document intelligence and speech transcription locally on private hardware. Zero per-token API charges to external providers, and complete compliance with donor data privacy requirements.</p>
+              <span class="hw-badge"><i class="fas fa-lock mr-1"></i> 100% Beneficiary Data Privacy</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: How We Collaborate (The 6-Step Partnership Cycle) -->
+    <section class="section-padding bg-surface-white">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">
+            <i class="fas fa-project-diagram mr-1"></i> Collaboration Methodology
+          </span>
+          <h2 class="section-title">The 6-Step Partnership Cycle</h2>
+          <p class="section-subtitle">
+            We are long-term efficiency allies, not transactional software agencies. Our methodology ensures high adoption, grassroots usability, and measurable ROI.
+          </p>
+        </div>
+
+        <div class="row">
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="cycle-step-card">
+              <div class="cycle-step-num">01</div>
+              <h3 class="cycle-step-title">Discovery</h3>
+              <p class="cycle-step-desc">Field visits and in-depth discussions to observe ground operations and non-profit workflow challenges firsthand.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="cycle-step-card">
+              <div class="cycle-step-num">02</div>
+              <h3 class="cycle-step-title">Diagnosis</h3>
+              <p class="cycle-step-desc">Mapping existing operational processes, identifying manual bottlenecks, and documenting license cost drains.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="cycle-step-card">
+              <div class="cycle-step-num">03</div>
+              <h3 class="cycle-step-title">Solution Design</h3>
+              <p class="cycle-step-desc">Co-designing tailored technical blueprints with fixed, transparent budgets and clear milestones.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="cycle-step-card">
+              <div class="cycle-step-num">04</div>
+              <h3 class="cycle-step-title">Development</h3>
+              <p class="cycle-step-desc">Building custom software, configuring open-source modules, and rigorously testing in low-bandwidth scenarios.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="cycle-step-card">
+              <div class="cycle-step-num">05</div>
+              <h3 class="cycle-step-title">Deployment &amp; Training</h3>
+              <p class="cycle-step-desc">Hands-on, grassroots-friendly training sessions to ensure total confidence and adoption across non-technical field teams.</p>
+            </div>
+          </div>
+
+          <div class="col-md-4 col-sm-6 mb-4">
+            <div class="cycle-step-card">
+              <div class="cycle-step-num">06</div>
+              <h3 class="cycle-step-title">Future-Proofing</h3>
+              <p class="cycle-step-desc">Ongoing support, scheduled workflow audits, and pragmatic AI upgrades as your non-profit expands its reach.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 7: Scope Clarity — What We Do vs. What We Do NOT Do -->
+    <section class="section-padding bg-surface-light">
+      <div class="container">
+        <div class="section-header text-center">
+          <span class="section-badge">
+            <i class="fas fa-balance-scale mr-1"></i> Engagement Boundaries
+          </span>
+          <h2 class="section-title">Transparent Scope Clarity</h2>
+          <p class="section-subtitle">
+            Clear boundaries protect your budget and our focus. We specialize exclusively in high-leverage systemic improvements, not routine office IT chores.
+          </p>
+        </div>
+
+        <div class="scope-box">
+          <div class="row">
+            <!-- What We Do -->
+            <div class="col-md-6 mb-4 mb-md-0 border-md-right pr-md-4">
+              <div class="scope-col-header text-primary">
+                <i class="fas fa-check-circle text-info mr-2"></i> What We Do (Systemic Efficiency)
+              </div>
+              <ul class="feature-list">
+                <li><i class="fas fa-check text-info icon-blue"></i> End-to-end automation of manual and repetitive administrative tasks.</li>
+                <li><i class="fas fa-check text-info icon-blue"></i> Custom offline-first Android and web data collection systems.</li>
+                <li><i class="fas fa-check text-info icon-blue"></i> Automated 80G tax receipt generation and donor communications.</li>
+                <li><i class="fas fa-check text-info icon-blue"></i> Migrations to robust open-source stacks (ERPNext, Nextcloud, CiviCRM).</li>
+                <li><i class="fas fa-check text-info icon-blue"></i> Custom AI integration for document intelligence and educational assessments.</li>
+              </ul>
+            </div>
+
+            <!-- What We Do NOT Do -->
+            <div class="col-md-6 pl-md-4">
+              <div class="scope-col-header text-secondary">
+                <i class="fas fa-minus-circle text-danger mr-2"></i> What We Do NOT Cover (Operational Maintenance)
+              </div>
+              <ul class="feature-list">
+                <li><i class="fas fa-times text-danger icon-red"></i> Hardware repairs (laptop batteries, printer cartridges, broken screens).</li>
+                <li><i class="fas fa-times text-danger icon-red"></i> Routine desktop helpdesk and day-to-day office OS troubleshooting.</li>
+                <li><i class="fas fa-times text-danger icon-red"></i> End-user training on standard third-party commercial office software.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="scope-quote-banner">
+            <i class="fas fa-quote-left text-muted mr-2"></i>
+            <strong>Guiding Principle:</strong> &ldquo;Our focus is on Systemic Improvement, not daily maintenance. We are here to build &mdash; not to fix.&rdquo;
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 8: Trusted Impact Partners -->
+    <section class="partner-bg py-5">
+      <div class="container-fluid px-lg-5">
+        <div class="text-center mb-4">
+          <span class="badge badge-light px-3 py-2 text-uppercase font-weight-bold tracking-wider" style="letter-spacing: 1px; font-size: 11px;">
+            Collaborations
+          </span>
+          <h2 class="text-white font-weight-bold mt-2 h3">Organizations We Have Supported</h2>
+        </div>
+
+        <div class="partner-logos">
+          <div class="partner-slide">
+            <div class="text-center">
+              <a href="https://www.shgplus.in/" target="_blank" rel="noopener">
+                <img src="images/AKRSP_Logo.jpeg" alt="AKRSP India Logo" />
+              </a>
+              <p><strong>AKRSP (India), Bihar</strong><br><span class="text-muted small">SHG Digitization &amp; Field App</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.soilfoundation.org.in/" target="_blank" rel="noopener">
+                <img src="images/SOIL Foundation Logo.jpg" alt="SOIL Foundation Logo" />
+              </a>
+              <p><strong>SOIL Foundation, Sirsi</strong><br><span class="text-muted small">Agricultural Data &amp; MIS</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.dhwani.org.in/" target="_blank" rel="noopener">
+                <img src="images/Dhwani Foundation Logo.jpg" alt="Dhwani Foundation Logo" />
+              </a>
+              <p><strong>DHWANI Foundation, Mysuru</strong><br><span class="text-muted small">Capacity Building</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.tamuku.org/" target="_blank" rel="noopener">
+                <img src="images/tamuku.jpeg" alt="Tamuku Logo" />
+              </a>
+              <p><strong>Tamuku</strong><br><span class="text-muted small">Email Engine &amp; Comms</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.karta-initiative.org.uk/" target="_blank" rel="noopener">
+                <img src="images/karta.jpeg" alt="The Karta Initiative Logo" />
+              </a>
+              <p><strong>The Karta Initiative</strong><br><span class="text-muted small">Higher Education Access</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.nitiniketan.org/" target="_blank" rel="noopener">
+                <img src="images/niti niketan.jpeg" alt="Niti Niketan Trust Logo" />
+              </a>
+              <p><strong>Niti Niketan Trust</strong><br><span class="text-muted small">Education &amp; Social Impact</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.ecobasketconsultancy.com/" target="_blank" rel="noopener">
+                <img src="images/eco-basket.jpeg" alt="Eco Basket Consultancy Logo" />
+              </a>
+              <p><strong>Eco Basket Consultancy</strong><br><span class="text-muted small">Environmental Solutions</span></p>
+            </div>
+
+            <!-- Duplicate set for seamless infinite scroll animation -->
+            <div class="text-center">
+              <a href="https://www.shgplus.in/" target="_blank" rel="noopener">
+                <img src="images/AKRSP_Logo.jpeg" alt="AKRSP India Logo" />
+              </a>
+              <p><strong>AKRSP (India), Bihar</strong><br><span class="text-muted small">SHG Digitization &amp; Field App</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.soilfoundation.org.in/" target="_blank" rel="noopener">
+                <img src="images/SOIL Foundation Logo.jpg" alt="SOIL Foundation Logo" />
+              </a>
+              <p><strong>SOIL Foundation, Sirsi</strong><br><span class="text-muted small">Agricultural Data &amp; MIS</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.dhwani.org.in/" target="_blank" rel="noopener">
+                <img src="images/Dhwani Foundation Logo.jpg" alt="Dhwani Foundation Logo" />
+              </a>
+              <p><strong>DHWANI Foundation, Mysuru</strong><br><span class="text-muted small">Capacity Building</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.tamuku.org/" target="_blank" rel="noopener">
+                <img src="images/tamuku.jpeg" alt="Tamuku Logo" />
+              </a>
+              <p><strong>Tamuku</strong><br><span class="text-muted small">Email Engine &amp; Comms</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.karta-initiative.org.uk/" target="_blank" rel="noopener">
+                <img src="images/karta.jpeg" alt="The Karta Initiative Logo" />
+              </a>
+              <p><strong>The Karta Initiative</strong><br><span class="text-muted small">Higher Education Access</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.nitiniketan.org/" target="_blank" rel="noopener">
+                <img src="images/niti niketan.jpeg" alt="Niti Niketan Trust Logo" />
+              </a>
+              <p><strong>Niti Niketan Trust</strong><br><span class="text-muted small">Education &amp; Social Impact</span></p>
+            </div>
+            <div class="text-center">
+              <a href="https://www.ecobasketconsultancy.com/" target="_blank" rel="noopener">
+                <img src="images/eco-basket.jpeg" alt="Eco Basket Consultancy Logo" />
+              </a>
+              <p><strong>Eco Basket Consultancy</strong><br><span class="text-muted small">Environmental Solutions</span></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 9: Call to Action -->
+    <section class="section-padding bg-surface-white">
+      <div class="container">
+        <div class="cta-banner-wrapper">
+          <div class="row align-items-center">
+            <div class="col-lg-8">
+              <h2 class="cta-title">Ready to Build a 10x More Efficient Non-Profit?</h2>
+              <p class="cta-desc">
+                Schedule a complimentary 45-minute discovery consultation. We will audit your current workflows, identify manual bottlenecks, and map out where you can eliminate recurring software licensing costs.
+              </p>
+              <div class="d-flex flex-wrap gap-3 mt-4" style="gap: 14px;">
+                <a href="contact.html" class="cta-btn-main">
+                  Book a Discovery Call <i class="fas fa-calendar-check ml-1"></i>
+                </a>
+                <a href="mailto:mayur@siliconmango.com" class="cta-btn-contact">
+                  <i class="fas fa-envelope mr-1"></i> mayur@siliconmango.com
+                </a>
+              </div>
+            </div>
+            <div class="col-lg-4 text-lg-right mt-4 mt-lg-0">
+              <div class="d-inline-block text-left p-3 rounded" style="background: rgba(255, 255, 255, 0.08); border: 1px solid rgba(255, 255, 255, 0.15);">
+                <div class="text-white-50 small mb-1">Direct Phone / WhatsApp:</div>
+                <a href="tel:+919503633029" class="text-white font-weight-bold h5 mb-0 d-block" style="text-decoration: none;">
+                  <i class="fas fa-phone-alt text-warning mr-2"></i>+91 9503633029
+                </a>
+                <div class="text-white-50 small mt-2">Location: Pune, Maharashtra, India</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Standard Global Footer -->
+    <footer class="site-footer pt-5 pb-3">
+      <div class="container">
+        <div class="row">
+          <!-- Col 1: Brand & Ethos -->
+          <div class="col-lg-4 mb-4">
+            <div class="d-flex align-items-center mb-3">
+              <img src="images/logo 1.png" alt="Silicon Mango Logo" height="48" class="mr-2" />
+              <span class="text-white font-weight-bold h5 mb-0">Silicon Mango</span>
+            </div>
+            <p class="text-muted small mb-3" style="line-height: 1.6;">
+              Empowering Social Impact Through Technology. Dedicated to building efficient, future-ready Non-Profits through custom apps, open-source platforms, and applied AI.
+            </p>
+            <p class="small text-info mb-0 font-italic" style="border-left: 2px solid #00b4d8; padding-left: 10px;">
+              &ldquo;More from Less.&rdquo; &mdash; Gandhian Engineering<br>
+              &ldquo;10x Better. 10x Cheaper.&rdquo; &mdash; Dr. R.A. Mashelkar
+            </p>
+          </div>
+
+          <!-- Col 2: Solutions -->
+          <div class="col-lg-3 col-md-6 mb-4">
+            <h6 class="footer-heading">Solutions</h6>
+            <ul class="footer-links">
+              <li><a href="services.html#pillar-apps">Custom Web &amp; Android Apps</a></li>
+              <li><a href="services.html#pillar-opensource">Open Source Deployments</a></li>
+              <li><a href="services.html#pillar-automation">Workflow Automation (80G / MIS)</a></li>
+              <li><a href="services.html#pillar-ai">Applied AI &amp; Knowledge Agents</a></li>
+              <li><a href="services.html#pillar-hardware">NAS &amp; Sovereign Servers</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Explore -->
+          <div class="col-lg-2 col-md-6 mb-4">
+            <h6 class="footer-heading">Explore</h6>
+            <ul class="footer-links">
+              <li><a href="about.html">About &amp; Philosophy</a></li>
+              <li><a href="blog.html">Resources &amp; Insights</a></li>
+              <li><a href="https://academy.siliconmango.in" target="_blank" rel="noopener">Academy</a></li>
+              <li><a href="contact.html">Schedule Discovery Call</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Contact & Engagement -->
+          <div class="col-lg-3 mb-4">
+            <h6 class="footer-heading">Connect</h6>
+            <div class="footer-contact-item">
+              <i class="fas fa-envelope"></i>
+              <a href="mailto:mayur@siliconmango.com">mayur@siliconmango.com</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-phone-alt"></i>
+              <a href="tel:+919503633029">+91 9503633029</a>
+            </div>
+            <div class="footer-contact-item">
+              <i class="fas fa-map-marker-alt"></i>
+              <span>Pune, Maharashtra, India</span>
+            </div>
+            <div class="d-flex mt-3" style="gap: 10px;">
+              <a href="https://www.linkedin.com/company/silicon-mango" target="_blank" rel="noopener" class="social-icon-btn" aria-label="LinkedIn">
+                <i class="fab fa-linkedin-in"></i>
+              </a>
+              <a href="https://github.com/siliconmango" target="_blank" rel="noopener" class="social-icon-btn" aria-label="GitHub">
+                <i class="fab fa-github"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+          <div class="row align-items-center">
+            <div class="col-md-7 text-center text-md-left mb-2 mb-md-0">
+              <p class="small text-muted mb-0">&copy; 2026 Silicon Mango. All rights reserved. Technology that serves humanity.</p>
+            </div>
+            <div class="col-md-5 text-center text-md-right">
+              <span class="badge badge-dark px-3 py-1 font-weight-normal border border-secondary text-muted small">
+                80% Team Social Sector Background
+              </span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
 
     <script
       src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
@@ -664,6 +1173,242 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Dynamic SVG Connecting Lines for Section 3 -->
+    <script>
+      (function() {
+        function updateConnectingLines() {
+          const container = document.querySelector('.connecting-diagram-wrapper');
+          const svg = document.querySelector('.connecting-lines-svg');
+          const hubCircle = document.querySelector('.connecting-hub-circle');
+          if (!container || !svg || !hubCircle) return;
+
+          if (window.innerWidth < 992) {
+            svg.innerHTML = '';
+            return;
+          }
+
+          const cRect = container.getBoundingClientRect();
+          const hRect = hubCircle.getBoundingClientRect();
+
+          const hx = hRect.left + hRect.width / 2 - cRect.left;
+          const hy = hRect.top + hRect.height / 2 - cRect.top;
+          const radius = (hRect.width / 2) + 2;
+
+          const connections = [
+            { id: 'diag-card-p1', color: '#f87171', angle: 150 }, // Top-left
+            { id: 'diag-card-p2', color: '#f87171', angle: 180 }, // Mid-left
+            { id: 'diag-card-p3', color: '#f87171', angle: 210 }, // Bottom-left
+            { id: 'diag-card-s1', color: '#34d399', angle: 30 },  // Top-right
+            { id: 'diag-card-s2', color: '#22c55e', angle: 0 },   // Mid-right
+            { id: 'diag-card-s3', color: '#22c55e', angle: 330 }  // Bottom-right
+          ];
+
+          let svgHtml = '';
+          connections.forEach(function(item) {
+            const card = document.getElementById(item.id);
+            if (!card) return;
+            const node = card.querySelector('.connecting-node');
+            if (!node) return;
+
+            const nRect = node.getBoundingClientRect();
+            const nx = nRect.left + nRect.width / 2 - cRect.left;
+            const ny = nRect.top + nRect.height / 2 - cRect.top;
+
+            const rad = item.angle * (Math.PI / 180);
+            const hxPoint = hx + Math.cos(rad) * radius;
+            const hyPoint = hy - Math.sin(rad) * radius;
+
+            const dx = nx - hxPoint;
+            const cx1 = hxPoint + dx * 0.45;
+            const cy1 = hyPoint;
+            const cx2 = nx - dx * 0.45;
+            const cy2 = ny;
+
+            svgHtml += '<path d="M ' + hxPoint.toFixed(1) + ' ' + hyPoint.toFixed(1) + 
+                       ' C ' + cx1.toFixed(1) + ' ' + cy1.toFixed(1) + 
+                       ', ' + cx2.toFixed(1) + ' ' + cy2.toFixed(1) + 
+                       ', ' + nx.toFixed(1) + ' ' + ny.toFixed(1) + 
+                       '" fill="none" stroke="' + item.color + 
+                       '" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round" opacity="0.85" />';
+            svgHtml += '<circle cx="' + hxPoint.toFixed(1) + '" cy="' + hyPoint.toFixed(1) + '" r="3.5" fill="' + item.color + '" />';
+          });
+
+          svg.innerHTML = svgHtml;
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', updateConnectingLines);
+        } else {
+          updateConnectingLines();
+        }
+
+        window.addEventListener('load', updateConnectingLines);
+        window.addEventListener('resize', updateConnectingLines);
+
+        if (window.ResizeObserver) {
+          const container = document.querySelector('.connecting-diagram-wrapper');
+          if (container) {
+            new ResizeObserver(updateConnectingLines).observe(container);
+          }
+        }
+      })();
+    </script>
+
+    <!-- Interactive CardShowcase Controller (Framer Component Functionality) -->
+    <script>
+      (function initCardShowcase() {
+        const wrapper = document.querySelector('.card-showcase-wrapper');
+        if (!wrapper) return;
+
+        const cards = wrapper.querySelectorAll('.showcase-card');
+        const navBtns = wrapper.querySelectorAll('.showcase-nav-btn');
+        if (!cards.length) return;
+
+        let activeIndex = 0;
+        let progress = 0;
+        let isPaused = false;
+        let animationFrameId = null;
+        let lastTimestamp = null;
+        const animationDuration = parseFloat(wrapper.dataset.animationSpeed || '5.5') * 1000;
+        const isLoop = wrapper.dataset.loop !== 'false';
+
+        function updateProgressDisplay(val) {
+          cards.forEach((card, idx) => {
+            const fill = card.querySelector('.showcase-progress-fill');
+            if (!fill) return;
+            if (idx === activeIndex) {
+              fill.style.height = `${Math.min(Math.max(val, 0), 100)}%`;
+            } else {
+              fill.style.height = '0%';
+            }
+          });
+        }
+
+        function setActiveCard(index, resetProgress = true) {
+          if (index < 0 || index >= cards.length) return;
+          activeIndex = index;
+          if (resetProgress) {
+            progress = 0;
+          }
+
+          cards.forEach((card, i) => {
+            const isActive = i === activeIndex;
+            card.classList.toggle('active', isActive);
+            card.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+
+          navBtns.forEach((btn, i) => {
+            btn.classList.toggle('active', i === activeIndex);
+          });
+
+          updateProgressDisplay(progress);
+        }
+
+        function tick(timestamp) {
+          if (!lastTimestamp) lastTimestamp = timestamp;
+          const delta = timestamp - lastTimestamp;
+          lastTimestamp = timestamp;
+
+          if (!isPaused) {
+            progress += (delta / animationDuration) * 100;
+            if (progress >= 100) {
+              if (activeIndex + 1 < cards.length) {
+                setActiveCard(activeIndex + 1, true);
+              } else if (isLoop) {
+                setActiveCard(0, true);
+              } else {
+                progress = 100;
+              }
+            }
+            updateProgressDisplay(progress);
+          }
+
+          animationFrameId = requestAnimationFrame(tick);
+        }
+
+        // Card click & keyboard interaction
+        cards.forEach((card, idx) => {
+          card.addEventListener('click', () => {
+            if (activeIndex !== idx) {
+              setActiveCard(idx, true);
+            }
+          });
+
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setActiveCard(idx, true);
+            } else if (e.key === 'ArrowRight') {
+              e.preventDefault();
+              const next = (activeIndex + 1) % cards.length;
+              setActiveCard(next, true);
+              cards[next].focus();
+            } else if (e.key === 'ArrowLeft') {
+              e.preventDefault();
+              const prev = (activeIndex - 1 + cards.length) % cards.length;
+              setActiveCard(prev, true);
+              cards[prev].focus();
+            }
+          });
+        });
+
+        // Quick navigation buttons
+        navBtns.forEach((btn, idx) => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setActiveCard(idx, true);
+          });
+        });
+
+        // Pause auto-advance on hover & focus to give readers plenty of time
+        wrapper.addEventListener('mouseenter', () => {
+          isPaused = true;
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+          isPaused = false;
+          lastTimestamp = null;
+        });
+
+        wrapper.addEventListener('focusin', () => {
+          isPaused = true;
+        });
+
+        wrapper.addEventListener('focusout', (e) => {
+          if (!wrapper.contains(e.relatedTarget)) {
+            isPaused = false;
+            lastTimestamp = null;
+          }
+        });
+
+        // IntersectionObserver: only run animations when section is in view
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                if (!animationFrameId) {
+                  lastTimestamp = null;
+                  animationFrameId = requestAnimationFrame(tick);
+                }
+              } else {
+                if (animationFrameId) {
+                  cancelAnimationFrame(animationFrameId);
+                  animationFrameId = null;
+                }
+              }
+            });
+          }, { threshold: 0.15 });
+
+          observer.observe(wrapper);
+        } else {
+          animationFrameId = requestAnimationFrame(tick);
+        }
+
+        // Initialize state
+        setActiveCard(0, true);
+      })();
+    </script>
   </body>
 </html>
 
