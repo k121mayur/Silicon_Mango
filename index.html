@@ -57,7 +57,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
-    <link rel="stylesheet" href="style.css?v=2.1" />
+    <link rel="stylesheet" href="style.css?v=2.2" />
 
     <!-- JSON-LD Structured Data: Organization & WebSite -->
     <script type="application/ld+json">
@@ -385,8 +385,8 @@
       </div>
     </section>
 
-    <!-- Section 4: The 4 Technology Pillars -->
-    <section class="section-padding bg-surface-light">
+    <!-- Section 4: The 4 Technology Pillars (Framer CardShowcase Component) -->
+    <section class="section-padding bg-surface-light pillar-showcase-section" id="technology-pillars">
       <div class="container">
         <div class="section-header text-center">
           <span class="section-badge">
@@ -398,98 +398,377 @@
           </p>
         </div>
 
-        <div class="row">
-          <!-- Pillar 1 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="pillar-card">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="pillar-num">Pillar 01</span>
-                <div class="pillar-icon mb-0">
+        <!-- Framer-style CardShowcase Component -->
+        <div class="card-showcase-wrapper" data-animation-speed="5.5" data-loop="true">
+          
+          <!-- Interactive Showcase Track -->
+          <div class="card-showcase-track" role="tablist" aria-label="Technology Pillars Showcase">
+            
+            <!-- Pillar Card 01 -->
+            <div class="showcase-card active" data-index="0" role="tab" aria-selected="true" tabindex="0">
+              <!-- Left Vertical Progress Bar (Framer CardShowcase signature) -->
+              <div class="showcase-progress-track" aria-hidden="true">
+                <div class="showcase-progress-fill" style="height: 0%;"></div>
+              </div>
+
+              <!-- Card Header -->
+              <div class="showcase-card-header">
+                <div class="showcase-header-meta">
+                  <span class="showcase-number">01</span>
+                  <span class="showcase-pillar-badge">Pillar 01</span>
+                </div>
+                <div class="showcase-icon-box">
                   <i class="fas fa-mobile-alt"></i>
                 </div>
               </div>
-              <h3 class="pillar-title">Web &amp; Offline Android Apps</h3>
-              <p class="pillar-desc">Field-tested mobile and web applications built to operate reliably in low-bandwidth and offline environments.</p>
-              <ul class="pillar-points">
-                <li>Beneficiary &amp; livelihood tracking portals</li>
-                <li>Self-Help Group (SHG) digital savings registers</li>
-                <li>Offline-first sync with conflict resolution</li>
-                <li>Real-time donor impact dashboards</li>
-              </ul>
-              <div class="pillar-savings-tag">
-                <i class="fas fa-check-double mr-1"></i> 100% Reliable Field Data
+              
+              <h3 class="showcase-title">Web &amp; Offline Android Apps</h3>
+
+              <!-- Expanded Active Body -->
+              <div class="showcase-expanded-body">
+                <p class="showcase-description">
+                  Field-tested mobile and web applications, engineered to operate seamlessly in remote, low-bandwidth, and offline environments with zero data loss.
+                </p>
+
+                <!-- Key Capabilities Grid -->
+                <div class="showcase-points-grid">
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Beneficiary Tracking:</strong> Dynamic livelihood &amp; program monitoring portals
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Digital SHG Registers:</strong> Paperless micro-savings &amp; ledger management
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Offline-First Sync:</strong> Two-way caching with automated conflict resolution
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Donor Dashboards:</strong> Real-time field indicators and verifiable analytics
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visual Showcase Mockup Panel -->
+                <div class="showcase-visual-panel">
+                  <div class="visual-mockup-header">
+                    <div class="mockup-indicator">
+                      <span class="mockup-status-dot dot-pulse"></span>
+                      <span class="mockup-status-text">Field Sync Engine &bull; Offline Cache Active</span>
+                    </div>
+                    <span class="mockup-net-badge"><i class="fas fa-wifi-slash mr-1"></i> No Network Needed</span>
+                  </div>
+                  <div class="visual-mockup-body">
+                    <div class="mockup-metric-row">
+                      <div class="mockup-metric-chip">
+                        <span class="chip-label">Cached Records</span>
+                        <span class="chip-val">148 Surveys</span>
+                      </div>
+                      <div class="mockup-metric-chip">
+                        <span class="chip-label">Sync Protocol</span>
+                        <span class="chip-val">Auto 2G / Wi-Fi</span>
+                      </div>
+                      <div class="mockup-metric-chip highlight">
+                        <span class="chip-label">Data Integrity</span>
+                        <span class="chip-val text-success">100% Guaranteed</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Tag & Action -->
+                <div class="showcase-card-footer">
+                  <div class="showcase-tag tag-success">
+                    <i class="fas fa-check-double mr-1"></i> 100% Reliable Field Data
+                  </div>
+                  <a href="services.html" class="showcase-link">
+                    Specifications <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Pillar 2 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="pillar-card">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="pillar-num">Pillar 02</span>
-                <div class="pillar-icon mb-0">
+            <!-- Pillar Card 02 -->
+            <div class="showcase-card" data-index="1" role="tab" aria-selected="false" tabindex="0">
+              <!-- Left Vertical Progress Bar -->
+              <div class="showcase-progress-track" aria-hidden="true">
+                <div class="showcase-progress-fill" style="height: 0%;"></div>
+              </div>
+
+              <!-- Card Header -->
+              <div class="showcase-card-header">
+                <div class="showcase-header-meta">
+                  <span class="showcase-number">02</span>
+                  <span class="showcase-pillar-badge">Pillar 02</span>
+                </div>
+                <div class="showcase-icon-box">
                   <i class="fas fa-cubes"></i>
                 </div>
               </div>
-              <h3 class="pillar-title">Open Source Deployments</h3>
-              <p class="pillar-desc">World-class enterprise platforms customized and deployed with zero ongoing monthly software license fees.</p>
-              <ul class="pillar-points">
-                <li><strong>ERPNext:</strong> Accounts, HR, payroll, procurement</li>
-                <li><strong>Nextcloud:</strong> Private office cloud storage</li>
-                <li><strong>CiviCRM:</strong> Donor management &amp; 80G receipts</li>
-                <li><strong>KoBoToolbox:</strong> Grassroots survey collection</li>
-              </ul>
-              <div class="pillar-savings-tag">
-                <i class="fas fa-wallet mr-1"></i> Saves &#8377;40,000+/year
+              
+              <h3 class="showcase-title">Open Source Deployments</h3>
+
+              <!-- Expanded Active Body -->
+              <div class="showcase-expanded-body">
+                <p class="showcase-description">
+                  World-class enterprise platforms customized and deployed for your non-profit, delivering sovereign data control with zero ongoing monthly software license fees.
+                </p>
+
+                <!-- Key Capabilities Grid -->
+                <div class="showcase-points-grid">
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>ERPNext:</strong> Complete accounts, HR, payroll, inventory, and procurement
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Nextcloud:</strong> Private self-hosted cloud storage and collaborative workspace
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>CiviCRM:</strong> Donor relationship management &amp; automated 80G tax receipts
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>KoBoToolbox:</strong> Grassroots mobile survey forms and demographic data collection
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visual Showcase Mockup Panel -->
+                <div class="showcase-visual-panel">
+                  <div class="visual-mockup-header">
+                    <div class="mockup-indicator">
+                      <span class="mockup-status-dot dot-green"></span>
+                      <span class="mockup-status-text">Production Open-Source Stack</span>
+                    </div>
+                    <span class="mockup-net-badge badge-green"><i class="fas fa-lock mr-1"></i> Zero Vendor Lock-in</span>
+                  </div>
+                  <div class="visual-mockup-body">
+                    <div class="mockup-stack-pills">
+                      <span class="stack-badge"><i class="fas fa-file-invoice-dollar mr-1"></i> ERPNext</span>
+                      <span class="stack-badge"><i class="fas fa-cloud mr-1"></i> Nextcloud</span>
+                      <span class="stack-badge"><i class="fas fa-hand-holding-heart mr-1"></i> CiviCRM</span>
+                      <span class="stack-badge"><i class="fas fa-poll-h mr-1"></i> KoBoToolbox</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Tag & Action -->
+                <div class="showcase-card-footer">
+                  <div class="showcase-tag tag-primary">
+                    <i class="fas fa-wallet mr-1"></i> Saves &#8377;40,000+ / Year
+                  </div>
+                  <a href="services.html" class="showcase-link">
+                    Specifications <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Pillar 3 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="pillar-card">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="pillar-num">Pillar 03</span>
-                <div class="pillar-icon mb-0">
+            <!-- Pillar Card 03 -->
+            <div class="showcase-card" data-index="2" role="tab" aria-selected="false" tabindex="0">
+              <!-- Left Vertical Progress Bar -->
+              <div class="showcase-progress-track" aria-hidden="true">
+                <div class="showcase-progress-fill" style="height: 0%;"></div>
+              </div>
+
+              <!-- Card Header -->
+              <div class="showcase-card-header">
+                <div class="showcase-header-meta">
+                  <span class="showcase-number">03</span>
+                  <span class="showcase-pillar-badge">Pillar 03</span>
+                </div>
+                <div class="showcase-icon-box">
                   <i class="fas fa-sync-alt"></i>
                 </div>
               </div>
-              <h3 class="pillar-title">Workflow Automation</h3>
-              <p class="pillar-desc">Connecting disparate tools into automated, error-free pipelines that free staff from repetitive manual data entry.</p>
-              <ul class="pillar-points">
-                <li>Instant 80G tax receipt generation &amp; dispatch</li>
-                <li>Field mobile data auto-sync to central MIS</li>
-                <li>Automated WhatsApp alerts for field coordinators</li>
-                <li>Scheduled compliance &amp; grant reporting</li>
-              </ul>
-              <div class="pillar-savings-tag">
-                <i class="fas fa-clock mr-1"></i> 10+ Hours Saved / Week
+              
+              <h3 class="showcase-title">Workflow Automation</h3>
+
+              <!-- Expanded Active Body -->
+              <div class="showcase-expanded-body">
+                <p class="showcase-description">
+                  Connecting disparate software tools into seamless, automated pipelines that eliminate error-prone manual data entry and reclaim hundreds of hours.
+                </p>
+
+                <!-- Key Capabilities Grid -->
+                <div class="showcase-points-grid">
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Instant 80G Tax Receipts:</strong> Dynamic PDF generation with instant WhatsApp / email dispatch
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Central MIS Auto-Sync:</strong> Continuous mobile field data consolidation into main databases
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Automated WhatsApp Alerts:</strong> Milestone triggers and operational reminders for field teams
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Scheduled Compliance:</strong> Automated donor reporting, grant utilization, and audit logs
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visual Showcase Mockup Panel -->
+                <div class="showcase-visual-panel">
+                  <div class="visual-mockup-header">
+                    <div class="mockup-indicator">
+                      <span class="mockup-status-dot dot-cyan"></span>
+                      <span class="mockup-status-text">Active Event Pipeline</span>
+                    </div>
+                    <span class="mockup-net-badge"><i class="fas fa-bolt mr-1"></i> Instant Execution (&lt;1.5s)</span>
+                  </div>
+                  <div class="visual-mockup-body">
+                    <div class="mockup-pipeline-flow">
+                      <div class="pipe-step"><i class="fas fa-wpforms mr-1"></i> Form Submit</div>
+                      <div class="pipe-arrow"><i class="fas fa-angle-right"></i></div>
+                      <div class="pipe-step"><i class="fas fa-cogs mr-1"></i> Auto 80G PDF</div>
+                      <div class="pipe-arrow"><i class="fas fa-angle-right"></i></div>
+                      <div class="pipe-step highlight"><i class="fab fa-whatsapp mr-1"></i> Donor Alert</div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Tag & Action -->
+                <div class="showcase-card-footer">
+                  <div class="showcase-tag tag-cyan">
+                    <i class="fas fa-clock mr-1"></i> 10+ Hours Saved / Week
+                  </div>
+                  <a href="services.html" class="showcase-link">
+                    Specifications <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
               </div>
             </div>
-          </div>
 
-          <!-- Pillar 4 -->
-          <div class="col-md-6 col-lg-3 mb-4">
-            <div class="pillar-card">
-              <div class="d-flex justify-content-between align-items-center mb-3">
-                <span class="pillar-num">Pillar 04</span>
-                <div class="pillar-icon mb-0">
+            <!-- Pillar Card 04 -->
+            <div class="showcase-card" data-index="3" role="tab" aria-selected="false" tabindex="0">
+              <!-- Left Vertical Progress Bar -->
+              <div class="showcase-progress-track" aria-hidden="true">
+                <div class="showcase-progress-fill" style="height: 0%;"></div>
+              </div>
+
+              <!-- Card Header -->
+              <div class="showcase-card-header">
+                <div class="showcase-header-meta">
+                  <span class="showcase-number">04</span>
+                  <span class="showcase-pillar-badge">Pillar 04</span>
+                </div>
+                <div class="showcase-icon-box">
                   <i class="fas fa-brain"></i>
                 </div>
               </div>
-              <h3 class="pillar-title">Applied AI Integration</h3>
-              <p class="pillar-desc">Pragmatic, private artificial intelligence tailored to non-profit knowledge bases, education, and recruiting.</p>
-              <ul class="pillar-points">
-                <li><strong>AI Knowledge Agent (RAG):</strong> Plain English Q&amp;A on 400+ research papers</li>
-                <li><strong>AI Education Assistant:</strong> Student audio speech evaluation</li>
-                <li><strong>AI Hiring Assistant:</strong> Automated candidate screening</li>
-                <li>100% data privacy with local inference</li>
-              </ul>
-              <div class="pillar-savings-tag">
-                <i class="fas fa-search mr-1"></i> Instant Proposal Answers
+              
+              <h3 class="showcase-title">Applied AI Integration</h3>
+
+              <!-- Expanded Active Body -->
+              <div class="showcase-expanded-body">
+                <p class="showcase-description">
+                  Pragmatic, private artificial intelligence tailored specifically for non-profit knowledge bases, bilingual education assessment, and automated recruitment.
+                </p>
+
+                <!-- Key Capabilities Grid -->
+                <div class="showcase-points-grid">
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>AI Knowledge Agent (RAG):</strong> Natural English Q&amp;A synthesized across 400+ research papers
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>AI Education Assistant:</strong> Automated student audio speech &amp; pronunciation evaluation
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>AI Hiring Assistant:</strong> Unbiased, objective resume and candidate screening for field staff
+                    </div>
+                  </div>
+                  <div class="showcase-point-item">
+                    <span class="point-bullet"><i class="fas fa-check-circle"></i></span>
+                    <div class="point-text">
+                      <strong>Sovereign Data Privacy:</strong> 100% on-premise inference with zero external model training
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visual Showcase Mockup Panel -->
+                <div class="showcase-visual-panel">
+                  <div class="visual-mockup-header">
+                    <div class="mockup-indicator">
+                      <span class="mockup-status-dot dot-purple"></span>
+                      <span class="mockup-status-text">Private RAG Knowledge Engine</span>
+                    </div>
+                    <span class="mockup-net-badge badge-purple"><i class="fas fa-shield-alt mr-1"></i> 100% Local Inference</span>
+                  </div>
+                  <div class="visual-mockup-body">
+                    <div class="mockup-ai-query">
+                      <span class="query-prompt"><i class="fas fa-search mr-1"></i> &ldquo;Extract key livelihood outcomes across rural clusters&rdquo;</span>
+                      <span class="query-reply"><i class="fas fa-magic mr-1"></i> Synthesized from 400+ papers with verified citations</span>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Footer Tag & Action -->
+                <div class="showcase-card-footer">
+                  <div class="showcase-tag tag-purple">
+                    <i class="fas fa-bolt mr-1"></i> Instant Proposal Answers
+                  </div>
+                  <a href="services.html" class="showcase-link">
+                    Specifications <i class="fas fa-arrow-right ml-1"></i>
+                  </a>
+                </div>
               </div>
             </div>
+
           </div>
+
+          <!-- Quick Navigation Bar below cards -->
+          <div class="showcase-nav-bar" aria-label="Showcase Navigation">
+            <button type="button" class="showcase-nav-btn active" data-index="0" aria-label="Go to Pillar 01">
+              <span class="nav-btn-num">01</span> Web &amp; Offline Apps
+            </button>
+            <button type="button" class="showcase-nav-btn" data-index="1" aria-label="Go to Pillar 02">
+              <span class="nav-btn-num">02</span> Open Source
+            </button>
+            <button type="button" class="showcase-nav-btn" data-index="2" aria-label="Go to Pillar 03">
+              <span class="nav-btn-num">03</span> Automation
+            </button>
+            <button type="button" class="showcase-nav-btn" data-index="3" aria-label="Go to Pillar 04">
+              <span class="nav-btn-num">04</span> Applied AI
+            </button>
+          </div>
+
         </div>
 
         <div class="text-center mt-4">
@@ -973,6 +1252,161 @@
             new ResizeObserver(updateConnectingLines).observe(container);
           }
         }
+      })();
+    </script>
+
+    <!-- Interactive CardShowcase Controller (Framer Component Functionality) -->
+    <script>
+      (function initCardShowcase() {
+        const wrapper = document.querySelector('.card-showcase-wrapper');
+        if (!wrapper) return;
+
+        const cards = wrapper.querySelectorAll('.showcase-card');
+        const navBtns = wrapper.querySelectorAll('.showcase-nav-btn');
+        if (!cards.length) return;
+
+        let activeIndex = 0;
+        let progress = 0;
+        let isPaused = false;
+        let animationFrameId = null;
+        let lastTimestamp = null;
+        const animationDuration = parseFloat(wrapper.dataset.animationSpeed || '5.5') * 1000;
+        const isLoop = wrapper.dataset.loop !== 'false';
+
+        function updateProgressDisplay(val) {
+          cards.forEach((card, idx) => {
+            const fill = card.querySelector('.showcase-progress-fill');
+            if (!fill) return;
+            if (idx === activeIndex) {
+              fill.style.height = `${Math.min(Math.max(val, 0), 100)}%`;
+            } else {
+              fill.style.height = '0%';
+            }
+          });
+        }
+
+        function setActiveCard(index, resetProgress = true) {
+          if (index < 0 || index >= cards.length) return;
+          activeIndex = index;
+          if (resetProgress) {
+            progress = 0;
+          }
+
+          cards.forEach((card, i) => {
+            const isActive = i === activeIndex;
+            card.classList.toggle('active', isActive);
+            card.setAttribute('aria-selected', isActive ? 'true' : 'false');
+          });
+
+          navBtns.forEach((btn, i) => {
+            btn.classList.toggle('active', i === activeIndex);
+          });
+
+          updateProgressDisplay(progress);
+        }
+
+        function tick(timestamp) {
+          if (!lastTimestamp) lastTimestamp = timestamp;
+          const delta = timestamp - lastTimestamp;
+          lastTimestamp = timestamp;
+
+          if (!isPaused) {
+            progress += (delta / animationDuration) * 100;
+            if (progress >= 100) {
+              if (activeIndex + 1 < cards.length) {
+                setActiveCard(activeIndex + 1, true);
+              } else if (isLoop) {
+                setActiveCard(0, true);
+              } else {
+                progress = 100;
+              }
+            }
+            updateProgressDisplay(progress);
+          }
+
+          animationFrameId = requestAnimationFrame(tick);
+        }
+
+        // Card click & keyboard interaction
+        cards.forEach((card, idx) => {
+          card.addEventListener('click', () => {
+            if (activeIndex !== idx) {
+              setActiveCard(idx, true);
+            }
+          });
+
+          card.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setActiveCard(idx, true);
+            } else if (e.key === 'ArrowRight') {
+              e.preventDefault();
+              const next = (activeIndex + 1) % cards.length;
+              setActiveCard(next, true);
+              cards[next].focus();
+            } else if (e.key === 'ArrowLeft') {
+              e.preventDefault();
+              const prev = (activeIndex - 1 + cards.length) % cards.length;
+              setActiveCard(prev, true);
+              cards[prev].focus();
+            }
+          });
+        });
+
+        // Quick navigation buttons
+        navBtns.forEach((btn, idx) => {
+          btn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            setActiveCard(idx, true);
+          });
+        });
+
+        // Pause auto-advance on hover & focus to give readers plenty of time
+        wrapper.addEventListener('mouseenter', () => {
+          isPaused = true;
+        });
+
+        wrapper.addEventListener('mouseleave', () => {
+          isPaused = false;
+          lastTimestamp = null;
+        });
+
+        wrapper.addEventListener('focusin', () => {
+          isPaused = true;
+        });
+
+        wrapper.addEventListener('focusout', (e) => {
+          if (!wrapper.contains(e.relatedTarget)) {
+            isPaused = false;
+            lastTimestamp = null;
+          }
+        });
+
+        // IntersectionObserver: only run animations when section is in view
+        if ('IntersectionObserver' in window) {
+          const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                if (!animationFrameId) {
+                  lastTimestamp = null;
+                  animationFrameId = requestAnimationFrame(tick);
+                }
+              } else {
+                if (animationFrameId) {
+                  cancelAnimationFrame(animationFrameId);
+                  animationFrameId = null;
+                }
+              }
+            });
+          }, { threshold: 0.15 });
+
+          observer.observe(wrapper);
+        } else {
+          animationFrameId = requestAnimationFrame(tick);
+        }
+
+        // Initialize state
+        setActiveCard(0, true);
       })();
     </script>
   </body>
