@@ -236,132 +236,146 @@
     </section>
 
     <!-- Section 3: Why Silicon Mango? (Diagram matching User Sketch) -->
-    <section class="section-padding bg-surface-white diagram-section">
-      <div class="container">
-        <div class="section-header text-center mb-5">
-          <h2 class="section-title">Connecting Village Work with Modern Technology</h2>
+    <section class="connecting-section" id="why-silicon-mango">
+      <div class="container-fluid connecting-outer-container">
+        
+        <!-- Header -->
+        <div class="connecting-header text-center">
+          <div class="connecting-badge-pill">THE CHALLENGE &amp; OUR SOLUTION</div>
+          <h2 class="connecting-title">
+            Connecting Village Work<br />
+            with <span class="connecting-title-highlight">Modern Technology</span>
+          </h2>
+          <p class="connecting-subtitle">
+            We understand the real challenges NGOs face in the field and build practical, low-cost technology solutions that actually work.
+          </p>
         </div>
 
-        <!-- Outer Canvas Container matching user's sketch -->
-        <div class="diagram-canvas">
-          <!-- Central Dividing Spine with glowing light pulse -->
-          <div class="diagram-spine">
-            <div class="diagram-spine-beam"></div>
-          </div>
+        <!-- Diagram Canvas / Wrapper -->
+        <div class="connecting-diagram-wrapper">
+          
+          <!-- Dynamic SVG Connecting Curved Lines -->
+          <svg class="connecting-lines-svg" aria-hidden="true"></svg>
 
-          <!-- Central Silicon Mango Logo Orb in exact center -->
-          <div class="diagram-center-orb-wrap">
-            <div class="diagram-orb-aura"></div>
-            <div class="diagram-center-orb">
-              <img src="images/logo 1.png" alt="Silicon Mango Emblem" class="diagram-orb-img" />
-            </div>
-            <div class="diagram-orb-tag">Silicon Mango</div>
-          </div>
-
-          <div class="row align-items-center position-relative" style="z-index: 5;">
+          <!-- Diagram Grid -->
+          <div class="connecting-diagram-grid">
             
-            <!-- Left Side: 3 Staggered Problem Boxes -->
-            <div class="col-lg-6 col-md-12 diagram-left-col mb-4 mb-lg-0">
+            <!-- Left Column: 3 Problem Cards -->
+            <div class="connecting-col connecting-col-problems">
               
-              <!-- Problem 1 (Top: Inward towards spine) -->
-              <div class="diag-free-card diag-problem-card diag-stagger-in float-anim-1">
-                <div class="diag-card-head">
-                  <span class="diag-badge-problem">
-                    <span class="diag-dot diag-dot-red"></span> Problem 01
-                  </span>
-                  <span class="diag-icon-capsule diag-icon-red">
-                    <i class="fas fa-coins"></i>
-                  </span>
+              <!-- Problem 01 -->
+              <div class="connecting-card connecting-card-problem" id="diag-card-p1">
+                <div class="connecting-card-icon-box icon-box-problem">
+                  <i class="fas fa-coins"></i>
                 </div>
-                <h3 class="diag-card-title">Software Costs Too Much Money</h3>
-                <p class="diag-card-desc">
-                  Big computer software companies charge huge fees every year. This drains away money that NGOs need to help poor families and village children.
-                </p>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-problem">
+                    <span class="badge-dot dot-red"></span> PROBLEM 01
+                  </div>
+                  <h3 class="connecting-card-title">Software Costs Too Much Money</h3>
+                  <p class="connecting-card-desc">
+                    Big computer software companies charge huge fees every year. This drains away money that NGOs need to help poor families and village children.
+                  </p>
+                </div>
+                <div class="connecting-node node-problem" aria-hidden="true"></div>
               </div>
 
-              <!-- Problem 2 (Middle: Outward towards edge, clearing space for center logo) -->
-              <div class="diag-free-card diag-problem-card diag-stagger-out float-anim-2">
-                <div class="diag-card-head">
-                  <span class="diag-badge-problem">
-                    <span class="diag-dot diag-dot-red"></span> Problem 02
-                  </span>
-                  <span class="diag-icon-capsule diag-icon-red">
-                    <i class="fas fa-wifi-slash"></i>
-                  </span>
+              <!-- Problem 02 -->
+              <div class="connecting-card connecting-card-problem" id="diag-card-p2">
+                <div class="connecting-card-icon-box icon-box-problem">
+                  <i class="fas fa-mobile-alt"></i>
                 </div>
-                <h3 class="diag-card-title">City Tech Companies Don't Understand Villages</h3>
-                <p class="diag-card-desc">
-                  City developers don't know village reality. They don't understand that mobile network is weak in villages, or how field workers and women's Bachat Gat (SHG) work.
-                </p>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-problem">
+                    <span class="badge-dot dot-red"></span> PROBLEM 02
+                  </div>
+                  <h3 class="connecting-card-title">City Tech Companies Don't Understand Villages</h3>
+                  <p class="connecting-card-desc">
+                    City developers don't know village reality. They don't understand that mobile network is weak in villages, or how field workers and women's Bachat Gat (SHG) work.
+                  </p>
+                </div>
+                <div class="connecting-node node-problem" aria-hidden="true"></div>
               </div>
 
-              <!-- Problem 3 (Bottom: Inward towards spine) -->
-              <div class="diag-free-card diag-problem-card diag-stagger-in float-anim-3">
-                <div class="diag-card-head">
-                  <span class="diag-badge-problem">
-                    <span class="diag-dot diag-dot-red"></span> Problem 03
-                  </span>
-                  <span class="diag-icon-capsule diag-icon-red">
-                    <i class="fas fa-user-slash"></i>
-                  </span>
+              <!-- Problem 03 -->
+              <div class="connecting-card connecting-card-problem" id="diag-card-p3">
+                <div class="connecting-card-icon-box icon-box-problem">
+                  <i class="fas fa-users"></i>
                 </div>
-                <h3 class="diag-card-title">Outside Developers Leave You Alone</h3>
-                <p class="diag-card-desc">
-                  Freelancers build a quick tool, take money, and disappear. When something stops working, nobody is there to help or fix the computer software.
-                </p>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-problem">
+                    <span class="badge-dot dot-red"></span> PROBLEM 03
+                  </div>
+                  <h3 class="connecting-card-title">Outside Developers Leave You Alone</h3>
+                  <p class="connecting-card-desc">
+                    Freelancers build a quick tool, take money, and disappear. When something stops working, nobody is there to help or fix the computer software.
+                  </p>
+                </div>
+                <div class="connecting-node node-problem" aria-hidden="true"></div>
               </div>
 
             </div>
 
-            <!-- Right Side: 3 Staggered Solution Boxes -->
-            <div class="col-lg-6 col-md-12 diagram-right-col">
+            <!-- Center Silicon Mango Hub -->
+            <div class="connecting-hub-wrapper">
+              <div class="connecting-hub-circle">
+                <img src="images/logo 1.png" alt="Silicon Mango Emblem" class="connecting-hub-logo" />
+              </div>
+              <div class="connecting-hub-badge">SILICON MANGO</div>
+            </div>
+
+            <!-- Right Column: 3 Solution Cards -->
+            <div class="connecting-col connecting-col-solutions">
               
-              <!-- Solution 1 (Top: Inward towards spine) -->
-              <div class="diag-free-card diag-solution-card diag-stagger-in float-anim-1">
-                <div class="diag-card-head">
-                  <span class="diag-badge-solution">
-                    <span class="diag-dot diag-dot-blue"></span> Solution 01
-                  </span>
-                  <span class="diag-icon-capsule diag-icon-blue">
-                    <i class="fas fa-wallet"></i>
-                  </span>
+              <!-- Solution 01 -->
+              <div class="connecting-card connecting-card-solution" id="diag-card-s1">
+                <div class="connecting-card-icon-box icon-box-solution-1">
+                  <i class="fas fa-wrench"></i>
                 </div>
-                <h3 class="diag-card-title">Smart Tools at Very Low Cost</h3>
-                <p class="diag-card-desc">
-                  We use high-quality, free and open-source tools. NGOs get 10 times better software at a very low cost, saving your money for real social work.
-                </p>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-solution-1">
+                    <span class="badge-dot dot-blue"></span> SOLUTION 01
+                  </div>
+                  <h3 class="connecting-card-title">Smart Tools at Very Low Cost</h3>
+                  <p class="connecting-card-desc">
+                    We use high-quality, free and open-source tools. NGOs get 10 times better software at a very low cost, saving your money for real social work.
+                  </p>
+                </div>
+                <div class="connecting-node node-solution-1" aria-hidden="true"></div>
               </div>
 
-              <!-- Solution 2 (Middle: Outward towards edge, clearing space for center logo) -->
-              <div class="diag-free-card diag-solution-card diag-stagger-out float-anim-2">
-                <div class="diag-card-head">
-                  <span class="diag-badge-solution">
-                    <span class="diag-dot diag-dot-blue"></span> Solution 02
-                  </span>
-                  <span class="diag-icon-capsule diag-icon-blue">
-                    <i class="fas fa-map-marked-alt"></i>
-                  </span>
+              <!-- Solution 02 -->
+              <div class="connecting-card connecting-card-solution" id="diag-card-s2">
+                <div class="connecting-card-icon-box icon-box-solution-2">
+                  <i class="fas fa-chart-bar"></i>
                 </div>
-                <h3 class="diag-card-title">We Know Villages &amp; Build Offline Apps</h3>
-                <p class="diag-card-desc">
-                  80% of our team has directly worked in villages with NGOs. We make mobile apps that work smoothly even when there is no internet network.
-                </p>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-solution-2">
+                    <span class="badge-dot dot-green"></span> SOLUTION 02
+                  </div>
+                  <h3 class="connecting-card-title">We Know Villages &amp; Build Offline Apps</h3>
+                  <p class="connecting-card-desc">
+                    80% of our team has directly worked in villages with NGOs. We make mobile apps that work smoothly even when there is no internet network.
+                  </p>
+                </div>
+                <div class="connecting-node node-solution-2" aria-hidden="true"></div>
               </div>
 
-              <!-- Solution 3 (Bottom: Inward towards spine) -->
-              <div class="diag-free-card diag-solution-card diag-stagger-in float-anim-3">
-                <div class="diag-card-head">
-                  <span class="diag-badge-solution">
-                    <span class="diag-dot diag-dot-blue"></span> Solution 03
-                  </span>
-                  <span class="diag-icon-capsule diag-icon-blue">
-                    <i class="fas fa-hands-helping"></i>
-                  </span>
+              <!-- Solution 03 -->
+              <div class="connecting-card connecting-card-solution" id="diag-card-s3">
+                <div class="connecting-card-icon-box icon-box-solution-3">
+                  <i class="fas fa-handshake"></i>
                 </div>
-                <h3 class="diag-card-title">We Stay With You as True Partners</h3>
-                <p class="diag-card-desc">
-                  We never leave you alone. We train your staff with patience, stay with your organization, and keep your software running smoothly year after year.
-                </p>
+                <div class="connecting-card-body">
+                  <div class="connecting-card-badge badge-solution-3">
+                    <span class="badge-dot dot-blue"></span> SOLUTION 03
+                  </div>
+                  <h3 class="connecting-card-title">We Stay With You as True Partners</h3>
+                  <p class="connecting-card-desc">
+                    We never leave you alone. We train your staff with patience, stay with your organization, and keep your software running smoothly year after year.
+                  </p>
+                </div>
+                <div class="connecting-node node-solution-3" aria-hidden="true"></div>
               </div>
 
             </div>
@@ -880,6 +894,87 @@
       integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx"
       crossorigin="anonymous"
     ></script>
+
+    <!-- Dynamic SVG Connecting Lines for Section 3 -->
+    <script>
+      (function() {
+        function updateConnectingLines() {
+          const container = document.querySelector('.connecting-diagram-wrapper');
+          const svg = document.querySelector('.connecting-lines-svg');
+          const hubCircle = document.querySelector('.connecting-hub-circle');
+          if (!container || !svg || !hubCircle) return;
+
+          if (window.innerWidth < 992) {
+            svg.innerHTML = '';
+            return;
+          }
+
+          const cRect = container.getBoundingClientRect();
+          const hRect = hubCircle.getBoundingClientRect();
+
+          const hx = hRect.left + hRect.width / 2 - cRect.left;
+          const hy = hRect.top + hRect.height / 2 - cRect.top;
+          const radius = (hRect.width / 2) + 2;
+
+          const connections = [
+            { id: 'diag-card-p1', color: '#f87171', angle: 150 }, // Top-left
+            { id: 'diag-card-p2', color: '#f87171', angle: 180 }, // Mid-left
+            { id: 'diag-card-p3', color: '#f87171', angle: 210 }, // Bottom-left
+            { id: 'diag-card-s1', color: '#34d399', angle: 30 },  // Top-right
+            { id: 'diag-card-s2', color: '#22c55e', angle: 0 },   // Mid-right
+            { id: 'diag-card-s3', color: '#22c55e', angle: 330 }  // Bottom-right
+          ];
+
+          let svgHtml = '';
+          connections.forEach(function(item) {
+            const card = document.getElementById(item.id);
+            if (!card) return;
+            const node = card.querySelector('.connecting-node');
+            if (!node) return;
+
+            const nRect = node.getBoundingClientRect();
+            const nx = nRect.left + nRect.width / 2 - cRect.left;
+            const ny = nRect.top + nRect.height / 2 - cRect.top;
+
+            const rad = item.angle * (Math.PI / 180);
+            const hxPoint = hx + Math.cos(rad) * radius;
+            const hyPoint = hy - Math.sin(rad) * radius;
+
+            const dx = nx - hxPoint;
+            const cx1 = hxPoint + dx * 0.45;
+            const cy1 = hyPoint;
+            const cx2 = nx - dx * 0.45;
+            const cy2 = ny;
+
+            svgHtml += '<path d="M ' + hxPoint.toFixed(1) + ' ' + hyPoint.toFixed(1) + 
+                       ' C ' + cx1.toFixed(1) + ' ' + cy1.toFixed(1) + 
+                       ', ' + cx2.toFixed(1) + ' ' + cy2.toFixed(1) + 
+                       ', ' + nx.toFixed(1) + ' ' + ny.toFixed(1) + 
+                       '" fill="none" stroke="' + item.color + 
+                       '" stroke-width="2" stroke-dasharray="4 4" stroke-linecap="round" opacity="0.85" />';
+            svgHtml += '<circle cx="' + hxPoint.toFixed(1) + '" cy="' + hyPoint.toFixed(1) + '" r="3.5" fill="' + item.color + '" />';
+          });
+
+          svg.innerHTML = svgHtml;
+        }
+
+        if (document.readyState === 'loading') {
+          document.addEventListener('DOMContentLoaded', updateConnectingLines);
+        } else {
+          updateConnectingLines();
+        }
+
+        window.addEventListener('load', updateConnectingLines);
+        window.addEventListener('resize', updateConnectingLines);
+
+        if (window.ResizeObserver) {
+          const container = document.querySelector('.connecting-diagram-wrapper');
+          if (container) {
+            new ResizeObserver(updateConnectingLines).observe(container);
+          }
+        }
+      })();
+    </script>
   </body>
 </html>
 

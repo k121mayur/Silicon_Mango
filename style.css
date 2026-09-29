@@ -1461,392 +1461,359 @@ body {
   border-right: 1px solid #e2e8f0;
 }
 
-/* 2. Free-Form Animated Diagram (Section 3) */
-.diagram-section {
-  background-color: #f8fafc;
+/* 2. Connecting Village Work with Modern Technology (Section 3) */
+.connecting-section {
   position: relative;
-  overflow: hidden;
-  padding: 60px 0;
-}
-
-/* Outer Canvas Container matching the user's sketch */
-.diagram-canvas {
-  background: #ffffff;
-  border: 2px solid #e2e8f0;
-  border-radius: 28px;
-  padding: 44px 32px;
-  position: relative;
-  box-shadow: 0 10px 35px rgba(15, 23, 42, 0.03);
+  background-image: url('images/connecting-tech-bg.png');
+  background-size: cover;
+  background-position: center top;
+  background-repeat: no-repeat;
+  padding: 80px 0 100px;
   overflow: hidden;
 }
 
-/* Central Dividing Spine */
-.diagram-spine {
+/* Bottom white blur & soft fade transition into the next section */
+.connecting-section::after {
+  content: '';
   position: absolute;
-  left: 50%;
-  top: 0;
+  left: 0;
+  right: 0;
   bottom: 0;
-  width: 2px;
-  background: linear-gradient(180deg, rgba(203, 213, 225, 0.3) 0%, #cbd5e1 15%, #cbd5e1 85%, rgba(203, 213, 225, 0.3) 100%);
-  transform: translateX(-50%);
+  height: 125px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.4) 30%, rgba(248, 250, 252, 0.85) 70%, #f8fafc 100%);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  pointer-events: none;
   z-index: 2;
-  overflow: hidden;
 }
 
-/* Traveling Light Beam on Spine */
-.diagram-spine-beam {
+.connecting-outer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding-left: 20px;
+  padding-right: 20px;
+  position: relative;
+  z-index: 3;
+}
+
+/* Header Area */
+.connecting-header {
+  margin-bottom: 48px;
+}
+
+.connecting-badge-pill {
+  display: inline-block;
+  background: #fef3c7;
+  color: #b45309;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  padding: 6px 18px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.08);
+}
+
+.connecting-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: #0f172a;
+  line-height: 1.25;
+  margin-bottom: 14px;
+  letter-spacing: -0.5px;
+}
+
+.connecting-title-highlight {
+  color: #f97316;
+}
+
+.connecting-subtitle {
+  font-size: 15px;
+  color: #475569;
+  line-height: 1.6;
+  max-width: 620px;
+  margin: 0 auto;
+}
+
+/* Diagram Layout */
+.connecting-diagram-wrapper {
+  position: relative;
+  max-width: 1160px;
+  margin: 0 auto;
+}
+
+.connecting-diagram-grid {
+  display: flex;
+  justify-content: space-between;
+  align-items: stretch;
+  position: relative;
+}
+
+.connecting-col {
+  width: 41%;
+  max-width: 41%;
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+  position: relative;
+  z-index: 4;
+}
+
+/* Card Styling */
+.connecting-card {
+  background: #ffffff;
+  border: 1px solid rgba(226, 232, 240, 0.85);
+  border-radius: 20px;
+  padding: 22px 24px;
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+  transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.3s ease;
+}
+
+.connecting-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.03);
+}
+
+.connecting-card-problem:hover {
+  border-color: #fca5a5;
+}
+
+.connecting-card-solution:hover {
+  border-color: #93c5fd;
+}
+
+.connecting-card-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  flex-shrink: 0;
+}
+
+.icon-box-problem {
+  background: #fee2e2;
+  color: #ef4444;
+}
+
+.icon-box-solution-1,
+.icon-box-solution-3 {
+  background: #e0f2fe;
+  color: #0284c7;
+}
+
+.icon-box-solution-2 {
+  background: #dcfce7;
+  color: #16a34a;
+}
+
+.connecting-card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.connecting-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 10.5px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-bottom: 8px;
+}
+
+.badge-problem {
+  background: rgba(254, 226, 226, 0.75);
+  color: #ef4444;
+}
+
+.badge-solution-1,
+.badge-solution-3 {
+  background: rgba(224, 242, 254, 0.75);
+  color: #0284c7;
+}
+
+.badge-solution-2 {
+  background: rgba(220, 252, 231, 0.75);
+  color: #16a34a;
+}
+
+.badge-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red {
+  background: #ef4444;
+  box-shadow: 0 0 6px rgba(239, 68, 68, 0.8);
+}
+
+.dot-blue {
+  background: #0284c7;
+  box-shadow: 0 0 6px rgba(2, 132, 199, 0.8);
+}
+
+.dot-green {
+  background: #16a34a;
+  box-shadow: 0 0 6px rgba(22, 163, 74, 0.8);
+}
+
+.connecting-card-title {
+  font-size: 16px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 6px;
+  line-height: 1.35;
+  letter-spacing: -0.2px;
+}
+
+.connecting-card-desc {
+  font-size: 13.5px;
+  color: #475569;
+  line-height: 1.55;
+  margin-bottom: 0;
+}
+
+/* Connector Nodes on Cards */
+.connecting-node {
   position: absolute;
-  width: 100%;
-  height: 140px;
-  background: linear-gradient(180deg, rgba(0, 180, 216, 0) 0%, #00b4d8 50%, rgba(255, 183, 3, 0.9) 100%);
-  animation: spineBeam 4.5s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 5;
+  pointer-events: none;
 }
 
-@keyframes spineBeam {
-  0% {
-    top: -140px;
-    opacity: 0;
-  }
-  25% {
-    opacity: 1;
-  }
-  85% {
-    opacity: 1;
-  }
-  100% {
-    top: 100%;
-    opacity: 0;
-  }
+.node-problem {
+  right: -5px;
+  background: #f87171;
+  box-shadow: 0 0 8px rgba(239, 68, 68, 0.8), 0 0 16px rgba(239, 68, 68, 0.4);
 }
 
-/* Central Silicon Mango Emblem Orb */
-.diagram-center-orb-wrap {
+.node-solution-1 {
+  left: -5px;
+  background: #34d399;
+  box-shadow: 0 0 8px rgba(52, 211, 153, 0.8), 0 0 16px rgba(52, 211, 153, 0.4);
+}
+
+.node-solution-2 {
+  left: -5px;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.8), 0 0 16px rgba(34, 197, 94, 0.4);
+}
+
+.node-solution-3 {
+  left: -5px;
+  background: #22c55e;
+  box-shadow: 0 0 8px rgba(34, 197, 94, 0.8), 0 0 16px rgba(34, 197, 94, 0.4);
+}
+
+/* Center Hub */
+.connecting-hub-wrapper {
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-  z-index: 10;
   display: flex;
   flex-direction: column;
   align-items: center;
-  pointer-events: none;
+  z-index: 10;
+  pointer-events: auto;
 }
 
-.diagram-orb-aura {
-  position: absolute;
-  width: 140px;
-  height: 140px;
-  border-radius: 50%;
-  background: radial-gradient(circle, rgba(0, 180, 216, 0.28) 0%, rgba(255, 183, 3, 0.16) 45%, rgba(255, 255, 255, 0) 70%);
-  animation: orbPulse 4s ease-in-out infinite;
-  z-index: 1;
-}
-
-@keyframes orbPulse {
-  0%, 100% {
-    transform: scale(0.96);
-    opacity: 0.6;
-  }
-  50% {
-    transform: scale(1.15);
-    opacity: 1;
-  }
-}
-
-.diagram-center-orb {
-  width: 108px;
-  height: 108px;
+.connecting-hub-circle {
+  width: 88px;
+  height: 88px;
   border-radius: 50%;
   background: #ffffff;
   border: 2.5px solid #00b4d8;
   display: flex;
   align-items: center;
   justify-content: center;
+  padding: 10px;
   box-shadow: 0 10px 28px rgba(1, 29, 61, 0.12), 0 0 25px rgba(0, 180, 216, 0.25);
-  position: relative;
-  z-index: 2;
-  padding: 12px;
-  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
-  pointer-events: auto;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.diagram-center-orb:hover {
-  transform: scale(1.08) rotate(3deg);
+.connecting-hub-circle:hover {
+  transform: scale(1.08);
   box-shadow: 0 14px 34px rgba(1, 29, 61, 0.18), 0 0 32px rgba(255, 183, 3, 0.45);
 }
 
-.diagram-orb-img {
+.connecting-hub-logo {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
-  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.1));
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08));
 }
 
-.diagram-orb-tag {
-  margin-top: 8px;
+.connecting-hub-badge {
   background: #011d3d;
   color: #ffffff;
-  font-size: 11px;
-  font-weight: 700;
-  letter-spacing: 0.6px;
+  font-size: 10.5px;
+  font-weight: 800;
+  letter-spacing: 0.8px;
   text-transform: uppercase;
-  padding: 3px 12px;
+  padding: 4px 14px;
   border-radius: 12px;
-  box-shadow: 0 4px 10px rgba(1, 29, 61, 0.15);
-  position: relative;
-  z-index: 2;
-  pointer-events: auto;
+  margin-top: 8px;
+  box-shadow: 0 4px 12px rgba(1, 29, 61, 0.25);
+  white-space: nowrap;
 }
 
-/* Free-Form Animated Cards (No one-sided border) */
-.diag-free-card {
-  background: #ffffff;
-  border: 1.5px solid #e2e8f0;
-  border-radius: 20px;
-  padding: 24px 26px;
-  position: relative;
-  box-shadow: 0 4px 18px rgba(15, 23, 42, 0.04);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
-  min-height: 148px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  z-index: 4;
+/* SVG Connecting Lines */
+.connecting-lines-svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 3;
+  overflow: visible;
 }
 
-/* Problem Card: Subtle ambient warm glow inside, full perimeter border on hover */
-.diag-problem-card {
-  background: radial-gradient(circle at 12% 16%, #fff1f2 0%, #ffffff 60%);
-}
-
-.diag-problem-card:hover {
-  border-color: #fca5a5;
-  box-shadow: 0 16px 36px -6px rgba(239, 68, 68, 0.18), 0 0 0 1px rgba(239, 68, 68, 0.15);
-}
-
-/* Solution Card: Subtle ambient cool glow inside, full perimeter border on hover */
-.diag-solution-card {
-  background: radial-gradient(circle at 12% 16%, #f0fdf4 0%, #ffffff 60%);
-}
-
-.diag-solution-card:hover {
-  border-color: #7dd3fc;
-  box-shadow: 0 16px 36px -6px rgba(0, 180, 216, 0.2), 0 0 0 1px rgba(0, 180, 216, 0.18);
-}
-
-/* Card Header Components */
-.diag-card-head {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 12px;
-}
-
-/* Status Badges with Live Pulsing Dot */
-.diag-badge-problem {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  color: #b91c1c;
-  background: rgba(254, 226, 226, 0.65);
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid #fecaca;
-}
-
-.diag-badge-solution {
-  display: inline-flex;
-  align-items: center;
-  gap: 7px;
-  font-size: 11px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.6px;
-  color: #0369a1;
-  background: rgba(224, 242, 254, 0.65);
-  padding: 4px 12px;
-  border-radius: 20px;
-  border: 1px solid #bae6fd;
-}
-
-.diag-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  display: inline-block;
-}
-
-.diag-dot-red {
-  background: #ef4444;
-  box-shadow: 0 0 6px #ef4444;
-  animation: dotPulseRed 2s infinite;
-}
-
-.diag-dot-blue {
-  background: #00b4d8;
-  box-shadow: 0 0 6px #00b4d8;
-  animation: dotPulseBlue 2s infinite;
-}
-
-@keyframes dotPulseRed {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.35;
-    transform: scale(0.85);
-  }
-}
-
-@keyframes dotPulseBlue {
-  0%, 100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.35;
-    transform: scale(0.85);
-  }
-}
-
-.diag-icon-capsule {
-  width: 34px;
-  height: 34px;
-  border-radius: 10px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 15px;
-}
-
-.diag-icon-red {
-  background: #fee2e2;
-  color: #dc2626;
-}
-
-.diag-icon-blue {
-  background: #e0f2fe;
-  color: #0284c7;
-}
-
-/* Card Typography */
-.diag-card-title {
-  font-size: 16.5px;
-  font-weight: 700;
-  color: #0f172a;
-  margin-bottom: 8px;
-  line-height: 1.35;
-  letter-spacing: -0.2px;
-}
-
-.diag-card-desc {
-  font-size: 14px;
-  color: #475569;
-  line-height: 1.55;
-  margin-bottom: 0;
-}
-
-/* Free-Form Floating Keyframe Animations */
-@keyframes floatCard1 {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-6px) rotate(0.35deg);
-  }
-}
-
-@keyframes floatCard2 {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-8px) rotate(-0.4deg);
-  }
-}
-
-@keyframes floatCard3 {
-  0%, 100% {
-    transform: translateY(0px) rotate(0deg);
-  }
-  50% {
-    transform: translateY(-5px) rotate(0.25deg);
-  }
-}
-
-.float-anim-1 {
-  animation: floatCard1 6s ease-in-out infinite;
-}
-
-.float-anim-2 {
-  animation: floatCard2 7.2s ease-in-out infinite 0.6s;
-}
-
-.float-anim-3 {
-  animation: floatCard3 6.5s ease-in-out infinite 1.2s;
-}
-
-.diag-free-card:hover {
-  animation-play-state: paused;
-  transform: translateY(-10px) scale(1.015) !important;
-}
-
-/* Staggering Offsets on Desktop matching User's Sketch */
-@media (min-width: 992px) {
-  /* Left Column (Problems) */
-  .diagram-left-col .diag-stagger-in {
-    margin-left: 15%;
-    margin-right: 20px;
-    margin-bottom: 26px;
-  }
-  .diagram-left-col .diag-stagger-out {
-    margin-left: 0;
-    margin-right: 15%;
-    margin-bottom: 26px;
-  }
-  .diagram-left-col .diag-stagger-in:last-child {
-    margin-bottom: 0;
-  }
-
-  /* Right Column (Solutions) */
-  .diagram-right-col .diag-stagger-in {
-    margin-right: 15%;
-    margin-left: 20px;
-    margin-bottom: 26px;
-  }
-  .diagram-right-col .diag-stagger-out {
-    margin-right: 0;
-    margin-left: 15%;
-    margin-bottom: 26px;
-  }
-  .diagram-right-col .diag-stagger-in:last-child {
-    margin-bottom: 0;
-  }
-}
-
-/* Responsive Overrides for Mobile & Tablet */
+/* Responsive Overrides */
 @media (max-width: 991px) {
-  .diagram-canvas {
-    padding: 28px 16px;
-    border-radius: 20px;
+  .connecting-section {
+    padding: 60px 0;
   }
-  .diagram-spine {
-    display: none;
+  .connecting-title {
+    font-size: 28px;
   }
-  .diagram-center-orb-wrap {
+  .connecting-diagram-grid {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .connecting-col {
+    width: 100%;
+    max-width: 100%;
+    gap: 16px;
+  }
+  .connecting-hub-wrapper {
     position: static;
     transform: none;
-    margin: 32px auto;
+    margin: 16px auto;
   }
-  .diag-free-card {
-    margin-left: 0 !important;
-    margin-right: 0 !important;
-    margin-bottom: 18px !important;
+  .connecting-lines-svg {
+    display: none;
+  }
+  .connecting-node {
+    display: none;
   }
 }
 
