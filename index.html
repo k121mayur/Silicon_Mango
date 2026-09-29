@@ -779,15 +779,61 @@
       </div>
     </section>
 
-    <!-- Section 5: Hardware & Private Infrastructure -->
-    <section class="section-padding bg-surface-light">
-      <div class="container">
-        <div class="section-header text-center">
-          <span class="section-badge">
+    <!-- Section 5: Hardware & Private Infrastructure (Orchid Security Style Parallax Glow) -->
+    <section class="section-padding hw-infra-section" id="hardware-infrastructure">
+      <!-- Scroll-to-Reveal Parallax Gradient Beam (Custom Pure Vector & CSS, No Image) -->
+      <div class="hw-gradient-beam-wrapper" id="hwGradientBeam" aria-hidden="true">
+        <div class="hw-beam-line"></div>
+        <div class="hw-beam-glow"></div>
+        
+        <!-- Custom Pure Vector Gradient Beam (Curved Arc with Multi-Stop Photonic Orange Glow) -->
+        <svg class="hw-beam-svg" viewBox="0 0 1024 320" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none">
+          <defs>
+            <radialGradient id="hwGlowCenter" cx="50%" cy="0%" r="60%" fx="50%" fy="0%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+              <stop offset="12%" stop-color="#fff7ed" stop-opacity="0.98" />
+              <stop offset="28%" stop-color="#fdba74" stop-opacity="0.95" />
+              <stop offset="50%" stop-color="#f97316" stop-opacity="0.75" />
+              <stop offset="75%" stop-color="#ea580c" stop-opacity="0.35" />
+              <stop offset="100%" stop-color="#c2410c" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="hwGlowWide" cx="50%" cy="0%" r="85%" fx="50%" fy="0%">
+              <stop offset="0%" stop-color="#fed7aa" stop-opacity="0.85" />
+              <stop offset="30%" stop-color="#fb923c" stop-opacity="0.6" />
+              <stop offset="62%" stop-color="#f97316" stop-opacity="0.25" />
+              <stop offset="100%" stop-color="#ea580c" stop-opacity="0" />
+            </radialGradient>
+            <radialGradient id="hwGlowCore" cx="50%" cy="0%" r="35%" fx="50%" fy="0%">
+              <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+              <stop offset="35%" stop-color="#fed7aa" stop-opacity="0.9" />
+              <stop offset="100%" stop-color="#fb923c" stop-opacity="0" />
+            </radialGradient>
+            <filter id="hwGlowBlur" x="-20%" y="-20%" width="140%" height="150%">
+              <feGaussianBlur stdDeviation="14" />
+            </filter>
+            <filter id="hwGlowSoftBlur" x="-30%" y="-30%" width="160%" height="160%">
+              <feGaussianBlur stdDeviation="30" />
+            </filter>
+          </defs>
+          <!-- Broad ambient curved plume -->
+          <path d="M 40 0 Q 512 320 984 0 Z" fill="url(#hwGlowWide)" filter="url(#hwGlowSoftBlur)" opacity="0.85" />
+          <!-- Core luminous arc body -->
+          <path d="M 100 0 Q 512 260 924 0 Z" fill="url(#hwGlowCenter)" filter="url(#hwGlowBlur)" opacity="0.95" />
+          <!-- Hot core lens highlight -->
+          <path d="M 200 0 Q 512 130 824 0 Z" fill="url(#hwGlowCore)" filter="url(#hwGlowBlur)" opacity="0.9" />
+          <path d="M 280 0 Q 512 60 744 0" stroke="#ffffff" stroke-width="4" filter="url(#hwGlowBlur)" opacity="0.95" />
+        </svg>
+
+        <div class="hw-beam-ambient"></div>
+      </div>
+
+      <div class="container position-relative" style="z-index: 2;">
+        <div class="section-header text-center hw-header">
+          <span class="section-badge hw-badge-tag">
             <i class="fas fa-server mr-1"></i> Sovereign Infrastructure
           </span>
-          <h2 class="section-title">Affordable On-Premise Infrastructure</h2>
-          <p class="section-subtitle">
+          <h2 class="section-title hw-title-glow">Affordable On-Premise Infrastructure</h2>
+          <p class="section-subtitle hw-subtitle">
             Eliminate recurring cloud bills and secure 100% beneficiary data privacy by hosting tools on compact, low-power local hardware in your office.
           </p>
         </div>
@@ -1407,6 +1453,126 @@
 
         // Initialize state
         setActiveCard(0, true);
+      })();
+    </script>
+
+    <!-- Scroll-to-Reveal Parallax Effect for Hardware & Private Infrastructure (Orchid Security Style) -->
+    <script>
+      (function initHardwareGlowParallax() {
+        const section = document.getElementById('hardware-infrastructure');
+        const beam = document.getElementById('hwGradientBeam');
+        if (!section || !beam) return;
+
+        // Check reduced motion preference
+        const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+        if (prefersReducedMotion) {
+          beam.style.opacity = '1';
+          beam.style.transform = 'translateX(-50%) translateY(0) scale(1, 1)';
+          return;
+        }
+
+        let currentOpacity = 0;
+        let currentScaleX = 0.65;
+        let currentScaleY = 0.08;
+        let currentTranslateY = -28;
+
+        let targetOpacity = 0;
+        let targetScaleX = 0.65;
+        let targetScaleY = 0.08;
+        let targetTranslateY = -28;
+
+        let lastScrollY = window.pageYOffset || document.documentElement.scrollTop;
+        let isTicking = false;
+        let isInView = false;
+
+        function updatePositions() {
+          const rect = section.getBoundingClientRect();
+          const winHeight = window.innerHeight || document.documentElement.clientHeight;
+          const currentScrollY = window.pageYOffset || document.documentElement.scrollTop;
+
+          // Track scroll direction & instantaneous delta
+          const scrollDelta = currentScrollY - lastScrollY;
+          lastScrollY = currentScrollY;
+
+          // Bound delta to prevent huge jumps on instant anchor clicks
+          const clampedDelta = Math.max(-25, Math.min(25, scrollDelta));
+
+          // Check if section is anywhere near the viewport
+          if (rect.bottom < -120 || rect.top > winHeight + 120) {
+            isInView = false;
+            targetOpacity = 0;
+            return;
+          }
+
+          isInView = true;
+
+          // Progress calculation:
+          // When section top is at window bottom: progress = 0
+          // When section top reaches 18% from top of window: progress = 1
+          const startReveal = winHeight * 0.98;
+          const fullReveal = winHeight * 0.18;
+          const totalDist = startReveal - fullReveal;
+          const distFromStart = startReveal - rect.top;
+
+          const progress = Math.max(0, Math.min(1.4, distFromStart / totalDist));
+
+          // Smooth opacity bloom
+          targetOpacity = Math.min(1, Math.pow(Math.max(0, progress), 1.08));
+
+          // DIRECTIONAL PARALLAX & REVEAL:
+          // When scrolling DOWN:
+          // 1. scaleY expands downwards from 0.08 to 1.15 ("opens downwards")
+          // 2. translateY shifts downwards from -28px to +35px
+          // 3. scaleX widens horizontally from 0.65 to 1.02
+          //
+          // When scrolling UP:
+          // 1. progress decreases -> scaleY shrinks back upwards toward 0.08 ("goes upwards")
+          // 2. translateY retracts back upwards toward -28px
+          // 3. opacity fades smoothly back to 0
+          const directionalBias = clampedDelta * 0.35;
+
+          targetScaleY = Math.max(0.06, Math.min(1.18, 0.08 + (progress * 0.98) + (clampedDelta > 0 ? 0.04 : -0.04)));
+          targetScaleX = Math.max(0.65, Math.min(1.03, 0.65 + (progress * 0.35)));
+          targetTranslateY = (-28 + (progress * 52)) + directionalBias;
+        }
+
+        function loop() {
+          if (isInView) {
+            // Silky 60fps lerp interpolation
+            currentOpacity += (targetOpacity - currentOpacity) * 0.14;
+            currentScaleX += (targetScaleX - currentScaleX) * 0.14;
+            currentScaleY += (targetScaleY - currentScaleY) * 0.14;
+            currentTranslateY += (targetTranslateY - currentTranslateY) * 0.14;
+
+            beam.style.opacity = currentOpacity.toFixed(3);
+            beam.style.transform = `translateX(-50%) translateY(${currentTranslateY.toFixed(2)}px) scale(${currentScaleX.toFixed(3)}, ${currentScaleY.toFixed(3)})`;
+          } else if (currentOpacity > 0.01) {
+            currentOpacity += (0 - currentOpacity) * 0.15;
+            beam.style.opacity = currentOpacity.toFixed(3);
+          }
+
+          isTicking = false;
+        }
+
+        function onScrollOrResize() {
+          updatePositions();
+          if (!isTicking) {
+            isTicking = true;
+            requestAnimationFrame(loop);
+          }
+        }
+
+        window.addEventListener('scroll', onScrollOrResize, { passive: true });
+        window.addEventListener('resize', onScrollOrResize, { passive: true });
+
+        // Initial setup
+        updatePositions();
+        currentOpacity = targetOpacity;
+        currentScaleX = targetScaleX;
+        currentScaleY = targetScaleY;
+        currentTranslateY = targetTranslateY;
+        beam.style.opacity = currentOpacity.toFixed(3);
+        beam.style.transform = `translateX(-50%) translateY(${currentTranslateY.toFixed(2)}px) scale(${currentScaleX.toFixed(3)}, ${currentScaleY.toFixed(3)})`;
       })();
     </script>
   </body>

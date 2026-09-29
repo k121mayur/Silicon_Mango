@@ -2621,7 +2621,154 @@ body {
   gap: 8px;
 }
 
-/* 5. Hardware & Infrastructure */
+/* 5. Hardware & Infrastructure (Orchid Security Style Parallax Glow on White Background) */
+.hw-infra-section {
+  position: relative;
+  background-color: #ffffff;
+  color: #0f172a;
+  overflow: hidden;
+  padding: 85px 0 95px 0;
+  border-top: 1px solid #e2e8f0;
+  border-bottom: 1px solid #e2e8f0;
+  transition: background 0.3s ease;
+}
+
+/* Scroll-to-Reveal Parallax Gradient Beam Container (Opens Downwards on Scroll Down, Retracts Upwards on Scroll Up) */
+.hw-gradient-beam-wrapper {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%) translateY(-28px) scale(0.65, 0.08);
+  transform-origin: top center;
+  width: 100%;
+  max-width: 1240px;
+  height: 380px;
+  pointer-events: none;
+  z-index: 1;
+  opacity: 0;
+  will-change: transform, opacity;
+  transition: opacity 0.18s ease-out;
+}
+
+/* Laser-sharp white-orange horizontal rim flare */
+.hw-beam-line {
+  position: absolute;
+  top: 0;
+  left: 6%;
+  right: 6%;
+  height: 3px;
+  background: linear-gradient(
+    90deg,
+    rgba(234, 88, 12, 0) 0%,
+    #fb923c 20%,
+    #fed7aa 40%,
+    #ffffff 50%,
+    #fed7aa 60%,
+    #fb923c 80%,
+    rgba(234, 88, 12, 0) 100%
+  );
+  box-shadow: 0 1px 14px rgba(249, 115, 22, 0.85), 0 0 8px rgba(251, 146, 60, 0.95);
+  border-radius: 9999px;
+  filter: blur(0.5px);
+  z-index: 4;
+}
+
+/* Diffuse neon orange rim glow */
+.hw-beam-glow {
+  position: absolute;
+  top: 0;
+  left: 10%;
+  right: 10%;
+  height: 10px;
+  background: linear-gradient(
+    90deg,
+    rgba(234, 88, 12, 0) 0%,
+    rgba(249, 115, 22, 0.65) 25%,
+    rgba(251, 146, 60, 0.95) 50%,
+    rgba(249, 115, 22, 0.65) 75%,
+    rgba(234, 88, 12, 0) 100%
+  );
+  filter: blur(6px);
+  z-index: 3;
+}
+
+/* Custom Pure Vector Gradient Beam (Zero External Image) */
+.hw-beam-svg {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1100px;
+  height: 310px;
+  pointer-events: none;
+  z-index: 2;
+  overflow: visible;
+  filter: drop-shadow(0 14px 28px rgba(249, 115, 22, 0.42));
+}
+
+/* Ambient wide atmospheric glow washing downwards onto white surface */
+.hw-beam-ambient {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88%;
+  height: 280px;
+  background: radial-gradient(
+    ellipse at 50% 0%,
+    rgba(249, 115, 22, 0.3) 0%,
+    rgba(251, 146, 60, 0.15) 45%,
+    rgba(234, 88, 12, 0) 75%
+  );
+  filter: blur(36px);
+  z-index: 1;
+  pointer-events: none;
+}
+
+/* Section Header Typography on White Background */
+.hw-infra-section .hw-header {
+  position: relative;
+  z-index: 2;
+  margin-bottom: 46px;
+}
+
+.hw-infra-section .hw-badge-tag {
+  display: inline-flex;
+  align-items: center;
+  background: #fff7ed;
+  color: #ea580c;
+  border: 1px solid #fed7aa;
+  box-shadow: 0 2px 10px rgba(249, 115, 22, 0.1);
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  margin-bottom: 16px;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+}
+
+.hw-infra-section .hw-title-glow {
+  color: #0f172a;
+  font-size: 38px;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  margin-bottom: 14px;
+  text-shadow: none;
+}
+
+.hw-infra-section .hw-subtitle {
+  color: #64748b;
+  font-size: 15.5px;
+  line-height: 1.6;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* Fallback & default hw-card (when outside hw-infra-section) */
 .hw-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
@@ -2669,6 +2816,94 @@ body {
   padding: 4px 10px;
   border-radius: 6px;
   display: inline-block;
+}
+
+/* Hardware Cards inside hw-infra-section (Clean White Aesthetics) */
+.hw-infra-section .hw-card {
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+  padding: 34px 26px;
+  height: 100%;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  overflow: hidden;
+  z-index: 2;
+}
+
+.hw-infra-section .hw-card:hover {
+  transform: translateY(-6px);
+  border-color: #fdba74;
+  box-shadow: 0 16px 32px -8px rgba(194, 65, 12, 0.1), 0 0 20px rgba(249, 115, 22, 0.12);
+}
+
+.hw-infra-section .hw-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  background: #fff7ed;
+  border: 1px solid #ffedd5;
+  color: #ea580c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 18px;
+  margin-bottom: 18px;
+  transition: all 0.3s ease;
+}
+
+.hw-infra-section .hw-card:hover .hw-icon {
+  background: #ffedd5;
+  color: #c2410c;
+  border-color: #fed7aa;
+  transform: scale(1.06);
+}
+
+.hw-infra-section .hw-title {
+  font-size: 18px;
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 10px;
+  letter-spacing: -0.01em;
+}
+
+.hw-infra-section .hw-desc {
+  font-size: 13.5px;
+  color: #64748b;
+  line-height: 1.55;
+  margin-bottom: 16px;
+}
+
+.hw-infra-section .hw-badge {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: #c2410c;
+  background: #fff7ed;
+  border: 1px solid #fed7aa;
+  padding: 5px 11px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transition: all 0.25s ease;
+}
+
+.hw-infra-section .hw-card:hover .hw-badge {
+  background: #ffedd5;
+  color: #9a3412;
+}
+
+@media (max-width: 767px) {
+  .hw-infra-section {
+    padding: 65px 0 75px 0;
+  }
+  .hw-infra-section .hw-title-glow {
+    font-size: 28px;
+  }
+  .hw-gradient-beam-wrapper {
+    height: 240px;
+  }
 }
 
 /* 6. Collaboration 6-Step Cycle */
