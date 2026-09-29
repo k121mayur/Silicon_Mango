@@ -2906,45 +2906,494 @@ body {
   }
 }
 
-/* 6. Collaboration 6-Step Cycle */
-.cycle-step-card {
-  background: #ffffff;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 24px 20px;
-  height: 100%;
+/* 6. Collaboration 6-Step Cycle — Framer StepsFlow Component Redesign */
+.stepsflow-section {
   position: relative;
-  transition: all 0.25s ease;
+  background-color: #ffffff;
+  overflow: hidden;
 }
-.cycle-step-card:hover {
-  border-color: #0077b6;
-  box-shadow: 0 8px 20px rgba(0, 119, 182, 0.08);
+
+.steps-flow-container {
+  width: 100%;
+  position: relative;
+  margin-top: 30px;
 }
-.cycle-step-num {
-  font-size: 12px;
-  font-weight: 800;
-  color: #0077b6;
-  background: #f0f9ff;
-  border: 1px solid #bae6fd;
-  width: 32px;
-  height: 32px;
+
+.steps-flow-inner {
+  position: relative;
+  width: 100%;
+  max-width: calc(100% - 60px);
+  margin: 0 auto;
+}
+
+/* Dots at Start and End */
+.steps-flow-dot {
+  position: absolute;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
+  background: #f97316;
+  box-shadow: 0 0 14px rgba(249, 115, 22, 0.6);
+  z-index: 5;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.steps-flow-dot::after {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  border-radius: 50%;
+  border: 2px solid rgba(249, 115, 22, 0.35);
+  animation: dotPulse 2.4s infinite ease-in-out;
+}
+@keyframes dotPulse {
+  0% {
+    transform: scale(0.95);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.4);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(0.95);
+    opacity: 0;
+  }
+}
+
+.steps-flow-start-dot {
+  top: 0;
+  left: -8px;
+}
+
+.steps-flow-end-dot {
+  bottom: 0;
+  left: calc(50% - 8px);
+}
+
+/* Step Row Layout */
+.step-row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding-top: 40px;
+  padding-bottom: 48px;
+  gap: 0;
+  align-items: center;
+  min-height: 180px;
+}
+.step-row:last-child {
+  padding-bottom: 40px;
+}
+
+/* Desktop Alternating Column Alignment */
+.step-row:not(.is-reversed) .step-content-col {
+  grid-column: 1;
+  grid-row: 1;
+  padding-left: 55px;
+  max-width: 480px;
+  position: relative;
+  z-index: 4;
+}
+
+.step-row.is-reversed .step-content-col {
+  grid-column: 2;
+  grid-row: 1;
+  padding-left: 55px;
+  max-width: 480px;
+  position: relative;
+  z-index: 4;
+}
+
+/* Vertical Track Lines */
+.step-line-v {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  background-color: #fed7aa;
+}
+.step-row:not(.is-reversed) .step-line-v {
+  left: 0;
+}
+.step-row.is-reversed .step-line-v {
+  left: 50%;
+}
+.step-row:first-child .step-line-v {
+  top: 12px;
+}
+.step-row:last-child .step-line-v {
+  bottom: 12px;
+}
+
+/* Horizontal Track Lines */
+.step-line-h {
+  position: absolute;
+  bottom: 0;
+  width: 50%;
+  height: 8px;
+  background-color: #fed7aa;
+}
+.step-row:not(.is-reversed) .step-line-h {
+  left: 0;
+}
+.step-row.is-reversed .step-line-h {
+  right: 50%;
+}
+
+/* Corner Masks (zIndex: 1, exactly like Framer) */
+.step-corner-mask {
+  position: absolute;
+  z-index: 1;
+  width: 48px;
+  height: 48px;
+  background-color: #ffffff;
+  pointer-events: none;
+}
+.step-corner-mask-top-even {
+  top: -8px;
+  left: 0;
+}
+.step-corner-mask-bottom-even {
+  bottom: 0;
+  left: 0;
+}
+.step-corner-mask-top-odd {
+  top: -8px;
+  left: calc(50% - 40px);
+}
+.step-corner-mask-bottom-odd {
+  bottom: 0;
+  left: calc(50% - 40px);
+}
+
+/* Corner Curves (zIndex: 2, exactly like Framer) */
+.step-curve {
+  position: absolute;
+  z-index: 2;
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  border: 8px solid transparent;
+  pointer-events: none;
+}
+.step-curve-inactive {
+  border-top-color: #fed7aa;
+}
+.step-curve-active {
+  border-top-color: #f97316;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+/* Corner Curve Positions */
+.step-curve-top-even {
+  top: -8px;
+  left: 0;
+  transform: rotate(-45deg);
+}
+.step-curve-bottom-even {
+  bottom: 0;
+  left: 0;
+  transform: rotate(225deg);
+}
+.step-curve-top-odd {
+  top: -8px;
+  left: calc(50% - 88px);
+  transform: rotate(45deg);
+}
+.step-curve-bottom-odd {
+  bottom: 0;
+  left: calc(50% - 88px);
+  transform: rotate(135deg);
+}
+
+/* Active Vertical Line Container (zIndex: 0, overflow: hidden, exactly like Framer) */
+.step-line-v-fill-wrap {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 8px;
+  overflow: hidden;
+  pointer-events: none;
+}
+.step-row:not(.is-reversed) .step-line-v-fill-wrap {
+  left: 0;
+}
+.step-row.is-reversed .step-line-v-fill-wrap {
+  left: 50%;
+}
+.step-row:first-child .step-line-v-fill-wrap {
+  top: 12px;
+}
+.step-row:last-child .step-line-v-fill-wrap {
+  bottom: 12px;
+}
+.step-line-v-fill {
+  width: 100%;
+  height: 0%;
+  background-color: #f97316;
+}
+
+/* Active Horizontal Line (zIndex: 0, exactly like Framer) */
+.step-line-h-fill {
+  position: absolute;
+  bottom: 0;
+  height: 8px;
+  width: 0%;
+  background-color: #f97316;
+  pointer-events: none;
+}
+.step-row:not(.is-reversed) .step-line-h-fill {
+  left: 0;
+}
+.step-row.is-reversed .step-line-h-fill {
+  right: 50%;
+}
+
+/* Giant Rolling Number Counter (Pixel-Perfect Alignment, Deep Blue) */
+.step-num-display {
+  display: inline-flex;
+  align-items: flex-start;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  font-size: 88px;
+  font-weight: 300;
+  line-height: 80px;
+  letter-spacing: -0.035em;
+  font-variant-numeric: tabular-nums lining-nums;
+  -webkit-font-smoothing: antialiased;
+  color: #0077b6;
+  height: 80px;
+  overflow: hidden;
+  user-select: none;
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+.step-row.is-triggered .step-num-display {
+  opacity: 1;
+  transform: translateY(0);
+}
+.step-num-prefix {
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.step-num-wheel {
+  display: block;
+  position: relative;
+  height: 80px;
+  line-height: 80px;
+  overflow: hidden;
+  width: 0.62em;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+.step-num-strip {
   display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  transform: translateY(0%);
+  transition: transform 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.step-num-strip span {
+  display: block;
+  height: 80px;
+  line-height: 80px;
+  text-align: center;
+  font-variant-numeric: tabular-nums lining-nums;
+}
+
+/* Triggered states for digits 1 through 6 */
+.step-row.is-triggered .step-num-strip[data-target="1"] {
+  transform: translateY(-10%);
+}
+.step-row.is-triggered .step-num-strip[data-target="2"] {
+  transform: translateY(-20%);
+}
+.step-row.is-triggered .step-num-strip[data-target="3"] {
+  transform: translateY(-30%);
+}
+.step-row.is-triggered .step-num-strip[data-target="4"] {
+  transform: translateY(-40%);
+}
+.step-row.is-triggered .step-num-strip[data-target="5"] {
+  transform: translateY(-50%);
+}
+.step-row.is-triggered .step-num-strip[data-target="6"] {
+  transform: translateY(-60%);
+}
+
+/* Step Number & Icon Row */
+.step-num-row {
+  display: inline-flex;
+  align-items: center;
+  gap: 16px;
+}
+.step-icon-badge {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+  border: 1px solid #bae6fd;
+  color: #0077b6;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 14px;
+  font-size: 18px;
+  box-shadow: 0 4px 12px rgba(0, 119, 182, 0.08);
+  opacity: 0;
+  transform: scale(0.85) translateY(6px);
+  transition: opacity 0.5s ease 0.12s, transform 0.5s cubic-bezier(0.16, 1, 0.3, 1) 0.12s, background-color 0.25s ease, color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
-.cycle-step-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: #0f172a;
+.step-row.is-triggered .step-icon-badge {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+.step-row:hover .step-icon-badge {
+  background: #0077b6;
+  color: #ffffff;
+  border-color: #0077b6;
+  box-shadow: 0 6px 18px rgba(0, 119, 182, 0.28);
+  transform: translateY(-2px);
+}
+
+/* Step Content Typography */
+.step-title {
+  margin-top: 16px;
   margin-bottom: 8px;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+  color: #0f172a;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.15s;
 }
-.cycle-step-desc {
-  font-size: 13px;
-  color: #64748b;
-  line-height: 1.5;
+.step-text {
+  margin-top: 8px;
   margin-bottom: 0;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.65;
+  color: #64748b;
+  opacity: 0;
+  transform: translateY(16px);
+  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.28s, transform 0.6s cubic-bezier(0.16, 1, 0.3, 1) 0.28s;
+}
+.step-row.is-triggered .step-title,
+.step-row.is-triggered .step-text {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Mobile Line and Responsive Behavior */
+.steps-flow-mobile-line {
+  display: none;
+}
+
+@media (max-width: 809px) {
+  .steps-flow-inner {
+    max-width: 100%;
+    padding-left: 36px;
+    padding-right: 15px;
+  }
+
+  /* Show dedicated mobile vertical line */
+  .steps-flow-mobile-line {
+    display: block;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 14px;
+    width: 6px;
+    background-color: #fed7aa;
+    z-index: 1;
+    border-radius: 3px;
+  }
+  .steps-flow-mobile-line-fill {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 6px;
+    height: 0%;
+    background: linear-gradient(180deg, #ea580c 0%, #f97316 100%);
+    box-shadow: 0 0 10px rgba(249, 115, 22, 0.5);
+    border-radius: 3px;
+    transition: height 0.1s linear;
+  }
+
+  /* Adjust Dots for mobile timeline */
+  .steps-flow-start-dot {
+    top: 0;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+  }
+  .steps-flow-end-dot {
+    bottom: 0;
+    left: 5px;
+    width: 24px;
+    height: 24px;
+  }
+
+  /* Hide Desktop Curves, Horizontal Lines, and Masks */
+  .step-line-v,
+  .step-line-v-fill-wrap,
+  .step-line-v-fill,
+  .step-line-h,
+  .step-line-h-fill,
+  .step-corner-mask,
+  .step-curve {
+    display: none !important;
+  }
+
+  /* Single Column Stack */
+  .step-row {
+    display: flex;
+    flex-direction: column;
+    padding-top: 26px;
+    padding-bottom: 26px;
+    gap: 0;
+    min-height: auto;
+  }
+  .step-row:not(.is-reversed) .step-content-col,
+  .step-row.is-reversed .step-content-col {
+    padding-left: 16px;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  .step-num-display {
+    font-size: 64px;
+    height: 58px;
+    line-height: 58px;
+  }
+  .step-num-prefix,
+  .step-num-wheel {
+    height: 58px;
+    line-height: 58px;
+  }
+  .step-num-strip span {
+    height: 58px;
+    line-height: 58px;
+  }
+  .step-title {
+    font-size: 20px;
+    margin-top: 12px;
+  }
+  .step-icon-badge {
+    width: 36px;
+    height: 36px;
+    font-size: 15px;
+    border-radius: 10px;
+  }
 }
 
 /* 7. Scope Boundaries (What We Do vs Do Not Do) */

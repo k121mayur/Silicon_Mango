@@ -875,8 +875,8 @@
       </div>
     </section>
 
-    <!-- Section 6: How We Collaborate (The 6-Step Partnership Cycle) -->
-    <section class="section-padding bg-surface-white">
+    <!-- Section 6: How We Collaborate (The 6-Step Partnership Cycle — Framer StepsFlow Redesign) -->
+    <section class="section-padding stepsflow-section" id="partnership-cycle">
       <div class="container">
         <div class="section-header text-center">
           <span class="section-badge">
@@ -888,53 +888,239 @@
           </p>
         </div>
 
-        <div class="row">
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div class="cycle-step-card">
-              <div class="cycle-step-num">01</div>
-              <h3 class="cycle-step-title">Discovery</h3>
-              <p class="cycle-step-desc">Field visits and in-depth discussions to observe ground operations and non-profit workflow challenges firsthand.</p>
-            </div>
-          </div>
+        <!-- Framer StepsFlow Component Container -->
+        <div class="steps-flow-container" id="stepsFlow">
+          <div class="steps-flow-inner">
+            <!-- Start Point Dot -->
+            <div class="steps-flow-dot steps-flow-start-dot" aria-hidden="true"></div>
 
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div class="cycle-step-card">
-              <div class="cycle-step-num">02</div>
-              <h3 class="cycle-step-title">Diagnosis</h3>
-              <p class="cycle-step-desc">Mapping existing operational processes, identifying manual bottlenecks, and documenting license cost drains.</p>
+            <!-- Mobile Continuous Line (<= 809px) -->
+            <div class="steps-flow-mobile-line" aria-hidden="true">
+              <div class="steps-flow-mobile-line-fill"></div>
             </div>
-          </div>
 
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div class="cycle-step-card">
-              <div class="cycle-step-num">03</div>
-              <h3 class="cycle-step-title">Solution Design</h3>
-              <p class="cycle-step-desc">Co-designing tailored technical blueprints with fixed, transparent budgets and clear milestones.</p>
-            </div>
-          </div>
+            <!-- Step 01: Discovery (Even: Text on Left) -->
+            <div class="step-row" data-step="1">
+              <!-- Desktop Lines & Curves -->
+              <div class="step-line-v" aria-hidden="true"></div>
+              <div class="step-line-h" aria-hidden="true"></div>
+              <div class="step-corner-mask step-corner-mask-bottom-even" aria-hidden="true"></div>
+              <div class="step-curve step-curve-inactive step-curve-bottom-even" aria-hidden="true"></div>
+              <div class="step-curve step-curve-active step-curve-bottom-even" aria-hidden="true"></div>
+              <div class="step-line-v-fill-wrap" aria-hidden="true">
+                <div class="step-line-v-fill"></div>
+              </div>
+              <div class="step-line-h-fill" aria-hidden="true"></div>
 
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div class="cycle-step-card">
-              <div class="cycle-step-num">04</div>
-              <h3 class="cycle-step-title">Development</h3>
-              <p class="cycle-step-desc">Building custom software, configuring open-source modules, and rigorously testing in low-bandwidth scenarios.</p>
+              <!-- Content Column -->
+              <div class="step-content-col">
+                <div class="step-num-row">
+                  <div class="step-num-display" aria-label="Step 01">
+                    <span class="step-num-prefix">0</span>
+                    <span class="step-num-wheel">
+                      <span class="step-num-strip" data-target="1">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="step-icon-badge" aria-hidden="true">
+                    <i class="fas fa-compass"></i>
+                  </div>
+                </div>
+                <h3 class="step-title">Discovery</h3>
+                <p class="step-text">
+                  Field visits and in-depth discussions to observe ground operations and non-profit workflow challenges firsthand.
+                </p>
+              </div>
             </div>
-          </div>
 
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div class="cycle-step-card">
-              <div class="cycle-step-num">05</div>
-              <h3 class="cycle-step-title">Deployment &amp; Training</h3>
-              <p class="cycle-step-desc">Hands-on, grassroots-friendly training sessions to ensure total confidence and adoption across non-technical field teams.</p>
-            </div>
-          </div>
+            <!-- Step 02: Diagnosis (Odd: Text on Right) -->
+            <div class="step-row is-reversed" data-step="2">
+              <!-- Desktop Lines & Curves -->
+              <div class="step-line-v" aria-hidden="true"></div>
+              <div class="step-line-h" aria-hidden="true"></div>
+              <div class="step-corner-mask step-corner-mask-top-odd" aria-hidden="true"></div>
+              <div class="step-corner-mask step-corner-mask-bottom-odd" aria-hidden="true"></div>
+              <div class="step-curve step-curve-inactive step-curve-top-odd" aria-hidden="true"></div>
+              <div class="step-curve step-curve-inactive step-curve-bottom-odd" aria-hidden="true"></div>
+              <div class="step-curve step-curve-active step-curve-top-odd" aria-hidden="true"></div>
+              <div class="step-curve step-curve-active step-curve-bottom-odd" aria-hidden="true"></div>
+              <div class="step-line-v-fill-wrap" aria-hidden="true">
+                <div class="step-line-v-fill"></div>
+              </div>
+              <div class="step-line-h-fill" aria-hidden="true"></div>
 
-          <div class="col-md-4 col-sm-6 mb-4">
-            <div class="cycle-step-card">
-              <div class="cycle-step-num">06</div>
-              <h3 class="cycle-step-title">Future-Proofing</h3>
-              <p class="cycle-step-desc">Ongoing support, scheduled workflow audits, and pragmatic AI upgrades as your non-profit expands its reach.</p>
+              <!-- Content Column -->
+              <div class="step-content-col">
+                <div class="step-num-row">
+                  <div class="step-num-display" aria-label="Step 02">
+                    <span class="step-num-prefix">0</span>
+                    <span class="step-num-wheel">
+                      <span class="step-num-strip" data-target="2">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="step-icon-badge" aria-hidden="true">
+                    <i class="fas fa-microscope"></i>
+                  </div>
+                </div>
+                <h3 class="step-title">Diagnosis</h3>
+                <p class="step-text">
+                  Mapping existing operational processes, identifying manual bottlenecks, and documenting license cost drains.
+                </p>
+              </div>
             </div>
+
+            <!-- Step 03: Solution Design (Even: Text on Left) -->
+            <div class="step-row" data-step="3">
+              <!-- Desktop Lines & Curves -->
+              <div class="step-line-v" aria-hidden="true"></div>
+              <div class="step-line-h" aria-hidden="true"></div>
+              <div class="step-corner-mask step-corner-mask-top-even" aria-hidden="true"></div>
+              <div class="step-corner-mask step-corner-mask-bottom-even" aria-hidden="true"></div>
+              <div class="step-curve step-curve-inactive step-curve-top-even" aria-hidden="true"></div>
+              <div class="step-curve step-curve-inactive step-curve-bottom-even" aria-hidden="true"></div>
+              <div class="step-curve step-curve-active step-curve-top-even" aria-hidden="true"></div>
+              <div class="step-curve step-curve-active step-curve-bottom-even" aria-hidden="true"></div>
+              <div class="step-line-v-fill-wrap" aria-hidden="true">
+                <div class="step-line-v-fill"></div>
+              </div>
+              <div class="step-line-h-fill" aria-hidden="true"></div>
+
+              <!-- Content Column -->
+              <div class="step-content-col">
+                <div class="step-num-row">
+                  <div class="step-num-display" aria-label="Step 03">
+                    <span class="step-num-prefix">0</span>
+                    <span class="step-num-wheel">
+                      <span class="step-num-strip" data-target="3">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="step-icon-badge" aria-hidden="true">
+                    <i class="fas fa-drafting-compass"></i>
+                  </div>
+                </div>
+                <h3 class="step-title">Solution Design</h3>
+                <p class="step-text">
+                  Co-designing tailored technical blueprints with fixed, transparent budgets and clear milestones.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 04: Development (Odd: Text on Right) -->
+            <div class="step-row is-reversed" data-step="4">
+              <!-- Desktop Lines & Curves -->
+              <div class="step-line-v" aria-hidden="true"></div>
+              <div class="step-line-h" aria-hidden="true"></div>
+              <div class="step-corner-mask step-corner-mask-top-odd" aria-hidden="true"></div>
+              <div class="step-corner-mask step-corner-mask-bottom-odd" aria-hidden="true"></div>
+              <div class="step-curve step-curve-inactive step-curve-top-odd" aria-hidden="true"></div>
+              <div class="step-curve step-curve-inactive step-curve-bottom-odd" aria-hidden="true"></div>
+              <div class="step-curve step-curve-active step-curve-top-odd" aria-hidden="true"></div>
+              <div class="step-curve step-curve-active step-curve-bottom-odd" aria-hidden="true"></div>
+              <div class="step-line-v-fill-wrap" aria-hidden="true">
+                <div class="step-line-v-fill"></div>
+              </div>
+              <div class="step-line-h-fill" aria-hidden="true"></div>
+
+              <!-- Content Column -->
+              <div class="step-content-col">
+                <div class="step-num-row">
+                  <div class="step-num-display" aria-label="Step 04">
+                    <span class="step-num-prefix">0</span>
+                    <span class="step-num-wheel">
+                      <span class="step-num-strip" data-target="4">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="step-icon-badge" aria-hidden="true">
+                    <i class="fas fa-laptop-code"></i>
+                  </div>
+                </div>
+                <h3 class="step-title">Development</h3>
+                <p class="step-text">
+                  Building custom software, configuring open-source modules, and rigorously testing in low-bandwidth scenarios.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 05: Deployment & Training (Even: Text on Left) -->
+            <div class="step-row" data-step="5">
+              <!-- Desktop Lines & Curves -->
+              <div class="step-line-v" aria-hidden="true"></div>
+              <div class="step-line-h" aria-hidden="true"></div>
+              <div class="step-corner-mask step-corner-mask-top-even" aria-hidden="true"></div>
+              <div class="step-corner-mask step-corner-mask-bottom-even" aria-hidden="true"></div>
+              <div class="step-curve step-curve-inactive step-curve-top-even" aria-hidden="true"></div>
+              <div class="step-curve step-curve-inactive step-curve-bottom-even" aria-hidden="true"></div>
+              <div class="step-curve step-curve-active step-curve-top-even" aria-hidden="true"></div>
+              <div class="step-curve step-curve-active step-curve-bottom-even" aria-hidden="true"></div>
+              <div class="step-line-v-fill-wrap" aria-hidden="true">
+                <div class="step-line-v-fill"></div>
+              </div>
+              <div class="step-line-h-fill" aria-hidden="true"></div>
+
+              <!-- Content Column -->
+              <div class="step-content-col">
+                <div class="step-num-row">
+                  <div class="step-num-display" aria-label="Step 05">
+                    <span class="step-num-prefix">0</span>
+                    <span class="step-num-wheel">
+                      <span class="step-num-strip" data-target="5">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="step-icon-badge" aria-hidden="true">
+                    <i class="fas fa-chalkboard-teacher"></i>
+                  </div>
+                </div>
+                <h3 class="step-title">Deployment &amp; Training</h3>
+                <p class="step-text">
+                  Hands-on, grassroots-friendly training sessions to ensure total confidence and adoption across non-technical field teams.
+                </p>
+              </div>
+            </div>
+
+            <!-- Step 06: Future-Proofing (Odd: Text on Right, Terminating Step) -->
+            <div class="step-row is-reversed" data-step="6">
+              <!-- Desktop Lines & Curves (Ends at bottom with dot, no bottom curve) -->
+              <div class="step-line-v" aria-hidden="true"></div>
+              <div class="step-corner-mask step-corner-mask-top-odd" aria-hidden="true"></div>
+              <div class="step-curve step-curve-inactive step-curve-top-odd" aria-hidden="true"></div>
+              <div class="step-curve step-curve-active step-curve-top-odd" aria-hidden="true"></div>
+              <div class="step-line-v-fill-wrap" aria-hidden="true">
+                <div class="step-line-v-fill"></div>
+              </div>
+
+              <!-- Content Column -->
+              <div class="step-content-col">
+                <div class="step-num-row">
+                  <div class="step-num-display" aria-label="Step 06">
+                    <span class="step-num-prefix">0</span>
+                    <span class="step-num-wheel">
+                      <span class="step-num-strip" data-target="6">
+                        <span>0</span><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span>
+                      </span>
+                    </span>
+                  </div>
+                  <div class="step-icon-badge" aria-hidden="true">
+                    <i class="fas fa-infinity"></i>
+                  </div>
+                </div>
+                <h3 class="step-title">Future-Proofing</h3>
+                <p class="step-text">
+                  Ongoing support, scheduled workflow audits, and pragmatic AI upgrades as your non-profit expands its reach.
+                </p>
+              </div>
+            </div>
+
+            <!-- End Point Dot -->
+            <div class="steps-flow-dot steps-flow-end-dot" aria-hidden="true"></div>
           </div>
         </div>
       </div>
@@ -1573,6 +1759,112 @@
         currentTranslateY = targetTranslateY;
         beam.style.opacity = currentOpacity.toFixed(3);
         beam.style.transform = `translateX(-50%) translateY(${currentTranslateY.toFixed(2)}px) scale(${currentScaleX.toFixed(3)}, ${currentScaleY.toFixed(3)})`;
+      })();
+    </script>
+
+    <!-- StepsFlow Scroll-Driven Path & Number Wheel Controller -->
+    <script>
+      (function() {
+        const flowContainer = document.getElementById('stepsFlow');
+        if (!flowContainer) return;
+
+        const rows = flowContainer.querySelectorAll('.step-row');
+        const mobileLineFill = flowContainer.querySelector('.steps-flow-mobile-line-fill');
+        const isMobile = () => window.innerWidth <= 809;
+
+        // 1. Rolling Number Trigger via IntersectionObserver
+        const observer = new IntersectionObserver((entries) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-triggered');
+            }
+          });
+        }, {
+          threshold: 0.15,
+          rootMargin: '0px 0px -50px 0px'
+        });
+
+        rows.forEach(row => observer.observe(row));
+
+        // 2. Scroll-Driven Progress Calculation for Lines & Curves
+        function updateStepsProgress() {
+          const winHeight = window.innerHeight;
+          const mobile = isMobile();
+
+          if (mobile) {
+            // Mobile continuous line fill
+            const containerRect = flowContainer.getBoundingClientRect();
+            const totalH = containerRect.height;
+            // Progress from container entering view to leaving view
+            const scrolledPast = winHeight * 0.7 - containerRect.top;
+            const overallProgress = Math.max(0, Math.min(1, scrolledPast / totalH));
+            if (mobileLineFill) {
+              mobileLineFill.style.height = (overallProgress * 100).toFixed(1) + '%';
+            }
+            return;
+          }
+
+          // Desktop Serpentine Progress per Row
+          rows.forEach((row, index) => {
+            const rect = row.getBoundingClientRect();
+            // Start filling when row is near bottom of viewport (e.g. 85% of winHeight)
+            // Complete fill when row reaches upper portion of viewport (e.g. 25% of winHeight)
+            const enterPoint = winHeight * 0.85;
+            const fullPoint = winHeight * 0.25;
+            const totalDist = enterPoint - fullPoint;
+            const dist = enterPoint - rect.top;
+            const progress = Math.max(0, Math.min(1, dist / totalDist));
+
+            const vLineFill = row.querySelector('.step-line-v-fill');
+            const hLineFill = row.querySelector('.step-line-h-fill');
+            const curveTopActive = row.querySelector('.step-curve-active[class*="top"]');
+            const curveBottomActive = row.querySelector('.step-curve-active[class*="bottom"]');
+
+            // Phase 1: Vertical line fills from 0 to 100% between progress 0 and 0.65
+            const vProgress = Math.max(0, Math.min(1, progress / 0.65));
+            if (vLineFill) {
+              vLineFill.style.height = (vProgress * 100).toFixed(1) + '%';
+            }
+
+            // Top curve illuminates as soon as vertical line starts
+            if (curveTopActive) {
+              curveTopActive.style.opacity = progress > 0.04 ? '1' : '0';
+            }
+
+            // Bottom curve illuminates when vertical line completes (~0.65)
+            if (curveBottomActive) {
+              curveBottomActive.style.opacity = progress >= 0.65 ? '1' : '0';
+            }
+
+            // Phase 2: Horizontal line expands from 0 to 50% between progress 0.65 and 1.0
+            const hProgress = Math.max(0, Math.min(1, (progress - 0.65) / 0.35));
+            if (hLineFill) {
+              hLineFill.style.width = (hProgress * 50).toFixed(1) + '%';
+            }
+
+            // Trigger numbers and animations
+            if (progress >= 0.12) {
+              row.classList.add('is-triggered');
+            }
+          });
+        }
+
+        let isTicking = false;
+        function onScroll() {
+          if (!isTicking) {
+            isTicking = true;
+            requestAnimationFrame(() => {
+              updateStepsProgress();
+              isTicking = false;
+            });
+          }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('resize', onScroll, { passive: true });
+
+        // Initial trigger check
+        updateStepsProgress();
       })();
     </script>
   </body>
