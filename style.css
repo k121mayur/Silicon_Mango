@@ -3589,3 +3589,561 @@ body {
   }
 }
 
+
+
+/* ==========================================================================
+   NGO ECOSYSTEM PUZZLE GATEWAY OVERLAY (index.html)
+   ========================================================================== */
+body.puzzle-active {
+  overflow: hidden !important;
+  height: 100vh !important;
+  height: 100dvh !important;
+}
+
+#puzzleOverlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background: radial-gradient(ellipse 72% 55% at 50% 42%, #141829 0%, #090b14 58%, #05060b 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 14px 24px 16px;
+  overflow: hidden;
+  z-index: 99999;
+  opacity: 1;
+  visibility: visible;
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.8s ease, background 1.2s ease;
+  -webkit-font-smoothing: antialiased;
+  color: #e8e9f3;
+  font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  box-sizing: border-box;
+}
+
+#puzzleOverlay *,
+#puzzleOverlay *::before,
+#puzzleOverlay *::after {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+#puzzleOverlay.puzzle-dismissed {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Subtle architectural micro-grid & ambient star-matrix */
+#puzzleOverlay::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+    radial-gradient(1px 1px at 18% 26%, rgba(255, 255, 255, 0.28), transparent 60%),
+    radial-gradient(1px 1px at 76% 18%, rgba(255, 255, 255, 0.22), transparent 60%),
+    radial-gradient(1px 1px at 84% 72%, rgba(255, 255, 255, 0.20), transparent 60%),
+    radial-gradient(1px 1px at 14% 82%, rgba(255, 255, 255, 0.18), transparent 60%);
+  background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+  mask-image: radial-gradient(ellipse 80% 70% at 50% 48%, #000 30%, transparent 90%);
+  -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 48%, #000 30%, transparent 90%);
+  pointer-events: none;
+}
+
+/* Warm ambient golden backdrop bloom when energized */
+#puzzleOverlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 45%, rgba(251, 191, 36, 0.12) 0%, rgba(245, 158, 11, 0.04) 40%, transparent 70%);
+  opacity: 0;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+  pointer-events: none;
+}
+
+#puzzleOverlay.lit::after {
+  opacity: 1;
+}
+
+/* Skip Button */
+#puzzleOverlay .puzzle-skip-btn {
+  position: absolute;
+  top: 18px;
+  right: 24px;
+  background: rgba(255, 255, 255, 0.07);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  color: #cbd5e1;
+  font-size: 12.5px;
+  font-weight: 500;
+  padding: 6px 14px;
+  border-radius: 9999px;
+  cursor: pointer;
+  z-index: 10;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  transition: all 0.25s ease;
+  letter-spacing: 0.3px;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+#puzzleOverlay .puzzle-skip-btn:hover {
+  background: rgba(251, 191, 36, 0.15);
+  border-color: rgba(251, 191, 36, 0.45);
+  color: #fbbf24;
+  transform: translateY(-1px);
+}
+
+/* Puzzle Top Header */
+#puzzleOverlay .top-header {
+  width: 100%;
+  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  z-index: 3;
+  flex-shrink: 0;
+}
+
+#puzzleOverlay .brand-bar {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2px;
+}
+
+#puzzleOverlay .navbar-brand {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+#puzzleOverlay .logo-h {
+  height: 52px;
+  width: auto;
+  display: block;
+}
+
+#puzzleOverlay .brand-text-wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  text-decoration: none;
+}
+
+#puzzleOverlay .head-text {
+  font-size: 22px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  line-height: 1.15;
+}
+
+#puzzleOverlay .brand-tagline {
+  display: block;
+  font-size: 10.5px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  letter-spacing: 0.35px;
+  line-height: 1;
+  margin-top: 3px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+#puzzleOverlay .brand-tagline .tagline-pipe {
+  color: #ffb703;
+  margin: 0 4px;
+  font-weight: 400;
+  opacity: 0.85;
+}
+
+/* Header Wrap & Headlines */
+#puzzleOverlay .header-wrap {
+  text-align: center;
+  max-width: 720px;
+  width: 100%;
+  margin-top: -6px;
+}
+
+#puzzleOverlay .headline {
+  margin: 0;
+  font-size: clamp(18px, 2.6vw, 28px);
+  font-weight: 300;
+  letter-spacing: 3.5px;
+  text-transform: uppercase;
+  line-height: 1.15;
+  color: #d8dcef;
+  transition: color 0.7s ease, text-shadow 0.7s ease;
+}
+
+#puzzleOverlay.lit .headline {
+  color: #fef3c7;
+  text-shadow: 0 0 28px rgba(251, 191, 36, 0.35);
+}
+
+#puzzleOverlay .subhead {
+  margin: 5px auto 0;
+  font-size: clamp(11.5px, 1.4vw, 13px);
+  font-weight: 400;
+  color: #727996;
+  max-width: 520px;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  transition: color 0.7s ease;
+}
+
+#puzzleOverlay.lit .subhead {
+  color: #cbd2e8;
+}
+
+/* SVG Puzzle Stage */
+#puzzleOverlay .svg-wrap {
+  flex: 1 1 0;
+  min-height: 0;
+  width: 100%;
+  max-width: 640px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  position: relative;
+  padding: 6px 0;
+}
+
+#puzzleOverlay svg.canvas {
+  height: 100%;
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+  display: block;
+  overflow: visible;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Base Jigsaw Piece (Dull System State) */
+#puzzleOverlay .pc .fill {
+  fill: #121626;
+  stroke: #262d47;
+  stroke-width: 1.5;
+  transition: fill 0.7s ease, stroke 0.7s ease, filter 0.7s ease;
+}
+
+#puzzleOverlay .pc .dept-icon {
+  color: #5b6485;
+  stroke: currentColor;
+  fill: none;
+  stroke-width: 1.75;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+  transition: color 0.7s ease, filter 0.7s ease, transform 0.5s ease;
+}
+
+#puzzleOverlay .pc .dept-icon .icon-fill {
+  fill: currentColor;
+  stroke: none;
+}
+
+#puzzleOverlay .pc .label {
+  fill: #8c95b5;
+  font-size: 14px;
+  font-weight: 500;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+  user-select: none;
+  letter-spacing: 0.4px;
+  transition: fill 0.7s ease, filter 0.7s ease;
+}
+
+/* Target Silhouette Ghost */
+#puzzleOverlay .target {
+  cursor: pointer;
+}
+
+#puzzleOverlay .target .fill {
+  fill: rgba(251, 191, 36, 0.035);
+  stroke: #fbbf24;
+  stroke-width: 1.5;
+  stroke-dasharray: 5 5;
+  opacity: 0.5;
+  animation: puzzleBreathe 2.2s ease-in-out infinite;
+  transition: fill 0.3s ease, stroke-width 0.3s ease, opacity 0.3s ease;
+}
+
+#puzzleOverlay .target.near .fill {
+  fill: rgba(251, 191, 36, 0.12);
+  stroke-width: 2.2;
+  stroke-dasharray: none;
+  opacity: 0.95;
+  filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.6));
+}
+
+#puzzleOverlay .target .target-label {
+  fill: rgba(251, 191, 36, 0.45);
+  font-size: 10px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  font-weight: 600;
+  text-anchor: middle;
+  dominant-baseline: central;
+  pointer-events: none;
+}
+
+@keyframes puzzleBreathe {
+  0%, 100% { opacity: 0.28; }
+  50%      { opacity: 0.72; }
+}
+
+/* Dragger Piece (Silicon Mango) */
+#puzzleOverlay .dragger {
+  cursor: grab;
+  touch-action: none;
+}
+#puzzleOverlay .dragger.hold {
+  cursor: grabbing;
+}
+#puzzleOverlay .dragger.snapped,
+#puzzleOverlay .dragger.lit {
+  cursor: default;
+}
+
+#puzzleOverlay .dragger .fill {
+  fill: #271e0d;
+  stroke: #fbbf24;
+  stroke-width: 2.2;
+  filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.45));
+}
+
+#puzzleOverlay .dragger .sm-logo-img {
+  pointer-events: none;
+  filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.45));
+  transition: filter 0.6s ease, transform 0.6s ease;
+}
+
+#puzzleOverlay .dragger .label {
+  fill: #fef3c7;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+#puzzleOverlay .dragger.idle .fill {
+  animation: puzzlePulseAura 2s ease-in-out infinite;
+}
+
+@keyframes puzzlePulseAura {
+  0%, 100% { filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.38)); }
+  50%      { filter: drop-shadow(0 0 22px rgba(251, 191, 36, 0.85)); }
+}
+
+/* Energize Cascade Across All Pieces */
+#puzzleOverlay.energized .pc .fill {
+  animation: puzzleFillCharge 1.5s cubic-bezier(.25, .7, .25, 1) forwards;
+  animation-delay: var(--delay, 0ms);
+}
+#puzzleOverlay.energized .pc .dept-icon {
+  animation: puzzleIconCharge 1.5s ease forwards;
+  animation-delay: var(--delay, 0ms);
+}
+#puzzleOverlay.energized .pc .label {
+  animation: puzzleLabelCharge 1.5s ease forwards;
+  animation-delay: var(--delay, 0ms);
+}
+
+#puzzleOverlay.energized .dragger .fill {
+  animation: puzzleFillCharge 1.5s cubic-bezier(.25, .7, .25, 1) forwards;
+  animation-delay: 0ms;
+}
+#puzzleOverlay.energized .dragger .sm-logo-img {
+  filter: drop-shadow(0 0 14px rgba(254, 240, 138, 0.85));
+}
+#puzzleOverlay.energized .dragger .label {
+  animation: puzzleLabelCharge 1.5s ease forwards;
+  animation-delay: 0ms;
+}
+
+@keyframes puzzleFillCharge {
+  0%   { fill: #121626; stroke: #262d47; filter: none; }
+  32%  { fill: #6e440c; stroke: #fef08a; filter: drop-shadow(0 0 22px #fbbf24); }
+  68%  { fill: #25223d; stroke: #fbbf24; filter: drop-shadow(0 0 14px rgba(251, 191, 36, 0.8)); }
+  100% { fill: #1a1f38; stroke: #fbbf24; filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.55)); }
+}
+
+@keyframes puzzleIconCharge {
+  0%   { color: #5b6485; filter: none; }
+  32%  { color: #ffffff; filter: drop-shadow(0 0 12px #fef08a); }
+  100% { color: #fbbf24; filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.65)); }
+}
+
+@keyframes puzzleLabelCharge {
+  0%   { fill: #8c95b5; }
+  32%  { fill: #fef9c3; filter: drop-shadow(0 0 10px rgba(254, 240, 138, 0.7)); }
+  100% { fill: #ffffff; filter: none; }
+}
+
+/* Yellow Energy Plasma Streams Along Jigsaw Contours */
+#puzzleOverlay .plasma-unit .plasma-glow {
+  fill: none;
+  stroke: #f59e0b;
+  stroke-width: 7;
+  stroke-linecap: round;
+  stroke-dasharray: 120 820;
+  stroke-dashoffset: 900;
+  opacity: 0;
+  filter: blur(4px);
+  pointer-events: none;
+}
+
+#puzzleOverlay .plasma-unit .trail {
+  fill: none;
+  stroke: #fef08a;
+  stroke-width: 2.8;
+  stroke-linecap: round;
+  stroke-dasharray: 95 820;
+  stroke-dashoffset: 900;
+  opacity: 0;
+  filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 16px #f59e0b);
+  pointer-events: none;
+}
+
+#puzzleOverlay .plasma-unit .plasma-sustained {
+  fill: none;
+  stroke: #fbbf24;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-dasharray: 50 350;
+  stroke-dashoffset: 800;
+  opacity: 0;
+  filter: drop-shadow(0 0 6px #fbbf24);
+  pointer-events: none;
+}
+
+#puzzleOverlay.energized .plasma-unit .plasma-glow {
+  animation: puzzleTrailRun 1.45s ease-out forwards;
+  animation-delay: calc(var(--delay, 0ms) + 50ms);
+}
+#puzzleOverlay.energized .plasma-unit .trail {
+  animation: puzzleTrailRun 1.45s ease-out forwards;
+  animation-delay: calc(var(--delay, 0ms) + 50ms);
+}
+#puzzleOverlay.energized .plasma-unit .plasma-sustained {
+  animation: puzzleSustainedFlow 4s linear infinite;
+  animation-delay: calc(var(--delay, 0ms) + 1050ms);
+}
+
+@keyframes puzzleTrailRun {
+  0%   { opacity: 0; stroke-dashoffset: 900; }
+  14%  { opacity: 1; }
+  84%  { opacity: 1; }
+  100% { opacity: 0; stroke-dashoffset: 40; }
+}
+
+@keyframes puzzleSustainedFlow {
+  0%   { opacity: 0.85; stroke-dashoffset: 800; }
+  100% { opacity: 0.85; stroke-dashoffset: 0; }
+}
+
+/* Footer Prompt & Status */
+#puzzleOverlay .footer-wrap {
+  min-height: 36px;
+  text-align: center;
+  width: 100%;
+  max-width: 540px;
+  z-index: 2;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#puzzleOverlay .prompt {
+  color: #7d85a6;
+  font-size: 13px;
+  margin: 0;
+  line-height: 1.4;
+  letter-spacing: 0.2px;
+  transition: color 0.4s ease;
+}
+
+#puzzleOverlay .prompt .k {
+  color: #fbbf24;
+  font-weight: 600;
+  letter-spacing: 0.3px;
+}
+
+#puzzleOverlay .redirect-status {
+  display: none;
+  align-items: center;
+  gap: 10px;
+  color: #fef3c7;
+  font-size: 13px;
+  font-weight: 500;
+  letter-spacing: 0.4px;
+  animation: puzzleFadeInStatus 0.5s ease forwards;
+}
+
+#puzzleOverlay.lit .redirect-status {
+  display: inline-flex;
+}
+
+#puzzleOverlay.lit .prompt {
+  display: none;
+}
+
+#puzzleOverlay .pulse-ring {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #fbbf24;
+  box-shadow: 0 0 10px #fbbf24, 0 0 20px #f59e0b;
+  animation: puzzleDotPulse 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes puzzleDotPulse {
+  from { transform: scale(0.85); opacity: 0.7; }
+  to   { transform: scale(1.25); opacity: 1; }
+}
+
+@keyframes puzzleFadeInStatus {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive Tweaks */
+@media (max-width: 640px) {
+  #puzzleOverlay { padding: 10px 12px 12px; }
+  #puzzleOverlay .puzzle-skip-btn { top: 12px; right: 12px; font-size: 11px; padding: 4px 10px; }
+  #puzzleOverlay .logo-h { height: 40px; }
+  #puzzleOverlay .head-text { font-size: 18px; }
+  #puzzleOverlay .brand-tagline { font-size: 9px; }
+  #puzzleOverlay .header-wrap { margin-top: 2px; }
+  #puzzleOverlay .headline { letter-spacing: 2px; font-size: 17px; }
+  #puzzleOverlay .subhead { font-size: 11.5px; margin-top: 3px; }
+  #puzzleOverlay .prompt { font-size: 12px; }
+  #puzzleOverlay .footer-wrap { min-height: 28px; }
+}
+
+@media (max-height: 740px) {
+  #puzzleOverlay { padding: 8px 16px 10px; }
+  #puzzleOverlay .puzzle-skip-btn { top: 10px; right: 14px; font-size: 11px; padding: 4px 10px; }
+  #puzzleOverlay .logo-h { height: 42px; }
+  #puzzleOverlay .head-text { font-size: 19px; }
+  #puzzleOverlay .brand-tagline { font-size: 9.5px; }
+  #puzzleOverlay .header-wrap { margin-top: -10px; }
+  #puzzleOverlay .headline { font-size: 19px; }
+  #puzzleOverlay .subhead { font-size: 11.5px; margin-top: 2px; }
+  #puzzleOverlay .footer-wrap { min-height: 26px; }
+}

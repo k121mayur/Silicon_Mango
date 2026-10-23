@@ -1,0 +1,988 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>NGO Ecosystem Puzzle — Silicon Mango</title>
+  <meta name="description" content="NGO Ecosystem Puzzle — Place the Silicon Mango piece to unify and energize every department." />
+  <link rel="icon" href="images/favicon-32x32.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      background: #06070d;
+      color: #e8e9f3;
+      font-family: 'Inter', system-ui, -apple-system, sans-serif;
+      overflow: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ---------- Minimalist Single-Screen Stage (Zero Scroll) ---------- */
+    .stage {
+      width: 100%;
+      height: 100vh;
+      height: 100dvh;
+      background:
+        radial-gradient(ellipse 72% 55% at 50% 42%, #141829 0%, #090b14 58%, #05060b 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 24px 16px;
+      position: relative;
+      overflow: hidden;
+      transition: background 1.2s ease;
+    }
+
+    /* Subtle architectural micro-grid & ambient star-matrix */
+    .stage::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255, 255, 255, 0.018) 1px, transparent 1px),
+        radial-gradient(1px 1px at 18% 26%, rgba(255, 255, 255, 0.28), transparent 60%),
+        radial-gradient(1px 1px at 76% 18%, rgba(255, 255, 255, 0.22), transparent 60%),
+        radial-gradient(1px 1px at 84% 72%, rgba(255, 255, 255, 0.20), transparent 60%),
+        radial-gradient(1px 1px at 14% 82%, rgba(255, 255, 255, 0.18), transparent 60%);
+      background-size: 48px 48px, 48px 48px, 100% 100%, 100% 100%, 100% 100%, 100% 100%;
+      mask-image: radial-gradient(ellipse 80% 70% at 50% 48%, #000 30%, transparent 90%);
+      -webkit-mask-image: radial-gradient(ellipse 80% 70% at 50% 48%, #000 30%, transparent 90%);
+      pointer-events: none;
+    }
+
+    /* Warm ambient golden backdrop bloom when energized */
+    .stage::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at 50% 45%, rgba(251, 191, 36, 0.12) 0%, rgba(245, 158, 11, 0.04) 40%, transparent 70%);
+      opacity: 0;
+      transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .stage.lit::after {
+      opacity: 1;
+    }
+
+    /* ---------- Top Bar & Brand Logo (Matching index.html) ---------- */
+    .top-header {
+      width: 100%;
+      max-width: 1280px;
+      display: flex;
+       flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 3;
+      flex-shrink: 0;
+    }
+
+    .brand-bar {
+      width: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 2px;
+    }
+
+    .navbar-brand {
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .logo-h {
+      height: 52px;
+      width: auto;
+      display: block;
+    }
+
+    .brand-text-wrapper {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin-left: 10px;
+      text-decoration: none;
+    }
+
+    .head-text {
+      font-size: 22px;
+      font-weight: 800;
+      color: #ffffff;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+
+    .brand-tagline {
+      display: block;
+      font-size: 10.5px;
+      font-weight: 600;
+      color: rgba(255, 255, 255, 0.9);
+      letter-spacing: 0.35px;
+      line-height: 1;
+      margin-top: 3px;
+      text-align: center;
+      white-space: nowrap;
+    }
+
+    .brand-tagline .tagline-pipe {
+      color: #ffb703;
+      margin: 0 4px;
+      font-weight: 400;
+      opacity: 0.85;
+    }
+
+    /* ---------- Puzzle Title & Subhead ---------- */
+    .header-wrap {
+      text-align: center;
+      max-width: 720px;
+      width: 100%;
+      margin-top: -6px;
+    }
+
+    .headline {
+      margin: 0;
+      font-size: clamp(18px, 2.6vw, 28px);
+      font-weight: 300;
+      letter-spacing: 3.5px;
+      text-transform: uppercase;
+      line-height: 1.15;
+      color: #d8dcef;
+      transition: color 0.7s ease, text-shadow 0.7s ease;
+    }
+
+    .stage.lit .headline {
+      color: #fef3c7;
+      text-shadow: 0 0 28px rgba(251, 191, 36, 0.35);
+    }
+
+    .subhead {
+      margin: 5px auto 0;
+      font-size: clamp(11.5px, 1.4vw, 13px);
+      font-weight: 400;
+      color: #727996;
+      max-width: 520px;
+      line-height: 1.4;
+      letter-spacing: 0.2px;
+      transition: color 0.7s ease;
+    }
+
+    .stage.lit .subhead {
+      color: #cbd2e8;
+    }
+
+    /* ---------- SVG Puzzle Stage (Auto-fits remaining viewport height) ---------- */
+    .svg-wrap {
+      flex: 1 1 0;
+      min-height: 0;
+      width: 100%;
+      max-width: 640px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      z-index: 2;
+      position: relative;
+      padding: 6px 0;
+    }
+
+    svg.canvas {
+      height: 100%;
+      width: auto;
+      max-width: 100%;
+      max-height: 100%;
+      display: block;
+      overflow: visible;
+      user-select: none;
+      -webkit-user-select: none;
+    }
+
+    /* ---------- Base Jigsaw Piece (Dull System State) ---------- */
+    .pc .fill {
+      fill: #121626;
+      stroke: #262d47;
+      stroke-width: 1.5;
+      transition: fill 0.7s ease, stroke 0.7s ease, filter 0.7s ease;
+    }
+
+    .pc .dept-icon {
+      color: #5b6485;
+      stroke: currentColor;
+      fill: none;
+      stroke-width: 1.75;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      pointer-events: none;
+      transition: color 0.7s ease, filter 0.7s ease, transform 0.5s ease;
+    }
+
+    .pc .dept-icon .icon-fill {
+      fill: currentColor;
+      stroke: none;
+    }
+
+    .pc .label {
+      fill: #8c95b5;
+      font-size: 14px;
+      font-weight: 500;
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+      user-select: none;
+      letter-spacing: 0.4px;
+      transition: fill 0.7s ease, filter 0.7s ease;
+    }
+
+    /* ---------- Target Silhouette Ghost (Bottom-Right Corner) ---------- */
+    .target {
+      cursor: pointer;
+    }
+
+    .target .fill {
+      fill: rgba(251, 191, 36, 0.035);
+      stroke: #fbbf24;
+      stroke-width: 1.5;
+      stroke-dasharray: 5 5;
+      opacity: 0.5;
+      animation: breathe 2.2s ease-in-out infinite;
+      transition: fill 0.3s ease, stroke-width 0.3s ease, opacity 0.3s ease;
+    }
+
+    .target.near .fill {
+      fill: rgba(251, 191, 36, 0.12);
+      stroke-width: 2.2;
+      stroke-dasharray: none;
+      opacity: 0.95;
+      filter: drop-shadow(0 0 16px rgba(251, 191, 36, 0.6));
+    }
+
+    .target .target-label {
+      fill: rgba(251, 191, 36, 0.45);
+      font-size: 10px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 600;
+      text-anchor: middle;
+      dominant-baseline: central;
+      pointer-events: none;
+    }
+
+    @keyframes breathe {
+      0%, 100% { opacity: 0.28; }
+      50%      { opacity: 0.72; }
+    }
+
+    /* ---------- Dragger Piece (Silicon Mango) ---------- */
+    .dragger {
+      cursor: grab;
+      touch-action: none;
+    }
+    .dragger.hold {
+      cursor: grabbing;
+    }
+    .dragger.snapped,
+    .dragger.lit {
+      cursor: default;
+    }
+
+    .dragger .fill {
+      fill: #271e0d;
+      stroke: #fbbf24;
+      stroke-width: 2.2;
+      filter: drop-shadow(0 0 12px rgba(251, 191, 36, 0.45));
+    }
+
+    .dragger .sm-logo-img {
+      pointer-events: none;
+      filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.45));
+      transition: filter 0.6s ease, transform 0.6s ease;
+    }
+
+    .dragger .label {
+      fill: #fef3c7;
+      font-weight: 600;
+      font-size: 14px;
+      letter-spacing: 0.5px;
+    }
+
+    .dragger.idle .fill {
+      animation: pulseAura 2s ease-in-out infinite;
+    }
+
+    @keyframes pulseAura {
+      0%, 100% { filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.38)); }
+      50%      { filter: drop-shadow(0 0 22px rgba(251, 191, 36, 0.85)); }
+    }
+
+    /* ---------- Energize Cascade Across All Pieces ---------- */
+    .energized .pc .fill {
+      animation: fillCharge 1.5s cubic-bezier(.25, .7, .25, 1) forwards;
+      animation-delay: var(--delay, 0ms);
+    }
+    .energized .pc .dept-icon {
+      animation: iconCharge 1.5s ease forwards;
+      animation-delay: var(--delay, 0ms);
+    }
+    .energized .pc .label {
+      animation: labelCharge 1.5s ease forwards;
+      animation-delay: var(--delay, 0ms);
+    }
+
+    .energized .dragger .fill {
+      animation: fillCharge 1.5s cubic-bezier(.25, .7, .25, 1) forwards;
+      animation-delay: 0ms;
+    }
+    .energized .dragger .sm-logo-img {
+      filter: drop-shadow(0 0 14px rgba(254, 240, 138, 0.85));
+    }
+    .energized .dragger .label {
+      animation: labelCharge 1.5s ease forwards;
+      animation-delay: 0ms;
+    }
+
+    @keyframes fillCharge {
+      0%   { fill: #121626; stroke: #262d47; filter: none; }
+      32%  { fill: #6e440c; stroke: #fef08a; filter: drop-shadow(0 0 22px #fbbf24); }
+      68%  { fill: #25223d; stroke: #fbbf24; filter: drop-shadow(0 0 14px rgba(251, 191, 36, 0.8)); }
+      100% { fill: #1a1f38; stroke: #fbbf24; filter: drop-shadow(0 0 8px rgba(251, 191, 36, 0.55)); }
+    }
+
+    @keyframes iconCharge {
+      0%   { color: #5b6485; filter: none; }
+      32%  { color: #ffffff; filter: drop-shadow(0 0 12px #fef08a); }
+      100% { color: #fbbf24; filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.65)); }
+    }
+
+    @keyframes labelCharge {
+      0%   { fill: #8c95b5; }
+      32%  { fill: #fef9c3; filter: drop-shadow(0 0 10px rgba(254, 240, 138, 0.7)); }
+      100% { fill: #ffffff; filter: none; }
+    }
+
+    /* ---------- Yellow Energy Plasma Streams Along Jigsaw Contours ---------- */
+    .plasma-unit .plasma-glow {
+      fill: none;
+      stroke: #f59e0b;
+      stroke-width: 7;
+      stroke-linecap: round;
+      stroke-dasharray: 120 820;
+      stroke-dashoffset: 900;
+      opacity: 0;
+      filter: blur(4px);
+      pointer-events: none;
+    }
+
+    .plasma-unit .trail {
+      fill: none;
+      stroke: #fef08a;
+      stroke-width: 2.8;
+      stroke-linecap: round;
+      stroke-dasharray: 95 820;
+      stroke-dashoffset: 900;
+      opacity: 0;
+      filter: drop-shadow(0 0 8px #fbbf24) drop-shadow(0 0 16px #f59e0b);
+      pointer-events: none;
+    }
+
+    .plasma-unit .plasma-sustained {
+      fill: none;
+      stroke: #fbbf24;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-dasharray: 50 350;
+      stroke-dashoffset: 800;
+      opacity: 0;
+      filter: drop-shadow(0 0 6px #fbbf24);
+      pointer-events: none;
+    }
+
+    .energized .plasma-unit .plasma-glow {
+      animation: trailRun 1.45s ease-out forwards;
+      animation-delay: calc(var(--delay, 0ms) + 50ms);
+    }
+    .energized .plasma-unit .trail {
+      animation: trailRun 1.45s ease-out forwards;
+      animation-delay: calc(var(--delay, 0ms) + 50ms);
+    }
+    .energized .plasma-unit .plasma-sustained {
+      animation: sustainedFlow 4s linear infinite;
+      animation-delay: calc(var(--delay, 0ms) + 1050ms);
+    }
+
+    @keyframes trailRun {
+      0%   { opacity: 0; stroke-dashoffset: 900; }
+      14%  { opacity: 1; }
+      84%  { opacity: 1; }
+      100% { opacity: 0; stroke-dashoffset: 40; }
+    }
+
+    @keyframes sustainedFlow {
+      0%   { opacity: 0.85; stroke-dashoffset: 800; }
+      100% { opacity: 0.85; stroke-dashoffset: 0; }
+    }
+
+    /* ---------- Footer Prompt & Auto-Redirect Indicator ---------- */
+    .footer-wrap {
+      min-height: 36px;
+      text-align: center;
+      width: 100%;
+      max-width: 540px;
+      z-index: 2;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .prompt {
+      color: #7d85a6;
+      font-size: 13px;
+      margin: 0;
+      line-height: 1.4;
+      letter-spacing: 0.2px;
+      transition: color 0.4s ease;
+    }
+
+    .prompt .k {
+      color: #fbbf24;
+      font-weight: 600;
+      letter-spacing: 0.3px;
+    }
+
+    .redirect-status {
+      display: none;
+      align-items: center;
+      gap: 10px;
+      color: #fef3c7;
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.4px;
+      animation: fadeInStatus 0.5s ease forwards;
+    }
+
+    .stage.lit .redirect-status {
+      display: inline-flex;
+    }
+
+    .stage.lit .prompt {
+      display: none;
+    }
+
+    .pulse-ring {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #fbbf24;
+      box-shadow: 0 0 10px #fbbf24, 0 0 20px #f59e0b;
+      animation: dotPulse 0.8s ease-in-out infinite alternate;
+    }
+
+    @keyframes dotPulse {
+      from { transform: scale(0.85); opacity: 0.7; }
+      to   { transform: scale(1.25); opacity: 1; }
+    }
+
+    @keyframes fadeInStatus {
+      from { opacity: 0; transform: translateY(6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- Responsive Tweaks for Compact & Mobile Screens ---------- */
+    @media (max-width: 640px) {
+      .stage { padding: 10px 12px 12px; }
+      .logo-h { height: 40px; }
+      .head-text { font-size: 18px; }
+      .brand-tagline { font-size: 9px; }
+      .header-wrap { margin-top: 2px; }
+      .headline { letter-spacing: 2px; font-size: 17px; }
+      .subhead { font-size: 11.5px; margin-top: 3px; }
+      .prompt { font-size: 12px; }
+      .footer-wrap { min-height: 28px; }
+    }
+
+    @media (max-height: 740px) {
+      .stage { padding: 8px 16px 10px; }
+      .logo-h { height: 42px; }
+      .head-text { font-size: 19px; }
+      .brand-tagline { font-size: 9.5px; }
+      .header-wrap { margin-top: -10px; }
+      .headline { font-size: 19px; }
+      .subhead { font-size: 11.5px; margin-top: 2px; }
+      .footer-wrap { min-height: 26px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="stage" id="stage">
+    <!-- Top Header: Silicon Mango Brand (same as index.html) + Puzzle Title -->
+    <div class="top-header">
+      <div class="brand-bar">
+        <a class="navbar-brand" href="index.html">
+          <img src="images/logo 1.png" alt="Silicon Mango Logo" class="logo-h" />
+          <div class="brand-text-wrapper">
+            <span class="head-text">Silicon Mango</span>
+            <span class="brand-tagline">10x Better <span class="tagline-pipe">|</span> 10x Cheaper</span>
+          </div>
+        </a>
+      </div>
+
+      <header class="header-wrap">
+        <h1 class="headline" id="headline">NGO ECOSYSTEM PUZZLE</h1>
+        <p class="subhead" id="subhead">Eight departments operating in silos. Place the missing piece to unify and energize the ecosystem.</p>
+      </header>
+    </div>
+
+    <!-- Center Stage: Responsive Single-Screen Jigsaw Puzzle -->
+    <div class="svg-wrap" id="svgWrap">
+      <svg
+        id="puzzleSvg"
+        class="canvas"
+        viewBox="0 0 600 760"
+        preserveAspectRatio="xMidYMid meet"
+        role="img"
+        aria-label="NGO Ecosystem Puzzle: drag the Silicon Mango piece into the bottom-right corner to energize all departments"
+      >
+        <defs>
+          <!-- Expanding Plasma Wavefronts -->
+          <radialGradient id="plasma" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#fef9c3" stop-opacity="0.92" />
+            <stop offset="35%" stop-color="#fbbf24" stop-opacity="0.52" />
+            <stop offset="72%" stop-color="#f59e0b" stop-opacity="0.10" />
+            <stop offset="100%" stop-color="#f59e0b" stop-opacity="0" />
+          </radialGradient>
+
+          <radialGradient id="corePlasma" cx="50%" cy="50%" r="50%">
+            <stop offset="0%" stop-color="#ffffff" stop-opacity="1" />
+            <stop offset="40%" stop-color="#fef08a" stop-opacity="0.65" />
+            <stop offset="100%" stop-color="#fbbf24" stop-opacity="0" />
+          </radialGradient>
+        </defs>
+
+        <!-- Plasma Radial Wave Burst Layer (activated upon completion) -->
+        <g id="plasmaWaveLayer" pointer-events="none"></g>
+
+        <!-- 8 Fixed NGO Department Jigsaw Pieces -->
+        <g class="grid" id="gridGroup"></g>
+
+        <!-- Target Silhouette in Bottom-Right Corner (Row 2, Col 2) -->
+        <g class="pc target" id="targetGroup" transform="translate(390 370)">
+          <path class="fill" id="targetPath"></path>
+          <text class="target-label" x="90" y="90">Drop Here</text>
+        </g>
+
+        <!-- Detached 9th Jigsaw Piece: Silicon Mango -->
+        <g class="pc dragger idle" id="draggerGroup" transform="translate(210 572)">
+          <path class="fill" id="draggerFill"></path>
+
+          <!-- Official Silicon Mango Logo inside the Puzzle Piece -->
+          <image
+            class="sm-logo-img"
+            href="images/logo 1.png"
+            x="66"
+            y="40"
+            width="48"
+            height="48"
+            preserveAspectRatio="xMidYMid meet"
+          />
+
+          <text class="label" x="90" y="116">Silicon Mango</text>
+        </g>
+
+        <!-- Top-Level Unobstructed Yellow Energy Plasma Conduits Layer -->
+        <g id="plasmaTrailsGroup" pointer-events="none"></g>
+      </svg>
+    </div>
+
+    <!-- Compact Footer -->
+    <footer class="footer-wrap">
+      <p class="prompt" id="promptText">
+        Drag the <span class="k">Silicon Mango</span> piece into the missing corner to complete the ecosystem.
+      </p>
+      <div class="redirect-status" id="redirectStatus">
+        <span class="pulse-ring"></span>
+        <span>Ecosystem Energized &mdash; Entering Silicon Mango&hellip;</span>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      const S = 180;
+      const GRID_X = 30;
+      const GRID_Y = 10;
+      const START_X = 210;
+      const START_Y = 572;
+      const TARGET_X = GRID_X + 2 * S; // 390
+      const TARGET_Y = GRID_Y + 2 * S; // 370
+      const VB_W = 600;
+      const VB_H = 760;
+
+      const stageEl = document.getElementById('stage');
+      const svgWrapEl = document.getElementById('svgWrap');
+      const svgEl = document.getElementById('puzzleSvg');
+      const gridGroupEl = document.getElementById('gridGroup');
+      const targetGroupEl = document.getElementById('targetGroup');
+      const targetPathEl = document.getElementById('targetPath');
+      const draggerGroupEl = document.getElementById('draggerGroup');
+      const draggerFillEl = document.getElementById('draggerFill');
+      const plasmaTrailsGroupEl = document.getElementById('plasmaTrailsGroup');
+      const plasmaWaveLayerEl = document.getElementById('plasmaWaveLayer');
+      const subheadEl = document.getElementById('subhead');
+
+      // Minimalist geometric SVG icons for the 8 NGO departments (centered at 0,0)
+      const DEPT_ICONS = {
+        'HR': `
+          <circle cx="-5" cy="-7" r="4.5" />
+          <path d="M -14 10 C -14 3, -10 -1, -5 -1 C 0 -1, 4 3, 4 10" />
+          <circle cx="7" cy="-5" r="3.5" />
+          <path d="M 3 10 C 3 4.5, 6 1, 10 1 C 13.5 1, 16 4, 16 10" />
+        `,
+        'Fundraising': `
+          <path d="M 0 -4 C -3 -9, -10 -9, -10 -3 C -10 2, 0 8, 0 11 C 0 8, 10 2, 10 -3 C 10 -9, 3 -9, 0 -4 Z" />
+          <path d="M -15 13 L 15 13" />
+        `,
+        'Programs': `
+          <polygon points="0,-13 15,-5 0,3 -15,-5" />
+          <polyline points="-15,2 0,10 15,2" />
+          <polyline points="-15,9 0,17 15,9" />
+        `,
+        'M&E': `
+          <path d="M -14 12 L 14 12" />
+          <path d="M -10 12 L -10 3 M -3 12 L -3 -3 M 4 12 L 4 1 M 11 12 L 11 -8" />
+          <polyline points="-11,-2 -3,-9 4,-5 12,-14" />
+        `,
+        'Finance': `
+          <polygon points="0,-14 14,-8 14,2 0,15 -14,2 -14,-8" />
+          <path d="M -4 -5 L 5 -5 M -4 0 L 4 0 M -2 -5 C 2 -5, 2 0, -2 0 L 4 7" />
+        `,
+        'Communications': `
+          <circle class="icon-fill" cx="0" cy="0" r="2.5" />
+          <path d="M -6 -6 A 8.5 8.5 0 0 1 6 -6" />
+          <path d="M 6 6 A 8.5 8.5 0 0 1 -6 6" />
+          <path d="M -11 -11 A 15.5 15.5 0 0 1 11 -11" />
+          <path d="M 11 11 A 15.5 15.5 0 0 1 -11 11" />
+        `,
+        'Implementation': `
+          <circle cx="0" cy="0" r="6" />
+          <path d="M 0 -13 L 0 -9 M 0 9 L 0 13 M -13 0 L -9 0 M 9 0 L 13 0 M -9.2 -9.2 L -6.4 -6.4 M 6.4 6.4 L 9.2 9.2 M 9.2 -9.2 L 6.4 -6.4 M -6.4 6.4 L -9.2 9.2" />
+        `,
+        'Admin': `
+          <path d="M -13 -8 L -8 -8 M -2 -8 L 13 -8" />
+          <path d="M -13 0 L 3 0 M 9 0 L 13 0" />
+          <path d="M -13 8 L -5 8 M 1 8 L 13 8" />
+          <circle cx="-5" cy="-8" r="2.8" />
+          <circle cx="6" cy="0" r="2.8" />
+          <circle cx="-2" cy="8" r="2.8" />
+        `
+      };
+
+      // 8 NGO Departments in the 3x3 grid; (2,2) is the detached Silicon Mango piece
+      const DEFS = [
+        { row: 0, col: 0, name: 'HR',             edges: { top: 0,  right: +1, bottom: +1, left: 0  } },
+        { row: 0, col: 1, name: 'Fundraising',    edges: { top: 0,  right: -1, bottom: +1, left: -1 } },
+        { row: 0, col: 2, name: 'Programs',       edges: { top: 0,  right: 0,  bottom: -1, left: +1 } },
+        { row: 1, col: 0, name: 'M&E',            edges: { top: -1, right: +1, bottom: +1, left: 0  } },
+        { row: 1, col: 1, name: 'Finance',        edges: { top: -1, right: -1, bottom: -1, left: -1 } },
+        { row: 1, col: 2, name: 'Communications', edges: { top: +1, right: 0,  bottom: +1, left: +1 } },
+        { row: 2, col: 0, name: 'Implementation', edges: { top: -1, right: -1, bottom: 0,  left: 0  } },
+        { row: 2, col: 1, name: 'Admin',          edges: { top: +1, right: +1, bottom: 0,  left: +1 } },
+      ];
+
+      // Build piece path with interlocking tabs (+1) and blanks (-1)
+      function piecePath(edges) {
+        const r = 20;
+        const p = (S - 2 * r) / 2; // 70
+        const t = 2 * r;           // 40
+        let d = 'M 0 0 ';
+        if (edges.top === 0) d += 'h ' + S + ' ';
+        else {
+          const sw = edges.top > 0 ? 0 : 1;
+          d += 'h ' + p + ' a ' + r + ' ' + r + ' 0 0 ' + sw + ' ' + t + ' 0 h ' + p + ' ';
+        }
+        if (edges.right === 0) d += 'v ' + S + ' ';
+        else {
+          const sw = edges.right > 0 ? 0 : 1;
+          d += 'v ' + p + ' a ' + r + ' ' + r + ' 0 0 ' + sw + ' 0 ' + t + ' v ' + p + ' ';
+        }
+        if (edges.bottom === 0) d += 'h ' + (-S) + ' ';
+        else {
+          const sw = edges.bottom > 0 ? 0 : 1;
+          d += 'h ' + (-p) + ' a ' + r + ' ' + r + ' 0 0 ' + sw + ' ' + (-t) + ' 0 h ' + (-p) + ' ';
+        }
+        if (edges.left === 0) d += 'v ' + (-S) + ' ';
+        else {
+          const sw = edges.left > 0 ? 0 : 1;
+          d += 'v ' + (-p) + ' a ' + r + ' ' + r + ' 0 0 ' + sw + ' 0 ' + (-t) + ' v ' + (-p) + ' ';
+        }
+        d += 'Z';
+        return d;
+      }
+
+      // Render the 8 fixed NGO department pieces & top-layer plasma conduits
+      function initGrid() {
+        let gridHtml = '';
+        let trailsHtml = '';
+
+        DEFS.forEach((d) => {
+          const dr = d.row - 2;
+          const dc = d.col - 2;
+          const dist = Math.sqrt(dr * dr + dc * dc);
+          const delay = Math.round(dist * 170);
+          const x = GRID_X + d.col * S;
+          const y = GRID_Y + d.row * S;
+          const path = piecePath(d.edges);
+          const iconSvg = DEPT_ICONS[d.name] || '';
+
+          gridHtml += `
+            <g class="pc" transform="translate(${x} ${y})" style="--delay: ${delay}ms;">
+              <path class="fill" d="${path}"></path>
+              <g class="dept-icon" transform="translate(90, 68)">
+                ${iconSvg}
+              </g>
+              <text class="label" x="90" y="116">${d.name}</text>
+            </g>
+          `;
+
+          trailsHtml += `
+            <g class="plasma-unit" transform="translate(${x} ${y})" style="--delay: ${delay}ms;">
+              <path class="plasma-glow" d="${path}"></path>
+              <path class="trail" d="${path}"></path>
+              <path class="plasma-sustained" d="${path}"></path>
+            </g>
+          `;
+        });
+
+        const draggerEdges = { top: -1, right: 0, bottom: 0, left: -1 };
+        const dPath = piecePath(draggerEdges);
+
+        // Add the 9th piece (Silicon Mango at TARGET_X, TARGET_Y) to the top plasma layer
+        trailsHtml += `
+          <g class="plasma-unit" transform="translate(${TARGET_X} ${TARGET_Y})" style="--delay: 0ms;">
+            <path class="plasma-glow" d="${dPath}"></path>
+            <path class="trail" d="${dPath}"></path>
+            <path class="plasma-sustained" d="${dPath}"></path>
+          </g>
+        `;
+
+        gridGroupEl.innerHTML = gridHtml;
+        plasmaTrailsGroupEl.innerHTML = trailsHtml;
+        targetPathEl.setAttribute('d', dPath);
+        draggerFillEl.setAttribute('d', dPath);
+      }
+
+      initGrid();
+
+      // Subtle Web Audio harmonic synthesis on completion
+      let audioCtx = null;
+      function playEnergizeAudio() {
+        try {
+          const AudioContext = window.AudioContext || window.webkitAudioContext;
+          if (!AudioContext) return;
+          if (!audioCtx) audioCtx = new AudioContext();
+          if (audioCtx.state === 'suspended') audioCtx.resume();
+
+          const now = audioCtx.currentTime;
+
+          // Precision lock click
+          const lockOsc = audioCtx.createOscillator();
+          const lockGain = audioCtx.createGain();
+          lockOsc.type = 'triangle';
+          lockOsc.frequency.setValueAtTime(150, now);
+          lockOsc.frequency.exponentialRampToValueAtTime(55, now + 0.09);
+          lockGain.gain.setValueAtTime(0.35, now);
+          lockGain.gain.exponentialRampToValueAtTime(0.001, now + 0.09);
+          lockOsc.connect(lockGain);
+          lockGain.connect(audioCtx.destination);
+          lockOsc.start(now);
+          lockOsc.stop(now + 0.1);
+
+          // Warm harmonic chord swell
+          const notes = [261.63, 329.63, 392.00, 493.88, 587.33];
+          notes.forEach((freq, idx) => {
+            const osc = audioCtx.createOscillator();
+            const gain = audioCtx.createGain();
+            const t0 = now + 0.18 + idx * 0.1;
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, t0);
+            gain.gain.setValueAtTime(0.001, t0);
+            gain.gain.linearRampToValueAtTime(0.12, t0 + 0.08);
+            gain.gain.exponentialRampToValueAtTime(0.0008, t0 + 1.0);
+            osc.connect(gain);
+            gain.connect(audioCtx.destination);
+            osc.start(t0);
+            osc.stop(t0 + 1.05);
+          });
+        } catch (e) {}
+      }
+
+      // Dragging state & coordinate math
+      let state = {
+        dragging: false,
+        dragX: START_X,
+        dragY: START_Y,
+        offsetX: 0,
+        offsetY: 0,
+        snapped: false,
+        energized: false
+      };
+
+      function toSvgCoords(clientX, clientY) {
+        const r = svgEl.getBoundingClientRect();
+        if (r.width === 0 || r.height === 0) return { x: 0, y: 0 };
+        return {
+          x: (clientX - r.left) * (VB_W / r.width),
+          y: (clientY - r.top) * (VB_H / r.height)
+        };
+      }
+
+      function updateDraggerTransform(x, y) {
+        draggerGroupEl.setAttribute('transform', `translate(${x} ${y})`);
+      }
+
+      function triggerPlasmaBurstSVG() {
+        plasmaWaveLayerEl.innerHTML = `
+          <circle cx="480" cy="460" r="40" fill="url(#corePlasma)">
+            <animate attributeName="r" from="20" to="350" dur="1.5s" fill="freeze" />
+            <animate attributeName="opacity" values="0;1;0.22" keyTimes="0;0.32;1" dur="1.5s" fill="freeze" />
+          </circle>
+          <circle cx="300" cy="280" r="40" fill="url(#plasma)">
+            <animate attributeName="r" from="40" to="440" dur="2.0s" begin="0.18s" fill="freeze" />
+            <animate attributeName="opacity" values="0;0.92;0.18" keyTimes="0;0.38;1" dur="2.0s" begin="0.18s" fill="freeze" />
+          </circle>
+        `;
+      }
+
+      function animateGlideToTarget(durationMs, onComplete) {
+        const fromX = state.dragX;
+        const fromY = state.dragY;
+        const startTime = performance.now();
+
+        function step(now) {
+          const t = Math.min(1, (now - startTime) / durationMs);
+          const ease = 1 - Math.pow(1 - t, 3);
+          const cx = fromX + (TARGET_X - fromX) * ease;
+          const cy = fromY + (TARGET_Y - fromY) * ease;
+          state.dragX = cx;
+          state.dragY = cy;
+          updateDraggerTransform(cx, cy);
+          if (t < 1) {
+            requestAnimationFrame(step);
+          } else {
+            onComplete();
+          }
+        }
+        requestAnimationFrame(step);
+      }
+
+      function snapAndEnergize(glideMs) {
+        if (state.snapped) return;
+        state.dragging = false;
+        state.snapped = true;
+
+        targetGroupEl.classList.remove('near');
+        draggerGroupEl.className.baseVal = 'pc dragger snapped';
+
+        animateGlideToTarget(glideMs || 120, () => {
+          targetGroupEl.style.display = 'none';
+          updateDraggerTransform(TARGET_X, TARGET_Y);
+          playEnergizeAudio();
+
+          // Ignite plasma and energize all pieces
+          state.energized = true;
+          stageEl.classList.add('lit');
+          svgWrapEl.classList.add('energized');
+          draggerGroupEl.className.baseVal = 'pc dragger lit';
+          subheadEl.textContent = 'Every department connected and amplified — powered by Silicon Mango.';
+          triggerPlasmaBurstSVG();
+
+          // Wait 3 seconds after puzzle completion, then auto-redirect to landing page
+          setTimeout(() => {
+            window.location.href = 'index.html';
+          }, 3000);
+        });
+      }
+
+      function startDrag(e) {
+        if (state.snapped) return;
+        const p = toSvgCoords(e.clientX, e.clientY);
+        state.dragging = true;
+        state.offsetX = p.x - state.dragX;
+        state.offsetY = p.y - state.dragY;
+
+        draggerGroupEl.className.baseVal = 'pc dragger hold';
+        if (draggerGroupEl.setPointerCapture && e.pointerId !== undefined) {
+          try { draggerGroupEl.setPointerCapture(e.pointerId); } catch (err) {}
+        }
+        if (e.preventDefault) e.preventDefault();
+        if (e.stopPropagation) e.stopPropagation();
+      }
+
+      function onMove(e) {
+        if (!state.dragging) return;
+        const p = toSvgCoords(e.clientX, e.clientY);
+        let nx = p.x - state.offsetX;
+        let ny = p.y - state.offsetY;
+        nx = Math.max(-20, Math.min(VB_W - S + 20, nx));
+        ny = Math.max(-20, Math.min(VB_H - S + 15, ny));
+
+        state.dragX = nx;
+        state.dragY = ny;
+        updateDraggerTransform(nx, ny);
+
+        const dist = Math.hypot(nx - TARGET_X, ny - TARGET_Y);
+        if (dist < 105) {
+          targetGroupEl.classList.add('near');
+        } else {
+          targetGroupEl.classList.remove('near');
+        }
+
+        if (e.cancelable && e.preventDefault) e.preventDefault();
+      }
+
+      function onUp(e) {
+        if (!state.dragging) return;
+        state.dragging = false;
+        if (draggerGroupEl.releasePointerCapture && e && e.pointerId !== undefined) {
+          try { draggerGroupEl.releasePointerCapture(e.pointerId); } catch (err) {}
+        }
+
+        const dist = Math.hypot(state.dragX - TARGET_X, state.dragY - TARGET_Y);
+        if (dist < 95) {
+          snapAndEnergize(120);
+        } else {
+          targetGroupEl.classList.remove('near');
+          draggerGroupEl.className.baseVal = 'pc dragger idle';
+        }
+      }
+
+      draggerGroupEl.addEventListener('pointerdown', startDrag);
+      window.addEventListener('pointermove', onMove, { passive: false });
+      window.addEventListener('pointerup', onUp);
+      window.addEventListener('pointercancel', onUp);
+
+      // Allow clicking target slot to smoothly glide the piece into place
+      targetGroupEl.addEventListener('click', () => {
+        if (!state.snapped) {
+          snapAndEnergize(380);
+        }
+      });
+    })();
+  </script>
+</body>
+</html>
