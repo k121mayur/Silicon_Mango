@@ -2559,80 +2559,134 @@ body {
   display: inline-block;
 }
 
-/* Hardware Cards inside hw-infra-section (Clean White Aesthetics) */
+/* Hardware Cards inside hw-infra-section (Prominent Hardware Showcase Redesign) */
 .hw-infra-section .hw-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 18px;
-  padding: 34px 26px;
+  border-radius: 20px;
+  padding: 0;
   height: 100%;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 4px 20px rgba(15, 23, 42, 0.04), 0 1px 3px rgba(15, 23, 42, 0.02);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
   position: relative;
   overflow: hidden;
   z-index: 2;
+  display: flex;
+  flex-direction: column;
 }
 
 .hw-infra-section .hw-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-8px);
   border-color: #fdba74;
-  box-shadow: 0 16px 32px -8px rgba(194, 65, 12, 0.1), 0 0 20px rgba(249, 115, 22, 0.12);
+  box-shadow: 0 20px 42px -10px rgba(234, 88, 12, 0.15), 0 0 0 1px rgba(251, 146, 60, 0.35);
 }
 
-.hw-infra-section .hw-icon {
-  width: 48px;
-  height: 48px;
-  border-radius: 12px;
-  background: #fff7ed;
-  border: 1px solid #ffedd5;
-  color: #ea580c;
+/* 1. Hero Hardware Stage (Dedicated Visual Showcase) */
+.hw-infra-section .hw-stage {
+  position: relative;
+  height: 215px;
+  background: radial-gradient(circle at 50% 65%, #fff7ed 0%, #f8fafc 65%, #f1f5f9 100%);
+  border-bottom: 1px solid #f1f5f9;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 18px;
-  margin-bottom: 18px;
-  transition: all 0.3s ease;
+  padding: 24px 20px;
+  overflow: visible;
 }
 
-.hw-infra-section .hw-card:hover .hw-icon {
-  background: #ffedd5;
-  color: #c2410c;
-  border-color: #fed7aa;
-  transform: scale(1.06);
+/* Ambient Radial Glow underneath the Machine */
+.hw-infra-section .hw-stage-glow {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 190px;
+  height: 50px;
+  background: radial-gradient(ellipse, rgba(249, 115, 22, 0.22) 0%, rgba(249, 115, 22, 0) 70%);
+  filter: blur(14px);
+  border-radius: 50%;
+  pointer-events: none;
+  transition: all 0.4s ease;
+}
+
+.hw-infra-section .hw-card:hover .hw-stage-glow {
+  width: 230px;
+  height: 60px;
+  background: radial-gradient(ellipse, rgba(234, 88, 12, 0.38) 0%, rgba(249, 115, 22, 0) 75%);
+  filter: blur(16px);
+}
+
+/* Hero Hardware Image */
+.hw-infra-section .hw-stage-img {
+  position: relative;
+  z-index: 2;
+  max-height: 145px;
+  max-width: 90%;
+  width: auto;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 22px rgba(15, 23, 42, 0.16));
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), filter 0.4s ease;
+}
+
+.hw-infra-section .hw-card:hover .hw-stage-img {
+  transform: translateY(-8px) scale(1.06);
+  filter: drop-shadow(0 20px 28px rgba(15, 23, 42, 0.2)) drop-shadow(0 0 16px rgba(249, 115, 22, 0.25));
+}
+
+/* 2. Card Content Body */
+.hw-infra-section .hw-body {
+  padding: 26px 26px 24px 26px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
 }
 
 .hw-infra-section .hw-title {
-  font-size: 18px;
-  font-weight: 700;
+  font-size: 19.5px;
+  font-weight: 800;
   color: #0f172a;
-  margin-bottom: 10px;
-  letter-spacing: -0.01em;
+  margin-bottom: 12px;
+  letter-spacing: -0.015em;
+  line-height: 1.35;
 }
 
 .hw-infra-section .hw-desc {
-  font-size: 13.5px;
+  font-size: 14px;
   color: #64748b;
-  line-height: 1.55;
-  margin-bottom: 16px;
+  line-height: 1.6;
+  margin-bottom: 22px;
+  flex-grow: 1;
+}
+
+/* 3. Bottom Impact Box */
+.hw-infra-section .hw-impact-box {
+  margin-top: auto;
+  padding-top: 16px;
+  border-top: 1px dashed #e2e8f0;
+  display: flex;
 }
 
 .hw-infra-section .hw-badge {
-  font-size: 11.5px;
+  font-size: 12px;
   font-weight: 600;
   color: #c2410c;
   background: #fff7ed;
   border: 1px solid #fed7aa;
-  padding: 5px 11px;
-  border-radius: 6px;
-  display: inline-flex;
+  padding: 7px 12px;
+  border-radius: 8px;
+  width: 100%;
+  display: flex;
   align-items: center;
-  gap: 5px;
+  justify-content: center;
+  gap: 6px;
   transition: all 0.25s ease;
 }
 
 .hw-infra-section .hw-card:hover .hw-badge {
   background: #ffedd5;
   color: #9a3412;
+  border-color: #fdba74;
 }
 
 @media (max-width: 767px) {
@@ -2644,6 +2698,15 @@ body {
   }
   .hw-gradient-beam-wrapper {
     height: 240px;
+  }
+  .hw-infra-section .hw-stage {
+    height: 180px;
+  }
+  .hw-infra-section .hw-stage-img {
+    max-height: 120px;
+  }
+  .hw-infra-section .hw-body {
+    padding: 20px;
   }
 }
 
