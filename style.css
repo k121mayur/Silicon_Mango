@@ -1921,24 +1921,23 @@ body {
   z-index: 5;
 }
 
-/* Individual Pillar Anchor placed on the top step */
+/* Individual Pillar Anchor placed firmly on the top step */
 .podium-pillar-anchor {
   position: absolute;
   top: 75.06%; /* Exact top surface of the upper podium step */
-  transform: translate(-50%, -99%);
+  transform: translate(-50%, -95%);
   display: flex;
   flex-direction: column;
   align-items: center;
   pointer-events: auto;
   text-decoration: none !important;
   cursor: pointer;
-  transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  will-change: transform;
 }
 
+/* Stationary: No upward translation or animation on hover */
 .podium-pillar-anchor:hover,
 .podium-pillar-anchor.hover-active {
-  transform: translate(-50%, calc(-99% - 14px));
+  transform: translate(-50%, -95%);
 }
 
 /* Arch Center Coordinates (20%, 40%, 60%, 80%) */
@@ -1951,13 +1950,13 @@ body {
 .podium-column-graphic {
   width: clamp(95px, 11.8vw, 195px);
   height: clamp(160px, 19.8vw, 330px);
-  filter: drop-shadow(0 16px 26px rgba(15, 23, 42, 0.18));
-  transition: filter 0.4s ease;
+  filter: drop-shadow(0 8px 16px rgba(15, 23, 42, 0.14));
+  transition: filter 0.3s ease;
 }
 
 .podium-pillar-anchor:hover .podium-column-graphic,
 .podium-pillar-anchor.hover-active .podium-column-graphic {
-  filter: drop-shadow(0 26px 40px rgba(15, 23, 42, 0.26));
+  filter: drop-shadow(0 10px 20px rgba(15, 23, 42, 0.18));
 }
 
 .podium-column-graphic svg {
@@ -1971,15 +1970,8 @@ body {
   width: clamp(85px, 10.5vw, 175px);
   height: 12px;
   border-radius: 50%;
-  background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.28) 0%, rgba(15, 23, 42, 0.06) 55%, transparent 75%);
+  background: radial-gradient(ellipse at center, rgba(15, 23, 42, 0.35) 0%, rgba(15, 23, 42, 0.08) 55%, transparent 75%);
   margin-top: -6px;
-  transition: transform 0.4s ease, opacity 0.4s ease;
-}
-
-.podium-pillar-anchor:hover .podium-pillar-shadow,
-.podium-pillar-anchor.hover-active .podium-pillar-shadow {
-  transform: scale(1.18);
-  opacity: 0.55;
 }
 
 /* Flute Specular Glint */
